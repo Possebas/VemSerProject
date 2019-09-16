@@ -1,95 +1,161 @@
--- ---
--- Globals
--- ---
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: https://ondras.zarovi.cz/sql/demo/?keyword=default -->
+<sql>
+<datatypes db="mysql">A
+		<group color="rgb(238,238,170)" label="Integer">
+			<type label="TinyInt" quote="" sql="tinyint" length="0" re="INT" bytes="1" note="Integer data: 0 to 255"/>
+			<type label="SmallInt" quote="" sql="smallint" length="0" re="INT" bytes="2" note="Integer data: -32,768 to 32,767"/>
+			<type label="Int" quote="" sql="int" length="0" re="INT" bytes="4" note="Integer data: -2,147,483,648 to 2,147,483,647"/>
+			<type label="BigInt" quote="" sql="bigint" length="0" re="INT" bytes="8" note="Integer data: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807"/>
+		</group>
 
--- SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
--- SET FOREIGN_KEY_CHECKS=0;
+		<group color="rgb(238,238,170)" label="Monetary">
+			<type label="Money" quote="" sql="money" length="0" re="FLOAT" bytes="8" note="Integer data: -922,337,203,685,477.5808 to 922,337,203,685,477.5807"/>
+			<type label="SmallMoney" quote="" sql="smallmoney" length="0" re="FLOAT" bytes="4" note="-214,748.3648 to 214,748.3647"/>
+		</group>
 
--- ---
--- Table 'USER'
--- 
--- ---
+		<group color="rgb(238,238,170)" label="Numeric">
+			<type label="Real" quote="" sql="real" length="0" re="FLOAT" bytes="4" note="Floating precision number data: -3.402823E+38 to 3.402823E+38"/>
+			<type label="Float" quote="" sql="float" length="0" re="FLOAT" bytes="8" note="Floating precision number data: -4.94E+324 to 4.94E+324"/>
+			<type label="Decimal" quote="" sql="decimal" length="1" re="DEC" bytes="n*" note="Fixed precision and scale numeric data: -10^38 +1 to 10^38 -1 (decimal and numeric are synonyms)"/>
+			<type label="Numeric" quote="" sql="numeric" length="1" re="DEC" bytes="n*" note="Fixed precision and scale numeric data: -10^38 +1 to 10^38 -1 (decimal and numeric are synonyms)"/>
+		</group>
 
-DROP TABLE IF EXISTS `USER`;
-		
-CREATE TABLE `USER` (
-  `ID_USER` int NOT NULL AUTO_INCREMENT DEFAULT NULL,
-  `NAME` varchar NOT NULL DEFAULT 'NULL',
-  `EMAIL` varchar NOT NULL DEFAULT 'NULL',
-  `PASSWORD` tinyint NOT NULL DEFAULT NULL,
-  PRIMARY KEY (`ID_USER`)
-);
+		<group color="rgb(255,200,200)" label="Character">
+			<type label="Char" quote="'" sql="char" length="0" bytes="n" note="Fixed-length character data with a maximum length of 8,000 characters"/>
+			<type label="Varchar" quote="'" sql="varchar" length="1" bytes="m &lt;= n" note="Variable-length data with a maximum of 8,000 characters"/>
+			<type label="Text" quote="'" sql="text" length="1" bytes="&lt;= 2,147,483,647" note="Variable-length data with a maximum length of 2,147,483,647 characters"/>
+			<type label="XML" quote="'" sql="xml" length="0" bytes="n" note="XML"/>
+		</group>
 
--- ---
--- Table 'ADDRESS'
--- 
--- ---
-
-DROP TABLE IF EXISTS `ADDRESS`;
-		
-CREATE TABLE `ADDRESS` (
-  `ID_ADDRESS` int NOT NULL AUTO_INCREMENT DEFAULT NULL,
-  `STREET` varchar NOT NULL DEFAULT 'NULL',
-  `NUMBER` int NOT NULL DEFAULT NULL,
-  `COMPLEMENT` varchar NULL DEFAULT NULL,
-  `ZIP_CODE` int NULL DEFAULT NULL,
-  `NEIGHBORHOOD` varchar NOT NULL DEFAULT 'NULL',
-  `CITY` varchar NULL DEFAULT NULL,
-  `STATE` varchar NOT NULL DEFAULT 'NULL',
-  PRIMARY KEY (`ID_ADDRESS`)
-);
-
--- ---
--- Table 'TYPE_OF_USER'
--- 
--- ---
-
-DROP TABLE IF EXISTS `TYPE_OF_USER`;
-		
-CREATE TABLE `TYPE_OF_USER` (
-  `ID_TYPE_OF_USER` int NULL AUTO_INCREMENT DEFAULT NULL,
-  `TYPE` sql_variant NULL DEFAULT NULL COMMENT 'ADMINISTRATOR, CANDIDATE',
-  PRIMARY KEY (`ID_TYPE_OF_USER`)
-);
-
--- ---
--- Table 'CANDIDATE DATA'
--- 
--- ---
-
-DROP TABLE IF EXISTS `CANDIDATE DATA`;
-		
-CREATE TABLE `CANDIDATE DATA` (
-  `ID_CANDIDATE DATA` int NULL AUTO_INCREMENT DEFAULT NULL,
-  `DATE_OF_BIRTH` datetime NOT NULL DEFAULT NULL,
-  `CPF` varchar NULL DEFAULT NULL,
-  `BEEN_CONFIRMED` varchar NULL DEFAULT NULL,
-  PRIMARY KEY (`ID_CANDIDATE DATA`)
-);
-
--- ---
--- Foreign Keys 
--- ---
+		<group color="rgb(255,200,200)" label="Unicode Character">
+			<type label="nChar" quote="'" sql="nchar" length="0" bytes="n" note="Fixed-length Unicode data with a maximum length of 4,000 characters"/>
+			<type label="nVarchar" quote="'" sql="nvarchar" length="1" bytes="m &lt;= n" note="Variable-length Unicode data with a maximum length of 4,000 characters"/>
+			<type label="nText" quote="'" sql="ntext" length="1" bytes="&lt;= 2,147,483,647" note="Variable-length Unicode data with a maximum length of 1,073,741,823 characters"/>
+		</group>
 
 
--- ---
--- Table Properties
--- ---
+		<group color="rgb(200,255,200)" label="Date &amp; Time">
+			<type label="Datetime" quote="" sql="datetime" length="0" bytes="8" note="Jan 1, 1753 to Dec 31, 9999"/>
+			<type label="SmallDateTime" quote="" sql="smalldatetime" length="0" bytes="4" note="Jan 1, 1900 to Dec 31, 2079"/>
+		</group>
 
--- ALTER TABLE `USER` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `ADDRESS` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `TYPE_OF_USER` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `CANDIDATE DATA` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+		<group color="rgb(200,200,255)" label="Binary">
+			<type label="Binary" quote="'" sql="binary" length="0" bytes="n" note="Fixed-length binary data with a maximum length of 8,000 bytes"/>
+			<type label="Varbinary" quote="'" sql="varbinary" length="1" bytes="m &lt;= n" note="Variable-length binary data with a maximum length of 8,000 bytes"/>
+		</group>
 
--- ---
--- Test Data
--- ---
-
--- INSERT INTO `USER` (`ID_USER`,`NAME`,`EMAIL`,`PASSWORD`) VALUES
--- ('','','','');
--- INSERT INTO `ADDRESS` (`ID_ADDRESS`,`STREET`,`NUMBER`,`COMPLEMENT`,`ZIP_CODE`,`NEIGHBORHOOD`,`CITY`,`STATE`) VALUES
--- ('','','','','','','','');
--- INSERT INTO `TYPE_OF_USER` (`ID_TYPE_OF_USER`,`TYPE`) VALUES
--- ('','');
--- INSERT INTO `CANDIDATE DATA` (`ID_CANDIDATE DATA`,`DATE_OF_BIRTH`,`CPF`,`BEEN_CONFIRMED`) VALUES
--- ('','','','');
+		<group color="rgb(200,220,255)" label="Miscellaneous">
+			<type label="Bit" quote="" sql="bit" length="0" bytes="1" note="Boolean: 1 or 0"/>
+			<type label="Image" quote="" sql="image" length="1" re="BLOB" bytes="0 to 2,147,483,647" note="Variable-length binary data with a maximum length of 2,147,483,647 bytes"/>
+			<type label="Timestamp" quote="" sql="timestamp" length="0" bytes="8" note="Locally unique binary number updated as a row gets updated"/>
+			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
+			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
+		</group>
+	</datatypes><table x="32" y="59" name="USERS">
+<row name="ID_USER" null="0" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="EMAIL" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="PASSWORD" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_USER</part>
+</key>
+</table>
+<table x="183" y="43" name="CANDIDATES">
+<row name="ID_CANDIDATES" null="0" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="CPF" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="BIRTH_DATE" null="1" autoincrement="0">
+<datatype>datetime</datatype>
+<default>NULL</default></row>
+<row name="STATUS PROCESS" null="0" autoincrement="0">
+<datatype>sql_variant</datatype>
+<default>NULL</default><comment>PENDING, INVITATION SENT, CONFIRMED PRESENCE, REJECTED</comment>
+</row>
+<row name="DATE_OF_REGISTRATION" null="1" autoincrement="0">
+<datatype>datetime</datatype>
+<default>NULL</default></row>
+<row name="BEEN_CONFIRMED" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_CANDIDATES</part>
+</key>
+</table>
+<table x="1012" y="107" name="COUNTRY">
+<row name="ID_COUNTRY" null="1" autoincrement="1">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<key type="PRIMARY" name="">
+<part>ID_COUNTRY</part>
+</key>
+</table>
+<table x="884" y="109" name="STATE">
+<row name="ID_STATE" null="1" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_STATE</part>
+</key>
+</table>
+<table x="768" y="110" name="CITY">
+<row name="ID_CITY" null="0" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_CITY</part>
+</key>
+</table>
+<table x="573" y="106" name="NEIGHBORHOOD">
+<row name="ID_NEIGHBORHOOD" null="1" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_NEIGHBORHOOD</part>
+</key>
+</table>
+<table x="417" y="78" name="ADDRESS">
+<row name="ID_ADDRESS" null="1" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="STREET" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<row name="NUMBER" null="0" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="COMPLEMENT" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="ZIP_CODE" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_ADDRESS</part>
+</key>
+</table>
+</sql>
