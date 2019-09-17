@@ -53,8 +53,8 @@
 			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
 			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
 		</group>
-	</datatypes><table x="136" y="119" name="USER">
-<row name="ID_USER" null="0" autoincrement="1">
+	</datatypes><table x="140" y="177" name="PROFILE">
+<row name="ID_PROFILE" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="0" autoincrement="0">
@@ -67,10 +67,10 @@
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>ID_USER</part>
+<part>ID_PROFILE</part>
 </key>
 </table>
-<table x="210" y="303" name="CANDIDATE">
+<table x="361" y="336" name="CANDIDATE">
 <row name="ID_CANDIDATE" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -93,6 +93,10 @@
 <row name="EDUCATIONAL_INSTITUTION" null="1" autoincrement="0">
 <datatype>varchar</datatype>
 <default>NULL</default></row>
+<row name="ID_ADDRESS_ADDRESS" null="1" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="ADDRESS" row="ID_ADDRESS" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_CANDIDATE</part>
 </key>
@@ -153,7 +157,7 @@
 <part>ID_NEIGHBORHOOD</part>
 </key>
 </table>
-<table x="378" y="58" name="ADDRESS">
+<table x="335" y="91" name="ADDRESS">
 <row name="ID_ADDRESS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -177,7 +181,7 @@
 <part>ID_ADDRESS</part>
 </key>
 </table>
-<table x="591" y="273" name="QUESTIONS">
+<table x="705" y="289" name="QUESTIONS">
 <row name="ID_QUESTIONS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -217,11 +221,15 @@
 <row name="REFERENCES_THAT_INSPIRE" null="1" autoincrement="0">
 <datatype>varchar</datatype>
 <default>NULL</default></row>
+<row name="ID_CANDIDATE_CANDIDATE" null="0" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="CANDIDATE" row="ID_CANDIDATE" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_QUESTIONS</part>
 </key>
 </table>
-<table x="44" y="301" name="ADMIN">
+<table x="139" y="361" name="ADMIN">
 <row name="ID_ADMIN" null="1" autoincrement="1">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
