@@ -53,7 +53,7 @@
 			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
 			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
 		</group>
-	</datatypes><table x="32" y="59" name="USERS">
+	</datatypes><table x="39" y="59" name="USERS">
 <row name="ID_USER" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -70,7 +70,7 @@
 <part>ID_USER</part>
 </key>
 </table>
-<table x="183" y="43" name="CANDIDATES">
+<table x="214" y="53" name="CANDIDATES">
 <row name="ID_CANDIDATES" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -94,7 +94,7 @@
 <part>ID_CANDIDATES</part>
 </key>
 </table>
-<table x="1012" y="107" name="COUNTRY">
+<table x="987" y="307" name="COUNTRY">
 <row name="ID_COUNTRY" null="1" autoincrement="1">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
@@ -105,40 +105,52 @@
 <part>ID_COUNTRY</part>
 </key>
 </table>
-<table x="884" y="109" name="STATE">
+<table x="803" y="207" name="STATE">
 <row name="ID_STATE" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="1" autoincrement="0">
 <datatype>varchar</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_COUNTRY" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default><relation table="COUNTRY" row="ID_COUNTRY" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_STATE</part>
 </key>
 </table>
-<table x="768" y="110" name="CITY">
+<table x="921" y="63" name="CITY">
 <row name="ID_CITY" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="1" autoincrement="0">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_STATE" null="1" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="STATE" row="ID_STATE" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_CITY</part>
 </key>
 </table>
-<table x="573" y="106" name="NEIGHBORHOOD">
+<table x="692" y="61" name="NEIGHBORHOOD">
 <row name="ID_NEIGHBORHOOD" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="1" autoincrement="0">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_CITY" null="0" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="CITY" row="ID_CITY" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_NEIGHBORHOOD</part>
 </key>
 </table>
-<table x="417" y="78" name="ADDRESS">
+<table x="463" y="49" name="ADDRESS">
 <row name="ID_ADDRESS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -154,6 +166,10 @@
 <row name="ZIP_CODE" null="1" autoincrement="0">
 <datatype>varchar</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_NEIGHBORHOOD" null="1" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="NEIGHBORHOOD" row="ID_NEIGHBORHOOD" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_ADDRESS</part>
 </key>
