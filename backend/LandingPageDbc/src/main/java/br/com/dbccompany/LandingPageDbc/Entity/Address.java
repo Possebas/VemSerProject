@@ -21,6 +21,10 @@ public class Address extends AbstractEntity{
     @Column(name= "ZIP_CODE", nullable = false)
     private String zipCode;
 
+    @ManyToOne
+    @JoinColumn(name = "FK_ID_NEIGHBORHOOD")
+    private Neighborhood neighborhood;
+    
     @Override
     public Integer getId() {
         return id;
@@ -61,5 +65,13 @@ public class Address extends AbstractEntity{
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public Neighborhood getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setNeighborhood(Neighborhood neighborhood) {
+        this.neighborhood = neighborhood;
     }
 }
