@@ -1,5 +1,8 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
 
+import br.com.dbccompany.LandingPageDbc.Enum.StatusProcess;
+import org.hibernate.validator.constraints.br.CPF;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,13 +14,18 @@ public class Candidate extends AbstractEntity {
     @Column(name = "ID_CANDIDATE")
     private Integer id;
 
-    @Column(name = "CPF")
+    @Column(name = "CPF", unique = true, nullable = false)
+    @CPF
     private String cpf;
 
-    @Column(name = "BIRTH_DATE")
+    @Column(name = "BIRTH_DATE", nullable = false)
     private String birthDate;
 
-    @Column(name = "DATE_OF_REGISTRATION")
+    @Column(name = "STATUS_PROCESS", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private StatusProcess statusProcess;
+
+    @Column(name = "DATE_OF_REGISTRATION", nullable = false)
     private Date dateOfRegistration;
 
     @Column(name = "EDUCATION_INSTITUTION")
@@ -28,6 +36,14 @@ public class Candidate extends AbstractEntity {
 
     public String getCpf() {
         return cpf;
+    }
+
+    public StatusProcess getStatusProcess() {
+        return statusProcess;
+    }
+
+    public void setStatusProcess(StatusProcess statusProcess) {
+        this.statusProcess = statusProcess;
     }
 
     public void setCpf(String cpf) {
@@ -68,11 +84,11 @@ public class Candidate extends AbstractEntity {
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
     }
 
     @Override
     public void setId(Integer id) {
-
-    }
+        this.id = id;
+}
 }

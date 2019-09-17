@@ -1,6 +1,7 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "USER")
@@ -15,6 +16,7 @@ public class User extends AbstractEntity {
     private String name;
 
     @Column(name = "EMAIL", nullable = false, unique = true)
+    @Email
     private String email;
 
     @Column(name = "PASSWORD", nullable = false)
@@ -46,11 +48,11 @@ public class User extends AbstractEntity {
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
     }
 
     @Override
     public void setId(Integer id) {
-
+        this.id = id;
     }
 }
