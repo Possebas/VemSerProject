@@ -10,7 +10,7 @@ public class Country extends AbstractEntity{
     @Column(name= "ID_COUNTRY")
     private Integer id;
 
-    @Column(name= "NAME", nullable = false)
+    @Column(name= "NAME", nullable = false, length = 5000)
     private String name;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
