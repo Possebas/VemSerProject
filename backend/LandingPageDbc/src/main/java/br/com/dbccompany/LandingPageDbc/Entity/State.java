@@ -1,13 +1,12 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
-
 import javax.persistence.*;
 
 @Entity
-public class Country extends AbstractEntity{
+public class State extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "ID_COUNTRY")
+    @Column(name= "ID_STATE")
     private Integer Id;
 
     @Column(name= "NAME", nullable = false)
