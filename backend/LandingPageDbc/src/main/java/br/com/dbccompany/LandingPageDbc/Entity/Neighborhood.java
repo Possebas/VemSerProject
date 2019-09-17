@@ -1,5 +1,7 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Neighborhood extends AbstractEntity{
@@ -11,6 +13,13 @@ public class Neighborhood extends AbstractEntity{
 
     @Column(name= "NAME", nullable = false)
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "FK_ID_CITY")
+    private City city;
+
+    @OneToMany(mappedBy = "neighborhood", cascade = CascadeType.ALL)
+    private List<Address> addresses = new ArrayList<>();
 
     @Override
     public Integer getId() {
@@ -28,5 +37,21 @@ public class Neighborhood extends AbstractEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 }
