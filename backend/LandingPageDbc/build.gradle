@@ -20,4 +20,6 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testImplementation 'junit:junit:4.12'
     compile files("../ojdbc8.jar")
+	testCompile group: 'com.h2database', name: 'h2', version: '1.4.199'
+
 }
