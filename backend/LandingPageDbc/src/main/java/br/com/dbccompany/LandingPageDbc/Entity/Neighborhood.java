@@ -7,19 +7,19 @@ public class Neighborhood extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "ID_NEIGHBORHOOD")
-    private Integer Id;
+    private Integer id;
 
     @Column(name= "NAME", nullable = false)
     private String name;
 
     @Override
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     @Override
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {

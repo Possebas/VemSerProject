@@ -7,7 +7,7 @@ public class Address extends AbstractEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "ID_ADDRESS")
-    private Integer Id;
+    private Integer id;
 
     @Column(name= "STREET", nullable = false)
     private String street;
@@ -23,12 +23,12 @@ public class Address extends AbstractEntity{
 
     @Override
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     @Override
     public void setId(Integer id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getStreet() {
