@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Candidate extends AbstractEntity {
+public class Candidate extends Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

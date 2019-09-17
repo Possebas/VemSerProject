@@ -4,12 +4,12 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 
 @Entity
-@Table(name = "USER_")
-public class User extends AbstractEntity {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Profile extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USER")
+    @Column(name = "ID_PROFILE")
     private Integer id;
 
     @Column(name = "NAME", nullable = false)
@@ -21,6 +21,16 @@ public class User extends AbstractEntity {
 
     @Column(name = "PASSWORD", nullable = false)
     private String password;
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -44,15 +54,5 @@ public class User extends AbstractEntity {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(Integer id) {
-        this.id = id;
     }
 }
