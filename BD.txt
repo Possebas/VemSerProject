@@ -53,7 +53,7 @@
 			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
 			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
 		</group>
-	</datatypes><table x="39" y="59" name="USERS">
+	</datatypes><table x="9" y="43" name="USER">
 <row name="ID_USER" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -70,8 +70,8 @@
 <part>ID_USER</part>
 </key>
 </table>
-<table x="214" y="53" name="CANDIDATES">
-<row name="ID_CANDIDATES" null="0" autoincrement="1">
+<table x="138" y="34" name="CANDIDATE">
+<row name="ID_CANDIDATE" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="CPF" null="0" autoincrement="0">
@@ -90,11 +90,14 @@
 <row name="BEEN_CONFIRMED" null="1" autoincrement="0">
 <datatype>bit</datatype>
 <default>NULL</default></row>
+<row name="EDUCATIONAL_INSTITUTION" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>ID_CANDIDATES</part>
+<part>ID_CANDIDATE</part>
 </key>
 </table>
-<table x="987" y="307" name="COUNTRY">
+<table x="1120" y="121" name="COUNTRY">
 <row name="ID_COUNTRY" null="1" autoincrement="1">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
@@ -105,7 +108,7 @@
 <part>ID_COUNTRY</part>
 </key>
 </table>
-<table x="803" y="207" name="STATE">
+<table x="956" y="98" name="STATE">
 <row name="ID_STATE" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -120,7 +123,7 @@
 <part>ID_STATE</part>
 </key>
 </table>
-<table x="921" y="63" name="CITY">
+<table x="803" y="115" name="CITY">
 <row name="ID_CITY" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -135,7 +138,7 @@
 <part>ID_CITY</part>
 </key>
 </table>
-<table x="692" y="61" name="NEIGHBORHOOD">
+<table x="599" y="117" name="NEIGHBORHOOD">
 <row name="ID_NEIGHBORHOOD" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -150,12 +153,12 @@
 <part>ID_NEIGHBORHOOD</part>
 </key>
 </table>
-<table x="463" y="49" name="ADDRESS">
+<table x="378" y="58" name="ADDRESS">
 <row name="ID_ADDRESS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="STREET" null="1" autoincrement="0">
-<datatype>tinyint</datatype>
+<datatype>varchar</datatype>
 <default>NULL</default></row>
 <row name="NUMBER" null="0" autoincrement="0">
 <datatype>int</datatype>
