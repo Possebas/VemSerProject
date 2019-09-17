@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USER_")
 public class User extends AbstractEntity {
 
     @Id
