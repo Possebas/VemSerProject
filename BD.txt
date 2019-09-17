@@ -53,7 +53,7 @@
 			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
 			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
 		</group>
-	</datatypes><table x="9" y="43" name="USER">
+	</datatypes><table x="136" y="119" name="USER">
 <row name="ID_USER" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -70,7 +70,7 @@
 <part>ID_USER</part>
 </key>
 </table>
-<table x="138" y="34" name="CANDIDATE">
+<table x="210" y="303" name="CANDIDATE">
 <row name="ID_CANDIDATE" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -175,6 +175,58 @@
 </row>
 <key type="PRIMARY" name="">
 <part>ID_ADDRESS</part>
+</key>
+</table>
+<table x="591" y="273" name="QUESTIONS">
+<row name="ID_QUESTIONS" null="1" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="IS_COLLEGE" null="0" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="COURSE" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="EDUCATIONAL_INSTITUTION" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="DAY_SHIFTS" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="IS_PARTICIPATED" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="REASONS_FOR_INTEREST" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="OTHER_REASON" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="IS_LOGICAL_KNOWLEDGE" null="0" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="HAS_AVAILABILITY" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="AVAILABLE_AFTER_TRAINING" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="WHAT_MOTIVATES" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="REFERENCES_THAT_INSPIRE" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_QUESTIONS</part>
+</key>
+</table>
+<table x="44" y="301" name="ADMIN">
+<row name="ID_ADMIN" null="1" autoincrement="1">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_ADMIN</part>
 </key>
 </table>
 </sql>
