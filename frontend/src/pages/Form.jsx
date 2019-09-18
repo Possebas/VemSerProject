@@ -15,7 +15,7 @@ export default class Form extends Component {
                     <React.Fragment>
                         <h2 id="titulo" className="pt-3 pb-2 "><span id="title" > Bem vindo ao projeto Vem Ser!</span></h2>
                         <TemplateForm />
-                        <div className="pt-5 text-center" id="sMarginPadding">©2018 DBC Company — Todos os direitos reservados</div>
+                        <div className="pt-5 pb-3 text-center font-weight-bold" id="sMarginPadding">©2018 DBC Company — Todos os direitos reservados</div>
                     </React.Fragment>
                 </div>
             </div>
