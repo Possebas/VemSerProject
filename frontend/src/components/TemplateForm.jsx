@@ -47,13 +47,13 @@ class TemplateForm extends React.Component {
           noValidate
         >
           <MDBRow>
-            <MDBCol md="4">
-              <MDBInput
+            <MDBCol>
+              <MDBInput className="white-text"
                 value={this.state.name}
                 name="name"
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterNameEx"
+                id="colorLabel"
                 label="Nome completo"
                 required
               >
@@ -62,13 +62,13 @@ class TemplateForm extends React.Component {
               </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="4">
-              <MDBInput
+            <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.birthDate}
                 name="birthDate"
                 onChange={this.changeHandler}
                 type="date"
-                id="materialFormRegisterDataNascimento"
+                id="colorLabel"
                 label="Data de Nascimento"
                 required
               >
@@ -77,12 +77,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="4">
-              <MDBInput
+            <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.cpf}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterCpf"
+                id="colorLabel"
                 name="cpf"
                 label="CPF"
                 required
@@ -94,12 +94,12 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol md="2">
-              <MDBInput
+            <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.zipCode}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterCep"
+                id="colorLabel"
                 name="zipCode"
                 label="CEP"
                 required
@@ -109,12 +109,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="4">
-            <MDBInput
+            <MDBCol >
+            <MDBInput className="white-text"
                 value={this.state.address}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterEndereço"
+                id="colorLabel"
                 name="address"
                 label="Endereço"
                 required
@@ -124,12 +124,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="2">
-              <MDBInput
+            <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.number}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterNumero"
+                id="colorLabel"
                 name="number"
                 label="Numero"
                 required
@@ -139,12 +139,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="4">
-            <MDBInput
+            <MDBCol >
+            <MDBInput className="white-text"
                 value={this.state.complement}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterComplemento"
+                id="colorLabel"
                 name="complement"
                 label="Complemento"
                 required
@@ -156,12 +156,12 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol md="3">
-            <MDBInput
+            <MDBCol >
+            <MDBInput className="white-text"
                 value={this.state.city}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterCidade"
+                id="colorLabel"
                 name="city"
                 label="Cidade"
                 required
@@ -171,12 +171,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="3">
-            <MDBInput
+            <MDBCol >
+            <MDBInput className="white-text"
                 value={this.state.district}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterBairro"
+                id="colorLabel"
                 name="district"
                 label="Bairro"
                 required
@@ -186,12 +186,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="3">
-            <MDBInput
+            <MDBCol >
+            <MDBInput className="white-text"
                 value={this.state.state}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterEstado"
+                id="colorLabel"
                 name="state"
                 label="Estado"
                 required
@@ -201,12 +201,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="3">
-            <MDBInput
+            <MDBCol >
+            <MDBInput className="white-text"
                 value={this.state.parents}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterPais"
+                id="colorLabel"
                 name="parents"
                 label="País"
                 required
@@ -218,12 +218,12 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-          <MDBCol md="6">
-              <MDBInput
+          <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.education}
                 onChange={this.changeHandler}
                 type="text"
-                id="materialFormRegisterInstituicao"
+                id="colorLabel"
                 name="education"
                 label="Instituição de ensino"
                 required
@@ -233,7 +233,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="6">
+            <MDBCol >
               <div className="input-group" id="file">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="inputGroupFileAddon01">
@@ -244,7 +244,7 @@ class TemplateForm extends React.Component {
                   <input
                     type="file"
                     className="custom-file-input"
-                    id="inputGroupFile01"
+                    id="colorLabel"
                     aria-describedby="inputGroupFileAddon01"
                   />
                   <label className="custom-file-label" htmlFor="inputGroupFile01">
@@ -255,12 +255,12 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-          <MDBCol md="4">
-              <MDBInput
+          <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.email}
                 onChange={this.changeHandler}
                 type="email"
-                id="materialFormRegisterEmail"
+                id="colorLabel"
                 name="email"
                 label="Seu email"
                 required
@@ -270,12 +270,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="4">
-              <MDBInput
+            <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.password}
                 onChange={this.changeHandler}
                 type="password"
-                id="materialFormRegisterPassword"
+                id="colorLabel"
                 name="password"
                 label="Senha"
                 required
@@ -285,12 +285,12 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol md="4">
-              <MDBInput
+            <MDBCol >
+              <MDBInput className="white-text"
                 value={this.state.confirmPassword}
                 onChange={this.changeHandler}
                 type="password"
-                id="materialFormRegisterConfirmPassword"
+                id="colorLabel"
                 name="confirmPassword"
                 label="confirme sua senha"
                 required

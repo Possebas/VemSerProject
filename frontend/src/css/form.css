@@ -1,11 +1,31 @@
-.form{
-    width: 60%;
+#form{
+    width: 80%;
+    text-align: center;
+    margin: 0 0 0 8%;
+    padding-top:10px;
+}
+
+
+
+#container{
+    width: 100%;
+    padding: 0 0;
+    margin: 0 0 ;
+    background: #5170e2;  /* fallback for old browsers */
+    background: -moz-linear-gradient(-45deg,  #283c86 0%, #45a247 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #283c86, #45a247 100%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(135deg, #283c86, #45a247 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.9;
 }
 
 #file{
     padding: 30px 0 0 20px; 
 }
 
-#button{
-    text-align: center;
+#title{
+    color: #e0f7fa;
+}
+
+#colorLabel{
+    color: white;
 }
