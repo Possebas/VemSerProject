@@ -8,19 +8,20 @@ import {
   MDBModalFooter,
   MDBCardHeader,
   MDBBtn,
-  MDBInput
+  MDBInput,
+  MDBIcon
 } from "mdbreact";
 
 const FormPage = () => {
   return (
     <MDBContainer >
       <MDBRow>
-        <MDBCol xl="6" md="6" sm="12">
-          <MDBCard>
+        <MDBCol md="8" xl="6" sm="12" className="mr-auto ml-auto">
+          <MDBCard >
             <MDBCardBody>
               <MDBCardHeader className="form-header deep-blue-gradient rounded">
                 <h3 className="my-3 text-center">
-                   Acessar
+                <MDBIcon icon="user" className="d-inline-inline mr-1" />{" "}Acessar
                 </h3>
               </MDBCardHeader>
               <form>
@@ -53,7 +54,7 @@ const FormPage = () => {
                 </div>
               </form>
               <MDBModalFooter>
-                <div className="font-weight-light">
+                <div className="font-weight-light text-decoration-none">
                   <p>Recuperar <a href="/">senha </a></p>
                 </div>
               </MDBModalFooter>

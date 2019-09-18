@@ -52,7 +52,7 @@ class NavBar extends React.Component {
             <MDBNavbar color="bg-dark" fixed="top" dark expand="md" scrolling transparent>
               <MDBNavbarBrand href="/">
                 <MDBContainer className="mt-1">
-                  <MDBRow className="mb-2 ml-2" >
+                  <MDBRow className="mb-2 mh-100" >
                     <MDBCol lg="9" md="8" sm="7">
                       <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" />
                     </MDBCol>
@@ -60,33 +60,31 @@ class NavBar extends React.Component {
                 </MDBContainer>
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-              <MDBCollapse isOpen={this.state.collapse} navbar>
-                <MDBNavbarNav  className="mr-0" right >
-                  <MDBNavItem>
+              <MDBCollapse isOpen={this.state.collapse} navbar >
+                <MDBNavbarNav  right >
+                  <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">O que é?</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
+                  <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Conhecimento</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
+                  <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Fases</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
+                  <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Ensinamentos</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
+                  <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Depoimentos</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem>
+                  <MDBNavItem className="pr-4" >
                     <MDBNavLink to="#">Localização</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
                 <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
-                  <MDBNavItem>
-                    <MDBNavLink to="/login">
-                      <MDBIcon icon="user" className="d-inline-inline mr-1" />{" "}
-                      <div className="d-none d-md-inline"> Acessar</div>
-                    </MDBNavLink>
+                  <MDBNavItem className="d-none d-md-inline">
+                    <MDBIcon icon="user" className="d-inline-inline" />
+                    <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> Acessar</a>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>

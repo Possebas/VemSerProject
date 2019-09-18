@@ -8,12 +8,11 @@ const Footer = () => {
         <MDBRow className="text-center text-md-left mt-3 pb-3">
           <MDBCol md="3" lg="3" xl="3" className="mx-auto mt-3">
             <h6 className="text-uppercase mb-4 font-weight-bold">
-              Company name
+              Sobre
             </h6>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              O Programa Vem Ser DBC é um programa de capacitação completo que estimula
+              o crescimento profissional e pessoal de estudantes na área de tecnologia da informação.
             </p>
           </MDBCol>
           <hr className="w-100 clearfix d-md-none" />
@@ -52,18 +51,19 @@ const Footer = () => {
           </MDBCol>
           <hr className="w-100 clearfix d-md-none" />
           <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
-            <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <h6 className="text-uppercase mb-4 font-weight-bold">Contato</h6>
             <p>
-              <i className="fa fa-home mr-3" /> New York, NY 10012, US
+              <i className="fa fa-home mr-3" /> Porto Alegre, RS, Brasil
             </p>
             <p>
-              <i className="fa fa-envelope mr-3" /> info@gmail.com
+              <i className="fa fa-envelope mr-3" />vemser@dbccompany.com.br
             </p>
             <p>
-              <i className="fa fa-phone mr-3" /> + 01 234 567 88
+              <i className="fa fa-phone mr-3" /> (51) 3092-8400
             </p>
             <p>
-              <i className="fa fa-print mr-3" /> + 01 234 567 89
+              <i className="fab fa-facebook-messenger mr-3"/> 
+              <a href="https://www.messenger.com/t/VemSerDBC">Messenger</a>
             </p>
           </MDBCol>
         </MDBRow>
@@ -72,7 +72,7 @@ const Footer = () => {
           <MDBCol md="8" lg="8">
             <p className="text-center text-md-left grey-text">
               &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+              <a href="https://www.dbccompany.com.br/"> DBCCOMPANY.com.br/</a>
             </p>
           </MDBCol>
           <MDBCol md="4" lg="4" className="ml-lg-0">
