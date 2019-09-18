@@ -1,5 +1,5 @@
 package br.com.dbccompany.LandingPageDbc.Security;
-
+/*
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -42,4 +42,4 @@ public class TokenAuthenticationService {
         }
         return null;
     }
-}
+}*/
