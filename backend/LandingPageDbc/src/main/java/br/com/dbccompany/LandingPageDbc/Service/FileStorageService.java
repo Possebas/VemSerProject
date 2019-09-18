@@ -1,5 +1,7 @@
 package br.com.dbccompany.LandingPageDbc.Service;
 
+import br.com.dbccompany.LandingPageDbc.Exception.FileStorageException;
+import br.com.dbccompany.LandingPageDbc.Exception.MyFileNotFoundException;
 import br.com.dbccompany.LandingPageDbc.Property.FileStorageProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
