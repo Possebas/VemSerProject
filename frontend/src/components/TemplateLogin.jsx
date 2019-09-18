@@ -40,6 +40,7 @@ const FormPage = () => {
                     group
                     type="password"
                     validate
+
                   />
                 </div>
 
