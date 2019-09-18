@@ -1,6 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBInputGroup } from "mdbreact";
-
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 
 import '../css/form.css';
 
@@ -46,7 +45,7 @@ class TemplateForm extends React.Component {
           onSubmit={this.submitHandler}
           noValidate
         >
-          <MDBRow>
+          <MDBRow className="mt-5">
             <MDBCol>
               <MDBInput className="white-text colorLabel"
                 value={this.state.name}
@@ -54,6 +53,7 @@ class TemplateForm extends React.Component {
                 onChange={this.changeHandler}
                 type="text"
                 label="Nome completo"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -68,8 +68,10 @@ class TemplateForm extends React.Component {
                 onChange={this.changeHandler}
                 type="date"
                 label="Data de Nascimento"
+                pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
                 required
               >
+              <MDBIcon  />
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
@@ -83,6 +85,7 @@ class TemplateForm extends React.Component {
                 name="cpf"
                 label="CPF"
                 required
+                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -98,6 +101,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="zipCode"
                 label="CEP"
+                
                 required
               >
                 <div className="invalid-tooltip">
@@ -123,9 +127,10 @@ class TemplateForm extends React.Component {
               <MDBInput className="white-text colorLabel"
                 value={this.state.number}
                 onChange={this.changeHandler}
-                type="text"
+                type="number"
                 name="number"
                 label="Número"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -140,6 +145,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="complement"
                 label="Complemento"
+
                 required
               >
                 <div className="invalid-tooltip">
@@ -156,6 +162,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="city"
                 label="Cidade"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -170,6 +177,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="district"
                 label="Bairro"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -184,6 +192,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="state"
                 label="Estado"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -198,6 +207,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="parents"
                 label="País"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -214,6 +224,7 @@ class TemplateForm extends React.Component {
                 type="email"
                 name="email"
                 label="Seu email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -227,6 +238,7 @@ class TemplateForm extends React.Component {
                 onChange={this.changeHandler}
                 type="password"
                 name="password"
+                pattern=".{6,}" title="Mínimo 6 caracteres"
                 label="Senha"
                 required
               >
@@ -258,6 +270,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="education"
                 label="Instituição de ensino"
+                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -266,24 +279,20 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <MDBInputGroup
-                inputs={
-                  <div className="custom-file">
-                    <input
-                      type="file"
-                      className="custom-file-input"
-                      id="inputGroupFile01"
-                    />
-                    <label className="custom-file-label" htmlFor="inputGroupFile01">
-                      Choose file
-                    </label>
+              <form class="md-form">
+                <div class="ml-5 file-field medium">
+                  <div class="btn btn-rounded ">
+                    <MDBIcon far icon="file-pdf" size="2x" className="mr-3 ml-2" />
+                    <input type="file" />
                   </div>
-                }
-              />
+                </div>
+              </form>
             </MDBCol>
           </MDBRow>
-          <MDBBtn color="success" id="button" type="submit">
-            Salvar
+          <MDBBtn color="black" id="button" type="submit">
+            <div>
+            <MDBIcon far icon="paper-plane" size="2x" className="mr-2" />
+            Enviar</div>
           </MDBBtn>
         </form>
       </div>
