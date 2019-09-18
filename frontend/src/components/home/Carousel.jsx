@@ -2,7 +2,7 @@ import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
 "mdbreact";
 
-import turma from "../../images/turma.jpeg";
+import turma from "../../images/turma.jpg";
 import ccc from "../../images/capacitacao.png";
 import beneficios from "../../images/beneficios.jpg";
 
