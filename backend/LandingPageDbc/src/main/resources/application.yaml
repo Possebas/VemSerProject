@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: dev1
+    active: dev
 
 ---
 
@@ -72,7 +72,7 @@ spring:
 spring:
   profiles: dev1
   datasource:
-    url: jdbc:postgresql://localhost:5432/vemser?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://localhost:5432/postgres?createDatabaseIfNotExist=true
     username: postgres
     password: Postgres2018!
     driver-class-name: org.postgresql.Driver

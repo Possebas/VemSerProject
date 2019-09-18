@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface CandidateRepository extends CrudRepository<Candidate, Integer> {
     
-    //List<Candidate> findAll();
+    List<Candidate> findAll();
 
-   // Candidate findCandidateByName(String name);
-    //Candidate findByName(String name);
-
+    Candidate findCandidateByName(String name);
 }
