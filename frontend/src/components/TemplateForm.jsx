@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBFileInput   } from "mdbreact";
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBInputGroup } from "mdbreact";
 
 
 import '../css/form.css';
@@ -10,19 +10,19 @@ class TemplateForm extends React.Component {
     name: "",
     birthDate: "",
     cpf: "",
-    zipCode:"",
-    address:"",
-    number:"",
-    complement:"",
+    zipCode: "",
+    address: "",
+    number: "",
+    complement: "",
     city: "",
-    district:"",
+    district: "",
     state: "",
-    parents:"",
-    education:"",
-    email:"",
-    password:"",
-    confirmPassword:"",
-    
+    parents: "",
+    education: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+
   };
 
   getPickerValue = (value) => {
@@ -42,33 +42,31 @@ class TemplateForm extends React.Component {
     return (
       <div>
         <form
-          className="needs-validation"
+          className="needs-validation white-text"
           onSubmit={this.submitHandler}
           noValidate
         >
           <MDBRow>
             <MDBCol>
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.name}
                 name="name"
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 label="Nome completo"
                 required
               >
-              <div className="invalid-tooltip">
-                campo obrigatório.
+                <div className="invalid-tooltip">
+                  campo obrigatório.
               </div>
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.birthDate}
                 name="birthDate"
                 onChange={this.changeHandler}
                 type="date"
-                id="colorLabel"
                 label="Data de Nascimento"
                 required
               >
@@ -78,11 +76,10 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.cpf}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="cpf"
                 label="CPF"
                 required
@@ -95,26 +92,24 @@ class TemplateForm extends React.Component {
           </MDBRow>
           <MDBRow>
             <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.zipCode}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="zipCode"
                 label="CEP"
                 required
               >
                 <div className="invalid-tooltip">
-                Campo obrigatório.
+                  Campo obrigatório.
                 </div>
               </MDBInput>
             </MDBCol>
             <MDBCol >
-            <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.address}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="address"
                 label="Endereço"
                 required
@@ -125,13 +120,12 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.number}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="number"
-                label="Numero"
+                label="Número"
                 required
               >
                 <div className="invalid-tooltip">
@@ -140,11 +134,10 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-            <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.complement}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="complement"
                 label="Complemento"
                 required
@@ -157,11 +150,10 @@ class TemplateForm extends React.Component {
           </MDBRow>
           <MDBRow>
             <MDBCol >
-            <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.city}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="city"
                 label="Cidade"
                 required
@@ -172,95 +164,54 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-            <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.district}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="district"
                 label="Bairro"
                 required
               >
                 <div className="invalid-tooltip">
-                Campo obrigatório.
+                  Campo obrigatório.
                 </div>
               </MDBInput>
             </MDBCol>
             <MDBCol >
-            <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.state}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="state"
                 label="Estado"
                 required
               >
                 <div className="invalid-tooltip">
-                Campo obrigatório.
+                  Campo obrigatório.
                 </div>
               </MDBInput>
             </MDBCol>
             <MDBCol >
-            <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.parents}
                 onChange={this.changeHandler}
                 type="text"
-                id="colorLabel"
                 name="parents"
                 label="País"
                 required
               >
                 <div className="invalid-tooltip">
-                Campo obrigatório.
+                  Campo obrigatório.
                 </div>
               </MDBInput>
             </MDBCol>
           </MDBRow>
           <MDBRow>
-          <MDBCol >
-              <MDBInput className="white-text"
-                value={this.state.education}
-                onChange={this.changeHandler}
-                type="text"
-                id="colorLabel"
-                name="education"
-                label="Instituição de ensino"
-                required
-              >
-                <div className="invalid-tooltip">
-                  campo obrigatório.
-                </div>
-              </MDBInput>
-            </MDBCol>
             <MDBCol >
-              <div className="input-group" id="file">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="inputGroupFileAddon01">
-                    Upload
-                  </span>
-                </div>
-                <div className="custom-file">
-                  <input
-                    type="file"
-                    className="custom-file-input"
-                    id="colorLabel"
-                    aria-describedby="inputGroupFileAddon01"
-                  />
-                  <label className="custom-file-label" htmlFor="inputGroupFile01">
-                    Arquivo CV
-                  </label>
-                </div>
-              </div>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow>
-          <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.email}
                 onChange={this.changeHandler}
                 type="email"
-                id="colorLabel"
                 name="email"
                 label="Seu email"
                 required
@@ -271,11 +222,10 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.password}
                 onChange={this.changeHandler}
                 type="password"
-                id="colorLabel"
                 name="password"
                 label="Senha"
                 required
@@ -286,19 +236,50 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <MDBInput className="white-text"
+              <MDBInput className="white-text colorLabel"
                 value={this.state.confirmPassword}
                 onChange={this.changeHandler}
                 type="password"
-                id="colorLabel"
                 name="confirmPassword"
-                label="confirme sua senha"
+                label="Confirme sua senha"
                 required
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
               </MDBInput>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow>
+            <MDBCol >
+              <MDBInput className="white-text colorLabel"
+                value={this.state.education}
+                onChange={this.changeHandler}
+                type="text"
+                name="education"
+                label="Instituição de ensino"
+                required
+              >
+                <div className="invalid-tooltip">
+                  campo obrigatório.
+                </div>
+              </MDBInput>
+            </MDBCol>
+            <MDBCol >
+              <MDBInputGroup
+                inputs={
+                  <div className="custom-file">
+                    <input
+                      type="file"
+                      className="custom-file-input"
+                      id="inputGroupFile01"
+                    />
+                    <label className="custom-file-label" htmlFor="inputGroupFile01">
+                      Choose file
+                    </label>
+                  </div>
+                }
+              />
             </MDBCol>
           </MDBRow>
           <MDBBtn color="success" id="button" type="submit">
