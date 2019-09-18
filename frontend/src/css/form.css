@@ -5,6 +5,10 @@
     padding-top:10px;
 }
 
+.md-form label{
+    color: #fff !important;
+}
+
 
 
 #container{
@@ -26,6 +30,6 @@
     color: #e0f7fa;
 }
 
-#colorLabel{
+.colorLabel{
     color: white;
 }
