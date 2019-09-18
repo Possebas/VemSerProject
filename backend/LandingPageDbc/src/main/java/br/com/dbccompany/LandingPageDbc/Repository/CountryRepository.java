@@ -8,6 +8,4 @@ public interface CountryRepository extends CrudRepository<Country, Integer> {
     List<Country> findAll();
 
     Country findCountryByName(String name);
-   // Country findByName(String name);
-    
 }

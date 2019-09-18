@@ -8,6 +8,5 @@ public interface AddressRepository extends CrudRepository<Address, Integer> {
     List<Address> findAll();
 
     Address findAddressByStreet(String name);
-    //Address findByName(String name);
     
 }
