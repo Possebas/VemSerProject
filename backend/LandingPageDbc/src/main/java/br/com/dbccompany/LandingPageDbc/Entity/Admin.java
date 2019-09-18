@@ -4,12 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ADMIN")
-public class Admin extends Profile {
+public class Admin extends AbstractEntity {
 
     @Id
     @Column(name = "ID_ADMIN")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "FK_ID_PROFILE")
+    private Profile profileAdmin;
 
     @Override
     public Integer getId() {
@@ -19,5 +23,13 @@ public class Admin extends Profile {
     @Override
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Profile getProfile() {
+        return profileAdmin;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profileAdmin = profile;
     }
 }

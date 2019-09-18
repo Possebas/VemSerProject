@@ -7,6 +7,7 @@ public interface AddressRepository extends CrudRepository<Address, Integer> {
     
     List<Address> findAll();
 
-    Address findByName(String name);
+    Address findAddressByStreet(String name);
+    //Address findByName(String name);
     
 }

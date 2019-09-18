@@ -7,6 +7,7 @@ public interface NeighborhoodRepository extends CrudRepository<Neighborhood, Int
    
     List<Neighborhood> findAll();
 
-    Neighborhood findByName(String name);
+    Neighborhood findNeighborhoodByName(String name);
+    //Neighborhood findByName(String name);
     
 }

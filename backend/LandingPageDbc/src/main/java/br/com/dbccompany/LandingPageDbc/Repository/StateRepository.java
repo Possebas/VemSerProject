@@ -7,6 +7,7 @@ public interface StateRepository extends CrudRepository<State, Integer> {
 
     List<State> findAll();
 
-    State findByName(String name);
+    State findStatesByName(String name);
+   // State findByName(String name);
 
 }

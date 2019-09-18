@@ -7,8 +7,9 @@ import java.util.List;
 
 public interface AdminRepository extends CrudRepository<Admin, Integer> {
     
-    List<Admin> findAll();
+    //List<Admin> findAll();
 
-    Admin findByName(String name);
+   // Admin findAdminByName(String name);
+   // Admin findByName(String name);
 
 }
