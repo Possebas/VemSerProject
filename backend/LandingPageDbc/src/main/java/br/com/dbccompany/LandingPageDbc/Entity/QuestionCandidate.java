@@ -4,15 +4,15 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "QUESTION_CANDIDATE")
-public class QuestionCandidate {
+public class QuestionCandidate extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "ID_QUESTION_CANDIDATE")
+    @Column(name = "ID_QUESTION_CANDIDATE")
     private Integer id;
 
     @Column(name = "IS_COLLEGE")
-    private boolean  isCollege;
+    private boolean isCollege;
 
     @Column(name = "COURSE")
     private String course;
@@ -46,6 +46,28 @@ public class QuestionCandidate {
 
     @Column(name = "REFERENCES_THAT_INSPIRE")
     private String referencesThatInspire;
+
+    //CRIAR OBJETO CANDIDATO AQUI, OU PELO MENOS O ID DO CANDIDATO!!
+
+    public QuestionCandidate(){
+        
+    }
+    
+    public QuestionCandidate(Integer id, boolean isCollege, String course, String educationalInstitution, String dayShifys, boolean isParticipated, String reasonsForInterest, String otherReason, boolean isLogicalKnowledge, boolean hasAvailability, boolean availabilityAfterTraining, String whatMotivates, String referencesThatInspire) {
+        this.id = id;
+        this.isCollege = isCollege;
+        this.course = course;
+        this.educationalInstitution = educationalInstitution;
+        this.dayShifys = dayShifys;
+        this.isParticipated = isParticipated;
+        this.reasonsForInterest = reasonsForInterest;
+        this.otherReason = otherReason;
+        this.isLogicalKnowledge = isLogicalKnowledge;
+        this.hasAvailability = hasAvailability;
+        this.availabilityAfterTraining = availabilityAfterTraining;
+        this.whatMotivates = whatMotivates;
+        this.referencesThatInspire = referencesThatInspire;
+    }
 
     public Integer getId() {
         return id;
@@ -149,5 +171,24 @@ public class QuestionCandidate {
 
     public void setReferencesThatInspire(String referencesThatInspire) {
         this.referencesThatInspire = referencesThatInspire;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", isCollege='" + isCollege() + "'" +
+            ", course='" + getCourse() + "'" +
+            ", educationalInstitution='" + getEducationalInstitution() + "'" +
+            ", dayShifys='" + getDayShifys() + "'" +
+            ", isParticipated='" + isParticipated() + "'" +
+            ", reasonsForInterest='" + getReasonsForInterest() + "'" +
+            ", otherReason='" + getOtherReason() + "'" +
+            ", isLogicalKnowledge='" + isLogicalKnowledge() + "'" +
+            ", hasAvailability='" + isHasAvailability() + "'" +
+            ", availabilityAfterTraining='" + isAvailabilityAfterTraining() + "'" +
+            ", whatMotivates='" + getWhatMotivates() + "'" +
+            ", referencesThatInspire='" + getReferencesThatInspire() + "'" +
+            "}";
     }
 }

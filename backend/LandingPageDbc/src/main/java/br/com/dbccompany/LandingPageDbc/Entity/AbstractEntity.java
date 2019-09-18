@@ -1,8 +1,6 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
 
-import java.io.Serializable;
-
-public abstract class AbstractEntity implements Serializable {
+public abstract class AbstractEntity {
 
     public abstract Integer getId();
 
