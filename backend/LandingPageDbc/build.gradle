@@ -22,5 +22,6 @@ dependencies {
     compile files("../ojdbc8.jar")
 	testCompile group: 'com.h2database', name: 'h2', version: '1.4.199'
 	compile files("../postgresql-42.2.8.jar")
+	compile files("../json-simple-1.1.1.jar")
 	compile group: 'io.jsonwebtoken', name:'jjwt', version:'0.9.0'
 }
