@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 /* Components */
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import WhatIs from '../components/home/WhatIs';
 
 export default class Home extends Component {
 
@@ -15,7 +16,7 @@ export default class Home extends Component {
         return (
             <React.Fragment>
                     <NavBar/>
-                    <h1 className="text-center mt-3">Home</h1>
+                    <WhatIs />
                     <Footer />
             </React.Fragment>
         )

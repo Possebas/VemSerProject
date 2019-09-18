@@ -1,3 +1,23 @@
 #logoVemSer{
-    width: 100%;
+    width: 72%;
+}
+
+#oi{
+    opacity: 0.9;
+}
+
+#titleNav{
+    font-size: 30px;
+    line-height: 35px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#corPadrao{
+    background: #5170e2;  /* fallback for old browsers */
+    background: -moz-linear-gradient(-45deg,  #283c86 0%, #45a247 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #283c86, #45a247 100%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(135deg, #283c86, #45a247 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.9;
 }

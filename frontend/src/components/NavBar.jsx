@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -11,13 +11,14 @@ import {
   MDBView,
   MDBIcon,
   MDBRow,
-  MDBCol
+  MDBCol,
+  MDBBtn
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 /* Image and css */
 import "../css/navbar.css"
-import background from "../images/background.jpg";
+import background from "../images/fundoDBC.jpg";
 import logoVemSer from '../images/logoVemSer.png';
 
 class NavBar extends React.Component {
@@ -49,12 +50,12 @@ class NavBar extends React.Component {
       <div>
         <header>
           <Router>
-            <MDBNavbar color="bg-dark" fixed="top" dark expand="md" scrolling transparent>
-              <MDBNavbarBrand href="/">
-                <MDBContainer className="mt-1">
-                  <MDBRow className="mb-2 mh-100" >
+            <MDBNavbar color="bg-dark" id="oi" fixed="top" dark expand="md" scrolling transparent>
+              <MDBNavbarBrand className="m-0" href="/">
+                <MDBContainer className="m-0">
+                  <MDBRow className="mb-0 mh-0" >
                     <MDBCol lg="9" md="8" sm="7">
-                      <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" />
+                      <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" id="logoVemSer" />
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
@@ -83,15 +84,13 @@ class NavBar extends React.Component {
                 </MDBNavbarNav>
                 <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
                   <MDBNavItem className="d-none d-md-inline">
-                    <MDBIcon icon="user" className="d-inline-inline" />
+                    <MDBIcon icon="user" className="d-inline-inline white-text" />
                     <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> Acessar</a>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
-
             </MDBNavbar>
           </Router>
-
           <MDBView src={background}>
 
           </MDBView>
@@ -99,7 +98,12 @@ class NavBar extends React.Component {
 
         <main>
           <MDBContainer className="text-center my-5">
-            <p align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p className="" id="titleNav">
+              <span className="" id="size">O </span>
+              Programa <span>Vem Ser DBC</span> é um programa de capacitação completo, que estimula o crescimento profissional e pessoal de estudantes na área de tecnologia da informação.
+            <br></ br>
+            Não fique de fora dessa, e <a href="">inscreva-se</a> agora!! </p>            
+            <MDBBtn gradient="aqua"><a href="" className="white-text">INSCREVA-SE</a></MDBBtn>
           </MDBContainer>
         </main>
       </div>
