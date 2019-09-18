@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import { PrivateRoute } from './components/PrivateRoute';
 import Register from './pages/Form';
+import {InvalidRoutes} from './pages/InvalidRoutes';
 
 /* CSS */
 import "./App.css";
@@ -19,7 +20,7 @@ export default class App extends Component {
           <PrivateRoute path="/" exact component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="*" component={() => <h1 className="text-center">Page not found</h1>} />
+          <Route path="*" component={InvalidRoutes} />
         </Switch>
       </BrowserRouter>
     );
