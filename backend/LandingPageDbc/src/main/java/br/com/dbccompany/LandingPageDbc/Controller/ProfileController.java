@@ -7,7 +7,7 @@ import br.com.dbccompany.LandingPageDbc.Repository.ProfileRepository;
 import br.com.dbccompany.LandingPageDbc.Service.ProfileService;
 
 @Controller
-@RequestMapping("/api/admin")
+@RequestMapping("/api/profile")
 public class ProfileController extends AbstractController<Profile, ProfileRepository, ProfileService>{
 
 }

@@ -2,10 +2,12 @@ package br.com.dbccompany.LandingPageDbc.Entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Profile extends AbstractEntity {
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class Profile extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +23,12 @@ public abstract class Profile extends AbstractEntity {
 
     @Column(name = "PASSWORD", nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "profileAdmin", cascade = CascadeType.ALL)
+    private List<Admin> admins = new ArrayList<>();
+
+    @OneToMany(mappedBy = "profile", cascade = CascadeType.ALL)
+    private List<Candidate> candidates = new ArrayList<>();
 
     @Override
     public Integer getId() {
@@ -54,5 +62,21 @@ public abstract class Profile extends AbstractEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Admin> getAdmins() {
+        return admins;
+    }
+
+    public void setAdmins(List<Admin> admins) {
+        this.admins = admins;
+    }
+
+    public List<Candidate> getCandidates() {
+        return candidates;
+    }
+
+    public void setCandidates(List<Candidate> candidates) {
+        this.candidates = candidates;
     }
 }

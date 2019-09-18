@@ -49,7 +49,7 @@ public abstract class AbstractController
         return entityService.editByID(id, entidade);
     }
 
-    @DeleteMapping(value = "/deletar/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     @ResponseBody
     public void remove(@PathVariable Integer id) throws Exception{
         entityService.deleteByID(id);

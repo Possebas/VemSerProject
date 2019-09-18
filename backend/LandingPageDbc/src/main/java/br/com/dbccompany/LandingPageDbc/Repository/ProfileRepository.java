@@ -9,6 +9,7 @@ public interface ProfileRepository extends CrudRepository<Profile, Integer> {
     
     List<Profile> findAll();
 
-    Profile findByName(String name);
+    Profile findProfileByName(String name);
+    //Profile findByName(String name);
 
 }
