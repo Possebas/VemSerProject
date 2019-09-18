@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Candidate extends Profile {
+public class Candidate extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,10 @@ public class Candidate extends Profile {
 
     @Column(name = "BEEN_CONFIRMED")
     private boolean beenConfirmed;
+
+    @ManyToOne
+    @JoinColumn(name = "FK_ID_PROFILE")
+    private Profile profile;
 
     public String getCpf() {
         return cpf;
@@ -91,4 +95,12 @@ public class Candidate extends Profile {
     public void setId(Integer id) {
         this.id = id;
 }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
 }

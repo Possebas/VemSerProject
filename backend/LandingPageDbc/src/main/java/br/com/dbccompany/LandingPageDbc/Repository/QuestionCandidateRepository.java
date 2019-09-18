@@ -9,6 +9,7 @@ public interface QuestionCandidateRepository extends CrudRepository<QuestionCand
     
     List<QuestionCandidate> findAll();
 
-    QuestionCandidate findByIdCandidate(Integer idCandidate);
+    QuestionCandidate findQuestionCandidateById(Integer id);
+   // QuestionCandidate findByIdCandidate(Integer idCandidate);
 
 }

@@ -7,6 +7,7 @@ public interface CountryRepository extends CrudRepository<Country, Integer> {
 
     List<Country> findAll();
 
-    Country findByName(String name);
+    Country findCountryByName(String name);
+   // Country findByName(String name);
     
 }
