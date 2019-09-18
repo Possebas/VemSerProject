@@ -9,7 +9,7 @@ export const WhatIs = () => {
     return (
         <React.Fragment>
             <MDBContainer>
-                <h1 className="text-center mt-3">Oque é</h1>
+                <h1 className="text-center mt-3" id="whatis">Oque é</h1>
                 <MDBContainer className="w-100 h-100 d-inline-block pt-5">
                     <MDBRow lg="6" md="12" sm="12">
                         <MDBCol lg="6" md="12" sm="12">

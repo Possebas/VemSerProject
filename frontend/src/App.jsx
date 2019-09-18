@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import { PrivateRoute } from './components/PrivateRoute';
 import Register from './pages/Form';
 import {InvalidRoutes} from './pages/InvalidRoutes';
+import WhatIs from './components/home/WhatIs';
 
 /* CSS */
 import "./App.css";
@@ -21,6 +22,7 @@ export default class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="*" component={InvalidRoutes} />
+          <Route path="/whatis" component={WhatIs}/>
         </Switch>
       </BrowserRouter>
     );

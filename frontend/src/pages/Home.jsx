@@ -16,7 +16,7 @@ export default class Home extends Component {
         return (
             <React.Fragment>
                     <NavBar/>
-                    <WhatIs />
+                    <WhatIs/>
                     <Footer />
             </React.Fragment>
         )

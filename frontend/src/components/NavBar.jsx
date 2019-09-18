@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Route from 'react-dom';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -15,6 +16,7 @@ import {
   MDBBtn
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
+import WhatIs from '../components/home/WhatIs';
 
 /* Image and css */
 import "../css/navbar.css"
@@ -62,9 +64,9 @@ class NavBar extends React.Component {
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar >
-                <MDBNavbarNav  right >
+                <MDBNavbarNav right >
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">O que é?</MDBNavLink>
+                    <MDBNavLink href="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Conhecimento</MDBNavLink>
@@ -102,8 +104,8 @@ class NavBar extends React.Component {
               <span className="" id="size">O </span>
               Programa <span>Vem Ser DBC</span> é um programa de capacitação completo, que estimula o crescimento profissional e pessoal de estudantes na área de tecnologia da informação.
             <br></ br>
-            Não fique de fora dessa, e <a href="">inscreva-se</a> agora!! </p>            
-            <MDBBtn gradient="aqua"><a href="" className="white-text">INSCREVA-SE</a></MDBBtn>
+              Não fique de fora dessa, e <a href="">inscreva-se</a> agora!! </p>
+            <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
           </MDBContainer>
         </main>
       </div>
