@@ -39,5 +39,4 @@ public abstract class AbstractService <
         news.setId(id);
         return repository.save(news);
     }
-
 }
