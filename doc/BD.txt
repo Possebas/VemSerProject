@@ -53,32 +53,24 @@
 			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
 			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
 		</group>
-	</datatypes><table x="140" y="177" name="PROFILE">
-<row name="ID_PROFILE" null="0" autoincrement="1">
-<datatype>int</datatype>
-<default>NULL</default></row>
-<row name="NAME" null="0" autoincrement="0">
-<datatype>varchar</datatype>
-<default>'NULL'</default></row>
-<row name="EMAIL" null="0" autoincrement="0">
-<datatype>varchar</datatype>
-<default>'NULL'</default></row>
-<row name="PASSWORD" null="1" autoincrement="0">
-<datatype>tinyint</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>ID_PROFILE</part>
-</key>
-</table>
-<table x="361" y="336" name="CANDIDATE">
+	</datatypes><table x="152" y="254" name="CANDIDATE">
 <row name="ID_CANDIDATE" null="0" autoincrement="1">
 <datatype>int</datatype>
+<default>NULL</default></row>
+<row name="NOME" null="1" autoincrement="0">
+<datatype>varchar</datatype>
 <default>NULL</default></row>
 <row name="CPF" null="0" autoincrement="0">
 <datatype>varchar</datatype>
 <default>'NULL'</default></row>
 <row name="BIRTH_DATE" null="1" autoincrement="0">
 <datatype>datetime</datatype>
+<default>NULL</default></row>
+<row name="EMAIL" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="PASSWORD" null="1" autoincrement="0">
+<datatype>varchar</datatype>
 <default>NULL</default></row>
 <row name="STATUS PROCESS" null="0" autoincrement="0">
 <datatype>sql_variant</datatype>
@@ -101,7 +93,7 @@
 <part>ID_CANDIDATE</part>
 </key>
 </table>
-<table x="1120" y="121" name="COUNTRY">
+<table x="1057" y="67" name="COUNTRY">
 <row name="ID_COUNTRY" null="1" autoincrement="1">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
@@ -112,7 +104,7 @@
 <part>ID_COUNTRY</part>
 </key>
 </table>
-<table x="956" y="98" name="STATE">
+<table x="892" y="56" name="STATE">
 <row name="ID_STATE" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -127,7 +119,7 @@
 <part>ID_STATE</part>
 </key>
 </table>
-<table x="803" y="115" name="CITY">
+<table x="745" y="57" name="CITY">
 <row name="ID_CITY" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -142,7 +134,7 @@
 <part>ID_CITY</part>
 </key>
 </table>
-<table x="599" y="117" name="NEIGHBORHOOD">
+<table x="521" y="57" name="NEIGHBORHOOD">
 <row name="ID_NEIGHBORHOOD" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -157,7 +149,7 @@
 <part>ID_NEIGHBORHOOD</part>
 </key>
 </table>
-<table x="335" y="91" name="ADDRESS">
+<table x="294" y="27" name="ADDRESS">
 <row name="ID_ADDRESS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -181,7 +173,7 @@
 <part>ID_ADDRESS</part>
 </key>
 </table>
-<table x="705" y="289" name="QUESTIONS">
+<table x="546" y="188" name="QUESTIONS">
 <row name="ID_QUESTIONS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
@@ -229,8 +221,17 @@
 <part>ID_QUESTIONS</part>
 </key>
 </table>
-<table x="139" y="361" name="ADMIN">
+<table x="133" y="34" name="ADMIN">
 <row name="ID_ADMIN" null="1" autoincrement="1">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="EMAIL" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="PASSWORD" null="1" autoincrement="0">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">

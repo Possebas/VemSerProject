@@ -1,5 +1,5 @@
 package br.com.dbccompany.LandingPageDbc.Security;
-
+/*
 public class AccountCredentials {
 
     private String username;
@@ -20,4 +20,4 @@ public class AccountCredentials {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+}*/
