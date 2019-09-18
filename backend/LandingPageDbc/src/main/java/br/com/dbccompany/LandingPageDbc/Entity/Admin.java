@@ -1,6 +1,7 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "ADMIN")
@@ -11,9 +12,15 @@ public class Admin extends AbstractEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_ID_PROFILE")
-    private Profile profileAdmin;
+    @Column(name = "NAME", nullable = false)
+    private String name;
+
+    @Column(name = "EMAIL", nullable = false, unique = true)
+    @Email
+    private String email;
+
+    @Column(name = "PASSWORD", nullable = false)
+    private String password;
 
     @Override
     public Integer getId() {
@@ -25,11 +32,27 @@ public class Admin extends AbstractEntity {
         this.id = id;
     }
 
-    public Profile getProfile() {
-        return profileAdmin;
+    public String getName() {
+        return name;
     }
 
-    public void setProfile(Profile profile) {
-        this.profileAdmin = profile;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
