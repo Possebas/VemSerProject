@@ -39,14 +39,14 @@ public abstract class AbstractController
 
     @PostMapping(value = "/add")
     @ResponseBody
-    public Entity add(@RequestBody Entity entidade) throws Exception{
-        return entityService.saveEntity(entidade);
+    public Entity add(@RequestBody Entity entity) throws Exception{
+        return entityService.saveEntity(entity);
     }
 
     @PutMapping(value = "/edit/{id}")
     @ResponseBody
-    public Entity edit(@PathVariable Integer id, @RequestBody Entity entidade) throws Exception{
-        return entityService.editByID(id, entidade);
+    public Entity edit(@PathVariable Integer id, @RequestBody Entity entity) throws Exception{
+        return entityService.editByID(id, entity);
     }
 
     @DeleteMapping(value = "/delete/{id}")

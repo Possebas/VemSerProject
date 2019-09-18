@@ -1,3 +1,4 @@
+/*
 package br.com.dbccompany.LandingPageDbc.Service;
 
 import br.com.dbccompany.LandingPageDbc.Exception.FileStorageException;
@@ -67,3 +68,4 @@ public class FileStorageService {
         }
     }
 }
+*/
