@@ -66,25 +66,25 @@ class NavBar extends React.Component {
                     <MDBNavLink href="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Tecnologias abordadas</MDBNavLink>
+                    <MDBNavLink to="#">TECNOLOGIAS ABORDADAS</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Etapas e benefícios</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">não se sabe</MDBNavLink>
+                    <MDBNavLink to="#">NÃO SE SABE</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Depoimentos</MDBNavLink>
+                    <MDBNavLink to="#">DEPOIMENTOS</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4" >
-                    <MDBNavLink to="#">Localização</MDBNavLink>
+                    <MDBNavLink to="#">LOCALIZAÇÃO</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
                 <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
                   <MDBNavItem className="d-none d-md-inline">
                     <MDBIcon icon="user" className="d-inline-inline white-text" />
-                    <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> Acessar</a>
+                    <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> ACESSAR</a>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
