@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import Route from 'react-dom';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -16,14 +15,14 @@ import {
   MDBBtn
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
-import WhatIs from '../components/home/WhatIs';
 
 /* Image and css */
-import "../css/navbar.css"
-import background from "../images/fundoDBC.jpg";
+import "../css/navbar.css";
+import '../css/painelnavbar.css';
 import logoVemSer from '../images/logoVemSer.png';
+import background from "../images/fundoDBC.jpg";
 
-class NavBar extends React.Component {
+export default class PainelNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,58 +60,44 @@ class NavBar extends React.Component {
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar >
-                <MDBNavbarNav right >
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink href="#whatis" >O que é?</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Tecnologias abordadas</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Etapas</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">não se sabe</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Depoimentos</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem className="pr-4" >
-                    <MDBNavLink to="#">Localização</MDBNavLink>
-                  </MDBNavItem>
-                </MDBNavbarNav>
                 <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
                   <MDBNavItem className="d-none d-md-inline">
                     <MDBIcon icon="user" className="d-inline-inline white-text" />
-                    <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> Acessar</a>
+                    <a className="nav-link Ripple-parent d-none d-md-inline" href="/"> Sair</a>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
             </MDBNavbar>
           </Router>
-          <MDBView src={background}>
-            <MDBContainer className="text-center" id="tt">
-              <h1 className="white-text font-weight-bold" id="tituloVS">Vem Ser DBC</h1> 
-              <p className="" id="titleNav">Não fique de fora dessa<br></br> <a href="/register">inscreva-se</a> agora!! </p>            
-              <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
-            </MDBContainer>
-          </MDBView>
-          
         </header>
-
-        <main>
-          
-        </main>
+        <MDBView src={background} id="imgPainel">
+        </MDBView>
       </div>
     );
   }
 }
 
-{/* <MDBMask className="flex-center flex-column text-white text-center">
+{/* 
+    
+          <MDBView src={background}>
+          </MDBView>
+
+
+    <main>
+          <MDBContainer className="text-center my-5">
+            <p className="" id="titleNav">
+              <span className="" id="size">O </span>
+              Programa <span>Vem Ser DBC</span> é um programa de capacitação completo, que estimula o crescimento profissional e pessoal de estudantes na área de tecnologia da informação.
+            <br></ br>
+            Não fique de fora dessa, e <a href="/register">inscreva-se</a> agora!! </p>            
+            <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
+          </MDBContainer>
+        </main>
+      </div>
+    
+    <MDBMask className="flex-center flex-column text-white text-center">
   <h2>This Navbar is fixed</h2>
   <h5>It will always stay visible on the top, even when you scroll down</h5>
   <p>Navbar's background will switch from transparent to solid color while scrolling down</p><br />
   <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
 </MDBMask> */}
-
-export default NavBar;
