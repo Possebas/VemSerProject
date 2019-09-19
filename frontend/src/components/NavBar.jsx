@@ -54,7 +54,9 @@ class NavBar extends React.Component {
                 <MDBContainer className="m-0">
                   <MDBRow className="mb-0 mh-0" >
                     <MDBCol lg="9" md="8" sm="7">
-                      <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" id="logoVemSer" />
+                      <a href="https://www.dbccompany.com.br/">
+                        <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" id="logoVemSer"/>
+                      </a>
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
