@@ -62,22 +62,22 @@ class NavBar extends React.Component {
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar >
                 <MDBNavbarNav right >
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="pr-4 text-uppercase">
                     <MDBNavLink href="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="pr-4 text-uppercase">
                     <MDBNavLink to="#">TECNOLOGIAS ABORDADAS</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="pr-4 text-uppercase">
                     <MDBNavLink to="#">Etapas e benefícios</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="pr-4 text-uppercase">
                     <MDBNavLink to="#">NÃO SE SABE</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="pr-4 text-uppercase">
                     <MDBNavLink to="#">DEPOIMENTOS</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4" >
+                  <MDBNavItem className="pr-4 text-uppercase" >
                     <MDBNavLink to="#">LOCALIZAÇÃO</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
