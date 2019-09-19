@@ -3,19 +3,18 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
 "mdbreact";
 
 import docker from "../../../images/carouselTechnology/docker.jpg";
-import eclipse from "../../../images/carouselTechnology/eclipse.png";
-import intelij from "../../../images/carouselTechnology/intelij.png";
-import ReactJS from "../../../images/carouselTechnology/ReactJS.png";
+import intellij from "../../../images/carouselTechnology/intellij.png";
+import reactJS from "../../../images/carouselTechnology/reactJS.png";
 import springBoot from "../../../images/carouselTechnology/springBoot.png";
 import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
 import js from "../../../images/carouselTechnology/js.jpeg";
 
 const CarouselTechnology = () => {
   return (
-    <MDBContainer>
+    <MDBContainer className>
       <MDBCarousel
-        activeItem={1}
-        length={7}
+        activeItem={5}
+        length={6}
         showControls={true}
         showIndicators={false}
         className="z-depth-1"
@@ -35,7 +34,7 @@ const CarouselTechnology = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={ReactJS}
+                src={reactJS}
                 alt="Second slide"
               />
             </MDBView>
@@ -53,7 +52,7 @@ const CarouselTechnology = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={intelij}
+                src={intellij}
                 alt="Third slide"
               />
             </MDBView>
@@ -62,21 +61,12 @@ const CarouselTechnology = () => {
             <MDBView>
               <img
                 className="d-block w-100"
-                src={eclipse}
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="6">
-            <MDBView>
-              <img
-                className="d-block w-100"
                 src={docker}
                 alt="Third slide"
               />
             </MDBView>
           </MDBCarouselItem>
-          <MDBCarouselItem itemId="7">
+          <MDBCarouselItem itemId="6">
             <MDBView>
               <img
                 className="d-block w-100"
