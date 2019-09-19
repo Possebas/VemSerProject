@@ -1,5 +1,5 @@
 package br.com.dbccompany.LandingPageDbc;
-/*
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -11,4 +11,4 @@ public class ConfigurationCors implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**").exposedHeaders("Authorization").allowedMethods("*");
     }
-}*/
+}
