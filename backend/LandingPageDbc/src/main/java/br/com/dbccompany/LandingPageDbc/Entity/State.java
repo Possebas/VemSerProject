@@ -1,9 +1,13 @@
 package br.com.dbccompany.LandingPageDbc.Entity;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = State.class)
 public class State extends AbstractEntity{
 
     @Id

@@ -58,7 +58,7 @@ class TemplateForm extends React.Component {
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
-              </div>
+                </div>
               </MDBInput>
             </MDBCol>
             <MDBCol >

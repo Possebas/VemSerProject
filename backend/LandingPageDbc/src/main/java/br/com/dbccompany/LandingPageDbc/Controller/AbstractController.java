@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 public abstract class AbstractController
-        <
-                Entity extends AbstractEntity,
+        <       Entity extends AbstractEntity,
                 EntityRepository extends CrudRepository<Entity, Integer>,
                 EntityService extends AbstractService<EntityRepository, Entity>
                 > {
