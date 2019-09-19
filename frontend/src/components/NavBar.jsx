@@ -64,13 +64,13 @@ class NavBar extends React.Component {
                     <MDBNavLink to="#">O que é?</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Conhecimento</MDBNavLink>
+                    <MDBNavLink to="#">Tecnologias abordadas</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Fases</MDBNavLink>
+                    <MDBNavLink to="#">Etapas</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Ensinamentos</MDBNavLink>
+                    <MDBNavLink to="#">não se sabe</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="pr-4">
                     <MDBNavLink to="#">Depoimentos</MDBNavLink>
@@ -89,19 +89,17 @@ class NavBar extends React.Component {
             </MDBNavbar>
           </Router>
           <MDBView src={background}>
-
+            <MDBContainer className="text-center" id="tt">
+              <h1 className="white-text font-weight-bold" id="tituloVS">Vem Ser DBC</h1> 
+              <p className="" id="titleNav">Não fique de fora dessa<br></br> <a href="/register">inscreva-se</a> agora!! </p>            
+              <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
+            </MDBContainer>
           </MDBView>
+          
         </header>
 
         <main>
-          <MDBContainer className="text-center my-5">
-            <p className="" id="titleNav">
-              <span className="" id="size">O </span>
-              Programa <span>Vem Ser DBC</span> é um programa de capacitação completo, que estimula o crescimento profissional e pessoal de estudantes na área de tecnologia da informação.
-            <br></ br>
-            Não fique de fora dessa, e <a href="/register">inscreva-se</a> agora!! </p>            
-            <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
-          </MDBContainer>
+          
         </main>
       </div>
     );
