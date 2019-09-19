@@ -1,32 +1,59 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
-
+import * as axios from 'axios';
 import '../css/form.css';
 
-
 class TemplateForm extends React.Component {
-  state = {
-    name: "",
-    birthDate: "",
-    cpf: "",
-    zipCode: "",
-    address: "",
-    number: "",
-    complement: "",
-    city: "",
-    district: "",
-    state: "",
-    parents: "",
-    education: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-
+  constructor(props){
+    super(props);
+    this.state = {
+      name: "",
+      birthDate: "",
+      cpf: "",
+      zipCode: "",
+      address: "",
+      number: "",
+      complement: "",
+      city: "",
+      district: "",
+      state: "",
+      parents: "",
+      education: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    }
+    // this.changeValuesState = this.changeValuesState.bind(this);
   };
+
+  // changeValuesState(e) {
+  //   const {name, value} = e.target;
+  //   this.setState({
+  //       [name]: value
+  //   })
+  //   this.searchZipCode.bind(this);
+  // };
+
+  // searchZipCode(e) {
+  //   const teste = [];
+  //   e.preventDefault();
+  //   const {address, complement, district, city, state} = this.state
+  //     axios.post(`viacep.com.br/ws/${this.state.zipCode}/json/`, {
+  //       }).then(resp =>{
+  //         console.log(resp);
+  //         teste = resp;
+  //       }
+  //     )
+  //     this.setState.address = teste.logradouro;
+  //     this.setState.complement = teste.complemento;
+  //     this.setState.district = teste.bairro;
+  //     this.setState.city = teste.localidade;
+  //     this.setState.state = teste.uf;
+  // };
 
   getPickerValue = (value) => {
     console.log(value);
-  }
+  };
 
   submitHandler = event => {
     event.preventDefault();
@@ -101,7 +128,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="zipCode"
                 label="CEP"
-
                 required
               >
                 <div className="invalid-tooltip">
@@ -279,9 +305,9 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <form class="md-form">
-                <div class="ml-5 file-field medium">
-                  <div class="btn btn-rounded ">
+              <form className="md-form">
+                <div className="ml-5 file-field medium">
+                  <div className="btn btn-rounded ">
                     <MDBIcon far icon="file-pdf" size="2x" className="mr-3 ml-2" />
                     <input type="file" />
                   </div>
