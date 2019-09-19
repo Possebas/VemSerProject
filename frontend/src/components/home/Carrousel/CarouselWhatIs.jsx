@@ -2,9 +2,9 @@ import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
 "mdbreact";
 
-import turma from "../../../images/turma.jpg";
-import ccc from "../../../images/capacitacao.png";
-import beneficios from "../../../images/beneficios.jpg";
+import turma2 from "../../../images/turma.jpg";
+import turma from "../../../images/turma2.jpg";
+import timeDBC from "../../../images/timeDBC.jpg";
 
 import '../../../css/whatIs.css'
 
@@ -34,7 +34,7 @@ const CarouselPage = () => {
               <img
                 id="test"
                 className="d-block w-100"
-                src={ccc}
+                src={turma2}
                 alt="Second slide"
               />
             </MDBView>
@@ -44,7 +44,7 @@ const CarouselPage = () => {
               <img
                 id="test"
                 className="d-block w-100"
-                src={beneficios}
+                src={timeDBC}
                 alt="Third slide"
               />
             </MDBView>
