@@ -33,3 +33,11 @@
 .colorLabel{
     color: white;
 }
+
+.padingRadio{
+    padding-left: 10px;
+}
+
+.mt-45{
+    margin-top: 36px;
+}

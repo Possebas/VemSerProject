@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import CandidateDetail from './pages/CandidateDetail';
 import { PrivateRoute } from './components/PrivateRoute';
 import Register from './pages/Form';
+import RegisterQuestions from './pages/FormQuestions';
 
 
 /* CSS */
@@ -22,6 +23,7 @@ export default class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/candidateDetail" component={CandidateDetail} />
           <Route path="/register" component={Register} />
+          <Route path="/registerQuestions" component={RegisterQuestions} />
           <Route path="*" component={() => <h1 className="text-center">Page not found</h1>} />
         </Switch>
       </BrowserRouter>
