@@ -14,8 +14,10 @@
 }
 
 #tituloVS{
-    font-size: 100px;
-    line-height: 55px;
+    font-size: 70px;
+    line-height: 95px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-variant: small-caps
 }
 
 #corPadrao{
@@ -35,9 +37,20 @@
 }
 
 #tt a{
-    
     text-shadow: 0 0 5px black;
 }
+
+.paragraf{
+    margin-top: 75px;
+}
+
+.test{
+    color: #fff;
+    font-family: Apple Chancery, cursive;
+    font-size: 120px;
+}
+
+
 
 
 /* @media (min-width: 600px){

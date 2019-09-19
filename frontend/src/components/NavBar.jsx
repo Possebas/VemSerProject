@@ -92,8 +92,8 @@ class NavBar extends React.Component {
           </Router>
           <MDBView src={background}>
             <MDBContainer className="text-center" id="tt">
-              <h1 className="white-text font-weight-bold" id="tituloVS">Vem Ser DBC</h1> 
-              <p className="" id="titleNav">Não fique de fora dessa<br></br> <a href="/register">inscreva-se</a> agora!! </p>            
+              <h1 className="white-text animated pulse infinite" id="tituloVS">Vem Ser <span className="test">DBC</span></h1> 
+              <p className="paragraf" id="titleNav">Não fique de fora dessa<br></br> <a href="/register">inscreva-se</a> agora!! </p>            
               <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
             </MDBContainer>
           </MDBView>
