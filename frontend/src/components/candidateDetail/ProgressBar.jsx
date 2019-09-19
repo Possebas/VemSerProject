@@ -5,7 +5,7 @@ export default class ProgressBar extends Component{
     constructor(props){
         super(props)
         this.state = {
-            status: "waitSelection"
+            status: "isNotSelected"
         }
     }
 

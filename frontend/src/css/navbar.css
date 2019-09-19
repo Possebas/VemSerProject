@@ -7,11 +7,15 @@
 }
 
 #titleNav{
-    font-size: 30px;
-    line-height: 35px;
+    font-size: 40px;
+    line-height: 45px;
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
 
+}
+
+#tituloVS{
+    font-size: 100px;
+    line-height: 55px;
 }
 
 #corPadrao{
@@ -21,3 +25,32 @@
     background: linear-gradient(135deg, #283c86, #45a247 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     opacity: 0.9;
 }
+
+#tt{
+    padding-top: 15%;
+}
+
+#tt p {
+    color: #fff;
+}
+
+#tt a{
+    
+    text-shadow: 0 0 5px black;
+}
+
+
+/* @media (min-width: 600px){
+
+    #titleNav{
+        font-size: 20px;
+        line-height: 25px;
+        padding-top: 15%;
+    }
+    
+
+    .view{
+        height: 70vh !important;
+    }
+
+}  */
