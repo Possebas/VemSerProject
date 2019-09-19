@@ -12,7 +12,7 @@ import {
   MDBIcon
 } from "mdbreact";
 
-const FormPage = () => {
+const TemplateLogin = () => {
   return (
     <MDBContainer >
       <MDBRow>
@@ -24,7 +24,7 @@ const FormPage = () => {
                 <MDBIcon icon="user" className="d-inline-inline mr-1" />{" "}Acessar
                 </h3>
               </MDBCardHeader>
-              <form>
+              <form id="formu">
                 <div className="grey-text">
                   <MDBInput
                     label="Digite seu email"
@@ -51,7 +51,7 @@ const FormPage = () => {
                     className="mb-3"
                     type="submit">
                     Entrar
-                </MDBBtn>
+                  </MDBBtn>
                 </div>
               </form>
               <MDBModalFooter>
@@ -67,4 +67,4 @@ const FormPage = () => {
   );
 };
 
-export default FormPage;
+export default TemplateLogin;
