@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { MDBCol, MDBRow, MDBContainer } from 'mdbreact';
+import { MDBContainer } from 'mdbreact';
 
-import Carousel from './Carrousel/carouselTechnology';
 
 export const Phases = () => {
     return (
@@ -10,11 +9,18 @@ export const Phases = () => {
             <MDBContainer>
                 <h1 className="text-center mt-5 pt-5 font-weight-bold">Etapas</h1>
                 <MDBContainer className="w-100 h-100 d-inline-block pt-5">
-                    <MDBRow lg="6" md="12" sm="12">
-                        <MDBCol lg="12" md="12" sm="12">
-                            
-                        </MDBCol>
-                    </MDBRow>
+                    <h3>A seleção é feita em 3 partes</h3>
+                    <ul>
+                        <p><h4>Primeiro passo ONLINE</h4></p>
+                        <li><a href="">Inscreva-se</a> dentro do praso</li>
+                        <li>Responda o Formulário de perguntas</li>
+                        <p><h4>Segundo passo PRESENCIAL</h4></p>
+                        <li>Prova de lógica de programação</li>
+                        <li>Avaliação psicológica</li>
+                        <p><h4>Terceiro e último</h4></p>
+                        <li>Entrevistas presenciais</li>
+                        <li>Teste em equipe</li>
+                    </ul>
                 </MDBContainer>
             </MDBContainer>
         </React.Fragment>
