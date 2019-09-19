@@ -44,9 +44,6 @@ class NavBar extends React.Component {
     });
   }
 
-
-
-
   render() {
     return (
       <div>
@@ -104,7 +101,7 @@ class NavBar extends React.Component {
               <span className="" id="size">O </span>
               Programa <span>Vem Ser DBC</span> é um programa de capacitação completo, que estimula o crescimento profissional e pessoal de estudantes na área de tecnologia da informação.
             <br></ br>
-              Não fique de fora dessa, e <a href="">inscreva-se</a> agora!! </p>
+            Não fique de fora dessa, e <a href="/register">inscreva-se</a> agora!! </p>            
             <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
           </MDBContainer>
         </main>

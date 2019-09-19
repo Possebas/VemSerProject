@@ -2,6 +2,8 @@ package br.com.dbccompany.LandingPageDbc.Entity;
 
 import br.com.dbccompany.LandingPageDbc.Enum.StatusProcess;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -10,6 +12,7 @@ import javax.validation.constraints.Email;
 import java.util.Date;
 
 @Entity
+@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Candidate.class)
 public class Candidate extends AbstractEntity {
 
     @Id
