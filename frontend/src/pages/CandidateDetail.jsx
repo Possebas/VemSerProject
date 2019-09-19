@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 
 /* Components */
-import Footer from '../components/Footer';
-import NavBar from '../components/NavBar';
+import PainelNavBar from '../components/PainelNavBar';
 import ProgressBar from '../components/candidateDetail/ProgressBar';
+import Footer from '../components/Footer';
+import { MDBContainer } from 'mdbreact';
 
 export default class CandidateDetail extends Component {
 
@@ -15,10 +16,13 @@ export default class CandidateDetail extends Component {
     render() {
         return (
             <React.Fragment>
-                    <NavBar/>
+                <PainelNavBar/>
+                <MDBContainer className="px-3 py-5">
+                    <h4> Confira seu status: </h4>
                     <ProgressBar/>
-                    <Footer />
+                </MDBContainer>
+                <Footer/>
             </React.Fragment>
-        )
+        );
     }
 }
