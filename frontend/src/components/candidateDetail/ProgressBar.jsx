@@ -5,13 +5,13 @@ export default class ProgressBar extends Component{
     constructor(props){
         super(props)
         this.state = {
-            status: "isSelected"
+            status: "isNotSelected"
         }
     }
 
     render() {
         return(
-            <div>
+            <div className="pt-3">
             {this.state.status === "isSelected" && 
                 <MDBProgress value={100} className="my-2" height= "35px" color="success">
                     Parabéns! Você foi selecionado! :)
