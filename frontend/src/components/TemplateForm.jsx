@@ -71,7 +71,7 @@ class TemplateForm extends React.Component {
                 pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
                 required
               >
-              <MDBIcon  />
+                <MDBIcon />
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
@@ -101,7 +101,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="zipCode"
                 label="CEP"
-                
+
                 required
               >
                 <div className="invalid-tooltip">
@@ -291,9 +291,17 @@ class TemplateForm extends React.Component {
           </MDBRow>
           <MDBBtn color="black" id="button" type="submit">
             <div>
-            <MDBIcon far icon="paper-plane" size="2x" className="mr-2" />
-            Enviar</div>
+              <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
+              Voltar
+            </div>
           </MDBBtn>
+          <MDBBtn color="black" id="button" type="submit">
+            <div>
+              <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
+              Enviar
+            </div>
+          </MDBBtn>
+
         </form>
       </div>
     );
