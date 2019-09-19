@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import WhatIs from '../components/home/WhatIs';
 import Technology from '../components/home/Technology';
+import Phases from '../components/home/Phases';
 
 
 export default class Home extends Component {
@@ -20,6 +21,7 @@ export default class Home extends Component {
                     <NavBar/>
                     <WhatIs />
                     <Technology />
+                    <Phases />
                     <Footer />
             </React.Fragment>
         )
