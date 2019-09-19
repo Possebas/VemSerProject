@@ -11,6 +11,7 @@ import WhatIs from '../components/home/WhatIs';
 import Technology from '../components/home/Technology';
 import Phases from '../components/home/Phases';
 import Benefits from '../components/home/Benefits';
+import Comments from '../components/home/Comments';
 
 
 
@@ -36,8 +37,7 @@ export default class Home extends Component {
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
-                    
-                    
+                    <Comments />
                     <Footer />
             </React.Fragment>
         )
