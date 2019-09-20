@@ -23,11 +23,21 @@ export default class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <NavBar />
-                <WhatIs id="whatis" key="whatis" />
-                <Technology id="technology" key="technology" />
-                <Phases />
-                <Footer />
+                    <NavBar/>
+                    <WhatIs />
+                    <Technology />
+                    <MDBContainer className="w-100 h-100 pt-5">
+                        <MDBRow lg="6" md="12" sm="12">
+                            <MDBCol lg="6" md="12" sm="12">
+                                <Phases />
+                            </MDBCol>
+                            <MDBCol lg="6" md="12" sm="12">
+                                <Benefits />
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                    <Comments />
+                    <Footer />
             </React.Fragment>
         )
     }

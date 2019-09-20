@@ -8,7 +8,8 @@ import reactJS from "../../../images/carouselTechnology/reactJS.png";
 import springBoot from "../../../images/carouselTechnology/springBoot.png";
 import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
 import js from "../../../images/carouselTechnology/js.jpeg";
-import '../../../css/carousel.css'
+import '../../../css/carousel.css';
+
 const CarouselTechnology = () => {
   return (
     <MDBContainer >

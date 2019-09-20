@@ -5,7 +5,7 @@ export default class ProgressBar extends Component{
     constructor(props){
         super(props)
         this.state = {
-            status: "isNotSelected"
+            status: "waitSelection"
         }
     }
 
@@ -23,7 +23,7 @@ export default class ProgressBar extends Component{
                 </MDBProgress>}
             {this.state.status === "waitSelection" &&
                 <MDBProgress value={50} className="my-2" height= "35px" color="info">
-                    Aguardar seleção.
+                    Estamos avaliando seu cadastro. Aguarde!
                 </MDBProgress>
             }        
             </div>
