@@ -1,32 +1,32 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
-
 import '../css/form.css';
 
-
 class TemplateForm extends React.Component {
-  state = {
-    name: "",
-    birthDate: "",
-    cpf: "",
-    zipCode: "",
-    address: "",
-    number: "",
-    complement: "",
-    city: "",
-    district: "",
-    state: "",
-    parents: "",
-    education: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-
+  constructor(props){
+    super(props);
+    this.state = {
+      name: "",
+      birthDate: "",
+      cpf: "",
+      zipCode: "",
+      address: "",
+      number: "",
+      complement: "",
+      city: "",
+      district: "",
+      state: "",
+      parents: "",
+      education: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    }
   };
 
   getPickerValue = (value) => {
     console.log(value);
-  }
+  };
 
   submitHandler = event => {
     event.preventDefault();
@@ -101,7 +101,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="zipCode"
                 label="CEP"
-
                 required
               >
                 <div className="invalid-tooltip">
@@ -279,9 +278,9 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <form class="md-form">
-                <div class="ml-5 file-field medium">
-                  <div class="btn btn-rounded ">
+              <form className="md-form">
+                <div className="ml-5 file-field medium">
+                  <div className="btn btn-rounded ">
                     <MDBIcon far icon="file-pdf" size="2x" className="mr-3 ml-2" />
                     <input type="file" />
                   </div>

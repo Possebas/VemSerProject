@@ -37,7 +37,7 @@ render() {
       <MDBNavbar id="painelNavBar" dark expand="md">
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-          <MDBNavbarNav left>
+          <MDBNavbarNav left className="pl-2">
             <MDBNavItem active>
               <MDBNavLink to="/">
                 <MDBIcon icon="home" />
@@ -57,7 +57,7 @@ render() {
                   <MDBIcon icon="user" />
                 </MDBDropdownToggle>
                 <MDBDropdownMenu right className="dropdown-default">
-                  <MDBDropdownItem href="/">Sair</MDBDropdownItem>
+                  <MDBDropdownItem><a href="/">Sair</a></MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
