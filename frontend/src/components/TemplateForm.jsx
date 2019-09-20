@@ -1,11 +1,14 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
+import RequestApi from '../api/RequestApi';
 import '../css/form.css';
 
 class TemplateForm extends React.Component {
   constructor(props){
     super(props);
+    this.backData = new RequestApi()
     this.state = {
+      list: [],
       name: "",
       birthDate: "",
       cpf: "",
@@ -22,6 +25,12 @@ class TemplateForm extends React.Component {
       password: "",
       confirmPassword: ""
     }
+  };
+
+  reqZipCodeData = event => {
+    let zipCodeJSON = [];
+    zipCodeJSON = this.backData.reqZipCode(event.target.value);
+    this.setState({ list: zipCodeJSON});
   };
 
   getPickerValue = (value) => {
@@ -98,6 +107,7 @@ class TemplateForm extends React.Component {
               <MDBInput className="white-text colorLabel"
                 value={this.state.zipCode}
                 onChange={this.changeHandler}
+                onBlur={this.reqZipCodeData}
                 type="text"
                 name="zipCode"
                 label="CEP"
