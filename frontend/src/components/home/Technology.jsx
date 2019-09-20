@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDBCol, MDBRow, MDBContainer } from 'mdbreact';
-import Carousel from './Carrousel/CarouselTchnology';
+
+import Carousel from './Carrousel/CarouselTechnology';
 
 export const Technology = () => {
     return (
