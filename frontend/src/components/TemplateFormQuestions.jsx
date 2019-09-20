@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBInput, MDBFormInline } from "mdbreact";
+import { MDBRow, MDBCol, MDBInput, MDBFormInline, MDBIcon, MDBBtn } from "mdbreact";
 import '../css/formQuestions.css'
 import '../css/form.css';
 
@@ -184,8 +184,16 @@ class TemplateFormQuestions extends React.Component {
               </div>
             </MDBCol>
           </MDBRow>
+          <MDBRow className="mt-3 text-center justify-content-center">
+            <MDBBtn color="black" id="button" type="submit">
+              <div>
+                <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
+                <a href="/registerQuestions"> Próximo</a>
+              </div>
+            </MDBBtn>
+          </MDBRow>
 
-         
+
         </form>
       </div>
     );

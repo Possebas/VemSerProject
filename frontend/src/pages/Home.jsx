@@ -21,10 +21,10 @@ export default class Home extends Component {
             <React.Fragment>
                 <NavBar />
                 <WhatIs id="whatis" key="whatis" />
-                <Requirements />
+                <Requirements id="requirements" key="requirements"/>
                 <Technology id="technology" key="technology" />
-                <Phases />
-                <Location />
+                <Phases id="Phases"  key="Phases" />
+                <Location id="Location"  key="Location"/>
                 <Footer />
             </React.Fragment>
         )
