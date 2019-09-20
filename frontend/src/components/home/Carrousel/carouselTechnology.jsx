@@ -4,7 +4,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
 
 import docker from "../../../images/carouselTechnology/docker.jpg";
 import intellij from "../../../images/carouselTechnology/intellij.png";
-import reactJS from "../../../images/carouselTechnology/ReactJS.png";
+import reactJS from "../../../images/carouselTechnology/reactJS.png";
 import springBoot from "../../../images/carouselTechnology/springBoot.png";
 import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
 import js from "../../../images/carouselTechnology/js.jpeg";
