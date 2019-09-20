@@ -10,7 +10,7 @@ export const Technology = () => {
                 <MDBContainer className="w-100 h-100 d-inline-block pt-5">
                     <MDBRow lg="6" md="12" sm="12">
                         <MDBCol lg="12" md="12" sm="12">
-                            <Carousel />
+                            <Carousel/>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
