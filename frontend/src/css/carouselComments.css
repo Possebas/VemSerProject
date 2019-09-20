@@ -15,3 +15,18 @@
     border:none !important;
     box-shadow: none !important;
 }
+
+#caro{
+    width: 100%;
+    margin: 0 0 ;
+    padding: 0 0; 
+}
+
+#container100{
+    max-width: 100%;
+}
+
+.carousel .carousel-control-prev-icon, .carousel .carousel-control-prev-icon, .carousel .carousel-control-next-icon{
+    width: 50px !important;
+    height: 50px !important;
+}

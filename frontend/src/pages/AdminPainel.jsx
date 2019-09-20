@@ -17,14 +17,9 @@ export default class AdminPainel extends Component {
         this.backData = new RequestApi()
         this.state = {
             list: [
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente"}
+                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente", sentInvite: false},
+                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente", sentInvite: true},
+                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente", sentInvite: false}
             ]
         }
     } 
