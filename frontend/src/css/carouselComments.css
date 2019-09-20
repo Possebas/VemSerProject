@@ -1,0 +1,17 @@
+.card-img-center{
+    height: 200px;
+    width: 200px;
+    margin:auto;
+    border-radius: 50px;
+}
+
+.card {
+    background: transparent !important;
+    border:none;
+    box-shadow: none;
+}
+
+#borderNone {
+    border:none !important;
+    box-shadow: none !important;
+}
