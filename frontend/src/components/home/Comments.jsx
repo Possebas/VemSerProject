@@ -8,11 +8,11 @@ import fundo from '../../images/fundoColorido.png'
 export const Comments = () => {
     return (
         <React.Fragment>
-            <MDBView src={fundo}>
+            <div className="dbc">
                     <MDBRow className="my-5">
                         <Carousel />
                     </MDBRow>
-            </MDBView>
+                    </div>
         </React.Fragment>
     );
 };

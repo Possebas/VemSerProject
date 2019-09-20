@@ -30,3 +30,12 @@
     width: 50px !important;
     height: 50px !important;
 }
+
+.dbc{
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#45a247+1,283c86+100&0.76+15,0.57+81 */
+background: -moz-linear-gradient(-45deg,  rgba(69,162,71,0.76) 1%, rgba(65,148,80,0.76) 15%, rgba(46,80,122,0.57) 81%, rgba(40,60,134,0.57) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(69,162,71,0.76) 1%,rgba(65,148,80,0.76) 15%,rgba(46,80,122,0.57) 81%,rgba(40,60,134,0.57) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(69,162,71,0.76) 1%,rgba(65,148,80,0.76) 15%,rgba(46,80,122,0.57) 81%,rgba(40,60,134,0.57) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c245a247', endColorstr='#91283c86',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
