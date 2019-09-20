@@ -2,7 +2,6 @@ import React from 'react';
 
 import { MDBCol, MDBRow, MDBContainer } from 'mdbreact';
 
-import Carousel from './Carrousel/carouselTechnology';
 
 export const Phases = () => {
     return (

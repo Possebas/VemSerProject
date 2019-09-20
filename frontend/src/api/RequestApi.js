@@ -3,36 +3,34 @@ import * as axios from 'axios';
 export default class RequestApi {
     constructor() {
         this.data = []
-        this.baseUrl = `http://localhost:8080/`
+        this.baseUrl = `http://localhost:8080`
     }
 
     async reqApi( url, typeReq, id ) {
         url += typeReq ?  `${typeReq}` : ''
-        console.log("URL 1", url)
-        url += id ? `:${id}` : ''
-        console.log("URL 2", url)
+        url += id ? `/${id}` : ''
         axios.get(`${this.baseUrl}${url}`, { 
         })
         .then( resp => {
             this.data = resp.data
-            console.log(this.data)
+            console.log(" Chegando na api ", resp.data)
         }).catch( function ( error ) {
             console.log( "Error that's request: "+url+"  "+ error )
         })
     }
 
     retornaTipo(tipoRequisicao) {
-        if(tipoRequisicao == "ALL"){
-            return "/"
-        }
-        if(tipoRequisicao == "POST"){
-            return "/add"
-        }
-        if(tipoRequisicao == "EDIT"){
-            return "/edit/"
-        }
-        if(tipoRequisicao == "DELETE"){
-            return "/delete/"
+        switch (tipoRequisicao) {
+            case "ALL" || "GET":
+                return "/"
+            case "POST":
+                return "/add"
+            case "EDIT":
+                return "/edit/"
+            case "DELETE":
+                return "/delete/"
+            default:
+                break;
         }
     }
 

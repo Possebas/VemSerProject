@@ -14,13 +14,11 @@ export default class CandidateDetail extends Component {
         }
     } 
 
-    componentWillMount(){
-        this.backData.requestState("ALL")
+    componentDidMount(){
         setTimeout(() => {
             this.setState({
-                list: this.backData.requestState("ALL")
+                list: this.backData.requestCountry("ALL")
             })
-            console.log("Resposta =>", this.state.list)
         }, 2000)
     }
 

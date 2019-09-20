@@ -8,7 +8,6 @@ import WhatIs from '../components/home/WhatIs';
 import Technology from '../components/home/Technology';
 import Phases from '../components/home/Phases';
 
-
 export default class Home extends Component {
 
     /* constructor(props){
@@ -18,11 +17,11 @@ export default class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                    <NavBar/>
-                    <WhatIs />
-                    <Technology />
-                    <Phases />
-                    <Footer />
+                <NavBar />
+                <WhatIs id="whatis" key="whatis" />
+                <Technology id="technology" key="technology" />
+                <Phases />
+                <Footer />
             </React.Fragment>
         )
     }
