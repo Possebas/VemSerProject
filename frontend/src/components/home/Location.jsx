@@ -15,7 +15,7 @@ export const Location = () => {
                                 title="maps"
                                 width="600"
                                 height="450"
-                                frameborder="0" frameBorder="0"
+                                frameBorder="0"
                                 allowFullScreen="">
                             </iframe>
                         </MDBCol>

@@ -10,8 +10,7 @@ export default class RequestApi {
     async reqApi( url, typeReq, id ) {
         url += typeReq ?  `${typeReq}` : ''
         url += id ? `/${id}` : ''
-        axios.get(`${this.baseUrl}${url}`, { 
-        })
+        axios.get(`${this.baseUrl}${url}`)
         .then( resp => {
             this.data = resp.data
             console.log(" Chegando na api ", resp.data)
