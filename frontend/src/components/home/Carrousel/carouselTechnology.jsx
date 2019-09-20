@@ -25,7 +25,7 @@ const CarouselTechnology = () => {
           <MDBCarouselItem itemId="1">
             <MDBView >
               <img
-                className="d-block w-100"
+                className="d-block w-100 imageo"
                 src={springBoot}
                 alt="First slide"
               />
