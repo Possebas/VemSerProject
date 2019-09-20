@@ -15,10 +15,15 @@ export default class CandidateTable extends Component{
             <td>{this.props.dateApply}</td>
             <td>{this.props.status}</td>
             <td>
-              <button className="btn btn-primary btn-sm my-0 mx-0">Enviar Convite</button>
+              {this.props.sentInvite &&
+                <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3">Reenviar Convite</button>
+              ||
+              !this.props.sentInvite &&
+                <button className="btn btn-primary btn-sm my-0 mx-0 ">Enviar Convite</button>
+              }
             </td>
             <td>
-              <button className="btn btn-warning btn-sm my-0 mx-0">Visualizar</button>
+              <button className="btn btn-warning btn-sm my-0 mx-0 ">Visualizar</button>
             </td>
           </tr>
         </tbody>

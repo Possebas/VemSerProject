@@ -39,6 +39,7 @@ export default class Candidate extends Component{
                                 email= {item.email} 
                                 dateApply= {item.dateApply} 
                                 status= {item.status}
+                                sentInvite= {item.sentInvite}
                 />
               )})
             }
