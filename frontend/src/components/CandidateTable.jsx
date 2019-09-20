@@ -6,23 +6,7 @@ export default class CandidateTable extends Component{
   };
   render(){
     return(
-      <table id="dt-basic-checkbox" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th class="th-sm">Nome completo
-            </th>
-            <th class="th-sm">CPF
-            </th>
-            <th class="th-sm">Email
-            </th>
-            <th class="th-sm">Data da inscrição
-            </th>
-            <th class="th-sm">Status inscrição
-            </th>
-            <th class="th-sm">
-            </th>
-          </tr>
-        </thead>
+      <React.Fragment>
         <tbody>
           <tr>
             <td>{this.props.name}</td>
@@ -31,13 +15,16 @@ export default class CandidateTable extends Component{
             <td>{this.props.dateApply}</td>
             <td>{this.props.status}</td>
             <td>
-              <button>Enviar Convite</button>
+              <button className="btn btn-primary btn-sm my-0 mx-0">Enviar Convite</button>
+            </td>
+            <td>
+              <button className="btn btn-warning btn-sm my-0 mx-0">Visualizar</button>
             </td>
           </tr>
         </tbody>
         <tfoot>
         </tfoot>
-      </table>
+      </React.Fragment>
     );
   }
 }
