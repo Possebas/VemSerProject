@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 /* Components */
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+
 import AdminPainel from "./pages/AdminPainel";
 import CandidateDetail from './pages/CandidateDetail';
 import { PrivateRoute } from './components/PrivateRoute';

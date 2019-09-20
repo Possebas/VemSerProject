@@ -1,83 +1,87 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
+import { MDBContainer, MDBCol, MDBCardImage, MDBCard,
+  MDBCardBody, MDBCardText, MDBRow } from
 "mdbreact";
 
-import docker from "../../../images/carouselTechnology/docker.jpg";
-import intellij from "../../../images/carouselTechnology/intellij.png";
-import reactJS from "../../../images/carouselTechnology/reactJS.png";
-import springBoot from "../../../images/carouselTechnology/springBoot.png";
-import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
-import js from "../../../images/carouselTechnology/js.jpeg";
+import docker from "../../../images/carouselTechnology/docker.png";
+import oracle from "../../../images/carouselTechnology/oracle.jpg";
+import react from "../../../images/carouselTechnology/react.png";
+import spring from "../../../images/carouselTechnology/spring.png";
+import js from "../../../images/carouselTechnology/js.jpg";
+import java from "../../../images/carouselTechnology/java.png";
 import '../../../css/carousel.css';
 
 const CarouselTechnology = () => {
   return (
     <MDBContainer >
-      <MDBCarousel
-        activeItem={5}
-        length={6}
-        showControls={true}
-        showIndicators={false}
-        className=" "
-        slide
-      >
-        <MDBCarouselInner className="imgcarousel">
-          <MDBCarouselItem itemId="1">
-            <MDBView >
-              <img
-                className="d-block w-100 imageo"
-                src={springBoot}
-                alt="First slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="2">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src={reactJS}
-                alt="Second slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="3">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src={visualStudio}
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="4">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src={intellij}
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="5">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src={docker}
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-          <MDBCarouselItem itemId="6">
-            <MDBView>
-              <img
-                className="d-block w-100"
-                src={js}
-                alt="Third slide"
-              />
-            </MDBView>
-          </MDBCarouselItem>
-        </MDBCarouselInner>
-      </MDBCarousel>
+      
+          <MDBRow className="mt-4">
+              <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
+                <MDBCard className="mb-2 h-100">
+                  <MDBCardImage className="img-fluid imgcard" src={java}/>
+                  <MDBCardBody>
+                      <MDBCardText>
+                        Conceitos sobre Orientação a Objetos com aplicação na linguagem Java.
+                      </MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+          
+              <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
+                <MDBCard className="mb-2 h-100">
+                  <MDBCardImage className="img-fluid imgcard" src={js}/>
+                  <MDBCardBody>
+                      <MDBCardText>
+                        Introdução Web Front End HTML, CSS e JS.
+                      </MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+
+              <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
+                <MDBCard className="mb-2 h-100">
+                  <MDBCardImage className="img-fluid imgcard" src={react}/>
+                  <MDBCardBody>
+                      <MDBCardText>
+                        Uma biblioteca JavaScript, eficiente e flexível para a criação de interfaces de usuário.
+                      </MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+
+              <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
+                <MDBCard className="mb-2 h-100">
+                  <MDBCardImage className="img-fluid imgcard" src={oracle}/>
+                  <MDBCardBody className="">
+                      <MDBCardText>
+                        Sistema Gerenciador de Banco de Dados, um software que permite a administração de dados.
+                      </MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+
+              <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
+                <MDBCard className="mb-2 h-100">
+                  <MDBCardImage className="img-fluid imgcard" src={spring}/>
+                  <MDBCardBody>
+                      <MDBCardText>
+                        Framework criado com o objetivo de simplificar a programação em Java.
+                      </MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+
+              <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
+                <MDBCard className="mb-2 h-100">
+                  <MDBCardImage className="img-fluid imgcard" src={docker}/>
+                  <MDBCardBody>
+                      <MDBCardText>
+                        Plataforma de código aberto que garante maior facilidade na criação e administração de ambientes.
+                      </MDBCardText>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+          </MDBRow>
     </MDBContainer>
   );
 }

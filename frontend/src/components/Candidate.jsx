@@ -1,27 +1,50 @@
 import React, {Component} from 'react';
-import { MDBRow, MDBCol  } from 'mdbreact';
+import CandidateTable from './CandidateTable';
+import {MDBCol} from "mdbreact";
 
 export default class Candidate extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      list: this.props.list
+    }
+  };
   render(){
     return(
-      <MDBRow>
-        <MDBCol className="elegant-color mr-1" md="2">
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a>
+      <React.Fragment>
+        <MDBCol className="col-sm">
+          <table id="dt_candidates" class="table table-striped table-bordered" cellspacing="0">
+            <thead>
+              <tr>
+                <th class="th-sm">Nome completo
+                </th>
+                <th class="th-sm">CPF
+                </th>
+                <th class="th-sm">Email
+                </th>
+                <th class="th-sm">Data da inscrição
+                </th>
+                <th class="th-sm">Status inscrição
+                </th>
+                <th class="th-sm">
+                </th>
+                <th class="th-sm">
+                </th>
+              </tr>
+            </thead>
+            {this.state.list.map((item) =>{
+              return(
+                <CandidateTable name= {item.name}
+                                cpf= {item.cpf} 
+                                email= {item.email} 
+                                dateApply= {item.dateApply} 
+                                status= {item.status}
+                />
+              )})
+            }
+          </table>
         </MDBCol>
-        <MDBCol className="default-color" md="9">
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-        </MDBCol>
-      </MDBRow>
+      </React.Fragment>
     );
   };
 }

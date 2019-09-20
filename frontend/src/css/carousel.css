@@ -1,5 +1,7 @@
-.imgcarousel{
-    border-radius: 15px;
-    border: 2px solid rgb(238, 236, 236);
-    
+.imgcard{
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
