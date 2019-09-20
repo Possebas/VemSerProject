@@ -7,17 +7,25 @@
 }
 
 #titleNav{
-    font-size: 40px;
+    font-size: 35px;
     line-height: 45px;
-    color: black;
+}
 
+#tecnologia{
+    color: blueviolet;
+}
+
+#desafios{
+    color: rgb(2, 255, 2);
+}
+
+#desenvolver{
+    color: yellow;
 }
 
 #tituloVS{
-    font-size: 70px;
-    line-height: 95px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-variant: small-caps
+    font-size: 90px;
+    line-height: 55px;
 }
 
 #corPadrao{

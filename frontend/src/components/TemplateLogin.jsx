@@ -47,7 +47,7 @@ const TemplateLogin = () => {
 
                 <div className="text-center mt-4">
                   <MDBBtn
-                    color="light-blue"
+                    color="dark"
                     className="mb-3"
                     type="submit">
                     Entrar

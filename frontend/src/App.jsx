@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import AdminPainel from "./pages/AdminPainel";
 import CandidateDetail from './pages/CandidateDetail';
 import { PrivateRoute } from './components/PrivateRoute';
+import AdministratorPanel from './pages/AdministratorPanel';
 import Register from './pages/Form';
 import RegisterQuestions from './pages/FormQuestions';
 
@@ -21,8 +22,13 @@ export default class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
+<<<<<<< HEAD
           <Route path="/adminPainel" component={AdminPainel} />
           <Route path="/candidateDetail" component={CandidateDetail} />
+=======
+          <PrivateRoute path="/admin" component={AdministratorPanel} />
+          <PrivateRoute path="/candidateDetail" component={CandidateDetail} />
+>>>>>>> devGustavo
           <Route path="/register" component={Register} />
           <Route path="/registerQuestions" component={RegisterQuestions} />
           <Route path="*" component={() => <h1 className="text-center">Page not found</h1>} />

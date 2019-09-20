@@ -14,7 +14,6 @@ import Benefits from '../components/home/Benefits';
 import Comments from '../components/home/Comments';
 
 
-
 export default class Home extends Component {
 
     /* constructor(props){
@@ -24,6 +23,7 @@ export default class Home extends Component {
     render() {
         return (
             <React.Fragment>
+<<<<<<< HEAD
                     <NavBar/>
                     <WhatIs />
                     <Technology />
@@ -39,6 +39,13 @@ export default class Home extends Component {
                     </MDBContainer>
                     <Comments />
                     <Footer />
+=======
+                <NavBar />
+                <WhatIs id="whatis" key="whatis" />
+                <Technology id="technology" key="technology" />
+                <Phases />
+                <Footer />
+>>>>>>> devGustavo
             </React.Fragment>
         )
     }
