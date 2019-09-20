@@ -4,7 +4,7 @@ import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer }
 
 import docker from "../../../images/carouselTechnology/docker.jpg";
 import intellij from "../../../images/carouselTechnology/intellij.png";
-import reactJS from "../../../images/carouselTechnology/reactJS.png";
+import reactJS from "../../../images/carouselTechnology/ReactJS.png";
 import springBoot from "../../../images/carouselTechnology/springBoot.png";
 import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
 import js from "../../../images/carouselTechnology/js.jpeg";
@@ -25,7 +25,7 @@ const CarouselTechnology = () => {
           <MDBCarouselItem itemId="1">
             <MDBView >
               <img
-                className="d-block w-100"
+                className="d-block w-100 imageo"
                 src={springBoot}
                 alt="First slide"
               />

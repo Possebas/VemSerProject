@@ -15,7 +15,6 @@ export const Technology = () => {
                     </MDBRow>
                 </MDBContainer>
             </MDBContainer>
-            <hr className="hr"></hr>
         </React.Fragment>
     );
 };
