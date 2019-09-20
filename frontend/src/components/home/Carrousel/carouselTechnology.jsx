@@ -8,23 +8,24 @@ import reactJS from "../../../images/carouselTechnology/reactJS.png";
 import springBoot from "../../../images/carouselTechnology/springBoot.png";
 import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
 import js from "../../../images/carouselTechnology/js.jpeg";
+import '../../../css/carousel.css';
 
 const CarouselTechnology = () => {
   return (
-    <MDBContainer className>
+    <MDBContainer >
       <MDBCarousel
         activeItem={5}
         length={6}
         showControls={true}
         showIndicators={false}
-        className="z-depth-1"
+        className=" "
         slide
       >
-        <MDBCarouselInner>
+        <MDBCarouselInner className="imgcarousel">
           <MDBCarouselItem itemId="1">
-            <MDBView>
+            <MDBView >
               <img
-                className="d-block w-100"
+                className="d-block w-100 imageo"
                 src={springBoot}
                 alt="First slide"
               />

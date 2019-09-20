@@ -1,11 +1,23 @@
 import React, { Component } from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
-MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon, MDBCardText } from "mdbreact";
+import { 
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBIcon }
+from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default class PainelNavBar extends Component {
 state = {
-  nome: "Fulano",
+  name: "Fulano",
   isOpen: false
 };
 
@@ -19,7 +31,7 @@ render() {
       <MDBNavbar id="painelNavBar" dark expand="md">
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-          <MDBNavbarNav left>
+          <MDBNavbarNav left className="pl-2">
             <MDBNavItem active>
               <MDBNavLink to="/">
                 <MDBIcon icon="home" />
@@ -32,14 +44,14 @@ render() {
             </MDBNavbarBrand>
           </MDBNavbarNav>
           <MDBNavbarNav right>
-            <span className="pr-3" id="textobranco"> Olá, {this.state.nome}! </span>
+            <span className="pr-3" id="textobranco"> Olá, {this.state.name}! </span>
             <MDBNavItem className="pr-2">
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
                   <MDBIcon icon="user" />
                 </MDBDropdownToggle>
                 <MDBDropdownMenu right className="dropdown-default">
-                  <MDBDropdownItem href="/">Sair</MDBDropdownItem>
+                  <MDBDropdownItem><a href="/">Sair</a></MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>

@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import Route from 'react-dom';
+import React from 'react';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -16,7 +15,6 @@ import {
   MDBBtn
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
-import WhatIs from '../components/home/WhatIs';
 
 /* Image and css */
 import "../css/navbar.css"
@@ -54,7 +52,7 @@ class NavBar extends React.Component {
                 <MDBContainer className="m-0">
                   <MDBRow className="mb-0 mh-0" >
                     <MDBCol lg="9" md="8" sm="7">
-                      <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" id="logoVemSer" />
+                        <img src={logoVemSer} text-hide="true" alt="LOGO" className="img-fluid" id="logoVemSer"/>
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
@@ -62,20 +60,23 @@ class NavBar extends React.Component {
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar >
                 <MDBNavbarNav right >
-                  <MDBNavItem className="pr-4 text-uppercase">
-                    <MDBNavLink href="#whatis" >O que é?</MDBNavLink>
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#whatis" to="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4 text-uppercase">
-                    <MDBNavLink to="#">TECNOLOGIAS ABORDADAS</MDBNavLink>
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#technology" to="#technology" >Tecnologias</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4 text-uppercase">
-                    <MDBNavLink to="#">Etapas e benefícios</MDBNavLink>
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#phases" to="#phases">Pré-Requisitos</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink to="#">Depoimentos</MDBNavLink>
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#phases" to="#phases">Etapas</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4 text-uppercase" >
-                    <MDBNavLink to="#">LOCALIZAÇÃO</MDBNavLink>
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#brief" to="#brief">Depoimentos</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem className="under mr-2" >
+                    <MDBNavLink href="#location" to="#location" >Localização</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
                 <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
@@ -89,9 +90,9 @@ class NavBar extends React.Component {
           </Router>
           <MDBView src={background}>
             <MDBContainer className="text-center" id="tt">
-              <h1 className="white-text animated pulse infinite" id="tituloVS">Vem Ser <span className="test">DBC</span></h1> 
-              <p className="paragraf" id="titleNav">Não fique de fora dessa<br></br> <a href="/register">inscreva-se</a> agora!! </p>            
-              <MDBBtn gradient="aqua"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
+              <h1 className="white-text font-weight-bold" id="tituloVS">Vem Ser DBC</h1> 
+              <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br/> Gosta de resolver <span id="desafios">desafios </span> ?  <br/> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br/> Não fique de fora dessa! </p>            
+              <MDBBtn className="amber darken-4 mt-5"><a href="/register" className="black-text">INSCREVA-SE</a></MDBBtn>
             </MDBContainer>
           </MDBView>
           
@@ -104,12 +105,5 @@ class NavBar extends React.Component {
     );
   }
 }
-
-{/* <MDBMask className="flex-center flex-column text-white text-center">
-  <h2>This Navbar is fixed</h2>
-  <h5>It will always stay visible on the top, even when you scroll down</h5>
-  <p>Navbar's background will switch from transparent to solid color while scrolling down</p><br />
-  <p>Full page intro with background image will be always displayed in full screen mode, regardless of device </p>
-</MDBMask> */}
 
 export default NavBar;
