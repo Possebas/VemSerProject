@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
-import * as axios from 'axios';
 import '../css/form.css';
 
 class TemplateForm extends React.Component {
@@ -23,33 +22,7 @@ class TemplateForm extends React.Component {
       password: "",
       confirmPassword: ""
     }
-    // this.changeValuesState = this.changeValuesState.bind(this);
   };
-
-  // changeValuesState(e) {
-  //   const {name, value} = e.target;
-  //   this.setState({
-  //       [name]: value
-  //   })
-  //   this.searchZipCode.bind(this);
-  // };
-
-  // searchZipCode(e) {
-  //   const teste = [];
-  //   e.preventDefault();
-  //   const {address, complement, district, city, state} = this.state
-  //     axios.post(`viacep.com.br/ws/${this.state.zipCode}/json/`, {
-  //       }).then(resp =>{
-  //         console.log(resp);
-  //         teste = resp;
-  //       }
-  //     )
-  //     this.setState.address = teste.logradouro;
-  //     this.setState.complement = teste.complemento;
-  //     this.setState.district = teste.bairro;
-  //     this.setState.city = teste.localidade;
-  //     this.setState.state = teste.uf;
-  // };
 
   getPickerValue = (value) => {
     console.log(value);
