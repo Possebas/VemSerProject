@@ -307,7 +307,7 @@ class TemplateForm extends React.Component {
           <MDBBtn color="black" id="button" type="submit">
             <div>
               <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
-              Enviar
+              <a href="/registerQuestions"> Próximo</a>
             </div>
           </MDBBtn>
 

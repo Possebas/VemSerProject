@@ -23,7 +23,6 @@ export const WhatIs = () => {
                     </MDBRow>
                 </MDBContainer>
             </MDBContainer>
-            <hr className="hr"></hr>
         </React.Fragment>
     );
 };
