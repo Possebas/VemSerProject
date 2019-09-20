@@ -4,10 +4,10 @@ import { MDBContainer, MDBCol, MDBCardImage, MDBCard,
 "mdbreact";
 
 import docker from "../../../images/carouselTechnology/docker.png";
-import oracle from "../../../images/carouselTechnology/oracle3.jpg";
+import oracle from "../../../images/carouselTechnology/oracle.jpg";
 import react from "../../../images/carouselTechnology/react.png";
-import spring from "../../../images/carouselTechnology/spring1.png";
-import js2 from "../../../images/carouselTechnology/js2.jpg";
+import spring from "../../../images/carouselTechnology/spring.png";
+import js from "../../../images/carouselTechnology/js.jpg";
 import java from "../../../images/carouselTechnology/java.png";
 import '../../../css/carousel.css';
 
@@ -29,7 +29,7 @@ const CarouselTechnology = () => {
           
               <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
                 <MDBCard className="mb-2 h-100">
-                  <MDBCardImage className="img-fluid imgcard" src={js2}/>
+                  <MDBCardImage className="img-fluid imgcard" src={js}/>
                   <MDBCardBody>
                       <MDBCardText>
                         Introdução Web Front End HTML, CSS e JS.
