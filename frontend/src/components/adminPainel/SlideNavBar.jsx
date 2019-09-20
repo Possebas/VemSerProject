@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
-MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon, MDBCardText } from "mdbreact";
+import { MDBNavbarNav, MDBNavItem, MDBNavLink
+} from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default class SlideNavBar extends Component {

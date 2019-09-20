@@ -1,9 +1,6 @@
 /* All librarys */
 import React, { Component } from 'react';
 
-
-import { MDBCol, MDBRow, MDBContainer } from 'mdbreact';
-
 /* Components */
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';

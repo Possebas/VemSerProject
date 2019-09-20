@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MDBCol, MDBRow, MDBContainer, MDBView } from 'mdbreact';
+import { MDBCol, MDBRow, MDBContainer} from 'mdbreact';
 import "../../css/location.css";
 
 export const Location = () => {
