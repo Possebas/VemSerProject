@@ -1,5 +1,5 @@
 package br.com.dbccompany.LandingPageDbc.Security;
-/*
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,7 +22,7 @@ public class TokenAuthenticationService {
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
-
+        System.out.println("Username: "+username);
         response.addHeader(HEADER_STRING,TOKEN_PREFIX + " " + JWT);
     }
 
@@ -42,4 +42,4 @@ public class TokenAuthenticationService {
         }
         return null;
     }
-}*/
+}

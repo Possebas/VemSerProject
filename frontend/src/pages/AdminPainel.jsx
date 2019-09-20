@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 /* Components */
 import PainelNavBar from '../components/PainelNavBar';
 import Candidate from '../components/Candidate';
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import { MDBContainer } from "mdbreact";
 import RequestApi from '../api/RequestApi';
 
 

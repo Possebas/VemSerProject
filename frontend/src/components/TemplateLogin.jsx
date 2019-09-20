@@ -12,7 +12,7 @@ import {
   MDBIcon
 } from "mdbreact";
 
-const TemplateLogin = () => {
+const TemplateLogin = ( props ) => {
   return (
     <MDBContainer >
       <MDBRow>
@@ -31,23 +31,28 @@ const TemplateLogin = () => {
                     icon="envelope"
                     group
                     type="email"
+                    name="email" id="email"
                     validate
+                    onChange={props.trocaValoresState}
                     error="invalido"
                     success="right"
                   />
                   <MDBInput
                     label="Digite sua senha"
                     icon="lock"
+                    name="password" id="password"
                     group
+                    onChange={props.trocaValoresState}
                     type="password"
                     validate
-
+                    success="right"
                   />
                 </div>
 
                 <div className="text-center mt-4">
                   <MDBBtn
                     color="dark"
+                    onClick={props.logar}
                     className="mb-3"
                     type="submit">
                     Entrar

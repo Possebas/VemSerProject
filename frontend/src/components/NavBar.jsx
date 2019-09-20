@@ -52,9 +52,7 @@ class NavBar extends React.Component {
                 <MDBContainer className="m-0">
                   <MDBRow className="mb-0 mh-0" >
                     <MDBCol lg="9" md="8" sm="7">
-                      <a href="https://www.dbccompany.com.br/">
-                        <img src={logoVemSer} text-hide alt="LOGO" className="img-fluid" id="logoVemSer"/>
-                      </a>
+                        <img src={logoVemSer} text-hide="true" alt="LOGO" className="img-fluid" id="logoVemSer"/>
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
@@ -81,7 +79,7 @@ class NavBar extends React.Component {
                     <MDBNavLink href="#location" to="#location" >Localização</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
-                <MDBNavbarNav className="under ml-1" right style={this.specialCaseNavbarStyles}>
+                <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
                   <MDBNavItem className="d-none d-md-inline">
                     <MDBIcon icon="user" className="d-inline-inline white-text" />
                     <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> ACESSAR</a>
