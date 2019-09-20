@@ -1,27 +1,27 @@
 import React, {Component} from 'react';
-import { MDBRow, MDBCol  } from 'mdbreact';
+import CandidateTable from './CandidateTable';
 
 export default class Candidate extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      list: this.props.list
+    }
+  };
   render(){
     return(
-      <MDBRow>
-        <MDBCol className="elegant-color mr-1" md="2">
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a><br/>
-          <a href="/">Testando</a>
-        </MDBCol>
-        <MDBCol className="default-color" md="9">
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-          <p>teste</p>
-        </MDBCol>
-      </MDBRow>
+      <div>
+        {this.state.list.map((item) =>{
+          return(
+            <CandidateTable name= {item.name}
+                            cpf= {item.cpf} 
+                            email= {item.email} 
+                            dateApply= {item.dateApply} 
+                            status= {item.status}
+            />
+          )})
+        }
+      </div>
     );
   };
 }
