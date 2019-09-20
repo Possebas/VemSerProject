@@ -9,6 +9,7 @@ import ReactJS from "../../../images/carouselTechnology/ReactJS.png";
 import springBoot from "../../../images/carouselTechnology/springBoot.png";
 import visualStudio from "../../../images/carouselTechnology/visualStudio.png";
 import js from "../../../images/carouselTechnology/js.jpeg";
+import '../../../css/carousel.css';
 
 const CarouselTechnology = () => {
   return (
@@ -25,7 +26,7 @@ const CarouselTechnology = () => {
           <MDBCarouselItem itemId="1">
             <MDBView>
               <img
-                className="d-block w-100"
+                className="d-block w-100 imageo"
                 src={springBoot}
                 alt="First slide"
               />

@@ -60,23 +60,26 @@ class NavBar extends React.Component {
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar >
                 <MDBNavbarNav right >
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="under mr-2">
                     <MDBNavLink href="#whatis" to="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
-                    <MDBNavLink href="#technology" to="#technology" >Tecnologias abordadas</MDBNavLink>
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#technology" to="#technology" >Tecnologias</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="under mr-2">
+                    <MDBNavLink href="#phases" to="#phases">Pré-Requisitos</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem className="under mr-2">
                     <MDBNavLink href="#phases" to="#phases">Etapas</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4">
+                  <MDBNavItem className="under mr-2">
                     <MDBNavLink href="#brief" to="#brief">Depoimentos</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="pr-4" >
+                  <MDBNavItem className="under mr-2" >
                     <MDBNavLink href="#location" to="#location" >Localização</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
-                <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>
+                <MDBNavbarNav className="under ml-1" right style={this.specialCaseNavbarStyles}>
                   <MDBNavItem className="d-none d-md-inline">
                     <MDBIcon icon="user" className="d-inline-inline white-text" />
                     <a className="nav-link Ripple-parent d-none d-md-inline" href="/login"> Acessar</a>
@@ -89,7 +92,7 @@ class NavBar extends React.Component {
             <MDBContainer className="text-center" id="tt">
               <h1 className="white-text font-weight-bold" id="tituloVS">Vem Ser DBC</h1> 
               <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br/> Gosta de resolver <span id="desafios">desafios </span> ?  <br/> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br/> Não fique de fora dessa! </p>            
-              <MDBBtn className="amber darken-4"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
+              <MDBBtn className="amber darken-4 mt-5"><a href="/register" className="black-text">INSCREVA-SE</a></MDBBtn>
             </MDBContainer>
           </MDBView>
           
