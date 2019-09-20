@@ -9,6 +9,7 @@ import Technology from '../components/home/Technology';
 import Phases from '../components/home/Phases';
 import Requirements from '../components/home/Requirements';
 import Location from '../components/home/Location';
+import Comments from '../components/home/Comments';
 
 export default class Home extends Component {
 
@@ -23,8 +24,9 @@ export default class Home extends Component {
                 <WhatIs id="whatis" key="whatis" />
                 <Requirements id="requirements" key="requirements"/>
                 <Technology id="technology" key="technology" />
-                <Phases id="Phases"  key="Phases" />
-                <Location id="Location"  key="Location"/>
+                <Phases />
+                <Comments />
+                <Location />
                 <Footer />
             </React.Fragment>
         )
