@@ -3,15 +3,15 @@ import { MDBContainer, MDBCol, MDBCardImage, MDBCard,
   MDBCardBody, MDBCardText, MDBRow } from
 "mdbreact";
 
-import docker from "../../../images/carouselTechnology/docker.png";
-import oracle from "../../../images/carouselTechnology/oracle.jpg";
-import react from "../../../images/carouselTechnology/react.png";
-import spring from "../../../images/carouselTechnology/spring.png";
-import js from "../../../images/carouselTechnology/js.jpg";
-import java from "../../../images/carouselTechnology/java.png";
-import '../../../css/carousel.css';
+import docker from "../../../images/cardTechnology/docker.png";
+import oracle from "../../../images/cardTechnology/oracle.jpg";
+import react from "../../../images/cardTechnology/react.png";
+import spring from "../../../images/cardTechnology/spring.png";
+import js from "../../../images/cardTechnology/js.jpg";
+import java from "../../../images/cardTechnology/java.png";
+import '../../../css/card.css';
 
-const CarouselTechnology = () => {
+const CardTechnology = () => {
   return (
     <MDBContainer >
       
@@ -86,4 +86,4 @@ const CarouselTechnology = () => {
   );
 }
 
-export default CarouselTechnology;
+export default CardTechnology;
