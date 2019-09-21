@@ -55,8 +55,8 @@ class TemplateFormQuestions extends React.Component {
           <MDBRow className="mt-5 text-left">
             <MDBCol>
               <h5 className="white-text">1 - Está matriculado em curso relacionado a TI?</h5>
-              <MDBFormInline className="mt-45 mb-4">
-                <MDBInput gap onClick={this.onClick(1)} checked={this.state.radio === 1 ? true : false} label="SIM" type="radio" id="radio1" />
+              <MDBFormInline required className="mt-45 mb-4">
+                <MDBInput  gap onClick={this.onClick(1)} checked={this.state.radio === 1 ? true : false} label="SIM" type="radio" id="radio1" />
                 <MDBInput gap onClick={this.onClick(2)} checked={this.state.radio === 2 ? true : false} label="NÃO" type="radio" id="radio2" />
               </MDBFormInline>
             </MDBCol>
@@ -65,7 +65,7 @@ class TemplateFormQuestions extends React.Component {
           <MDBRow className="mt-3 text-left">
             <MDBCol>
               <h5 className="white-text">2 - Se sua resposta foi "Sim", qual o curso?</h5>
-              <MDBInput className="white-text" type="text" >
+              <MDBInput className="white-text" required  type="text" >
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
@@ -76,7 +76,7 @@ class TemplateFormQuestions extends React.Component {
           <MDBRow className="mt-45 text-left">
             <MDBCol>
               <h5 className="white-text">3 - Em qual instituição de ensino está estudando?</h5>
-              <MDBInput className="white-text" type="text" >
+              <MDBInput className="white-text" required type="text" >
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
@@ -88,7 +88,7 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">4 - Em que turno está matriculado?</h5>
               <MDBFormInline className="mt-5">
-                <MDBInput gap onClick={this.onClick(1)} checked={this.state.radio === 1 ? true : false} label="MANHÃ" type="radio" id="radio1" />
+                <MDBInput gap required onClick={this.onClick(1)} checked={this.state.radio === 1 ? true : false} label="MANHÃ" type="radio" id="radio1" />
                 <MDBInput gap onClick={this.onClick(2)} checked={this.state.radio === 2 ? true : false} label="TARDE" type="radio" id="radio2" />
                 <MDBInput gap onClick={this.onClick(3)} checked={this.state.radio === 3 ? true : false} label="NOITE" type="radio" id="radio3" />
               </MDBFormInline>
@@ -129,7 +129,7 @@ class TemplateFormQuestions extends React.Component {
           <MDBRow className="mt-3 text-left">
             <MDBCol>
               <h5 className="white-text">7 - Se você respondeu "Outro", nos diga qual o motivo pelo qual se interessou pela carreira na área de tecnologia? </h5>
-              <MDBInput className="white-text" type="text" >
+              <MDBInput className="white-text" required type="text" >
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
@@ -171,7 +171,7 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">11 - Nos conte o que te inspira e motiva a fazer parte do programa de formação Vem Ser DBC:</h5>
               <div class="form-group mt-4">
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
+                <textarea required class="form-control" id="exampleFormControlTextarea3" rows="5"></textarea>
               </div>
             </MDBCol>
           </MDBRow>
@@ -180,15 +180,21 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">12 - Quais são as suas referências de pessoas que você acompanha ou que o inspiram? Quais ideias elas defendem que você se identifica e considera importantes? Aqui, você pode falar de pensadores, artistas, escritores, atletas ou quaisquer pessoas importantes pra você.</h5>
               <div class="form-group mt-4">
-                <textarea class="form-control" id="exampleFormControlTextarea3" rows="8"></textarea>
+                <textarea required class="form-control" id="exampleFormControlTextarea3" rows="8"></textarea>
               </div>
             </MDBCol>
           </MDBRow>
           <MDBRow className="mt-3 text-center justify-content-center">
+            <MDBBtn color="black" id="button" role="button">
+              <div>
+                <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
+                <a href="/register">Voltar</a>
+            </div>
+            </MDBBtn>
             <MDBBtn color="black" id="button" type="submit">
               <div>
                 <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
-                <a href="/registerQuestions"> Próximo</a>
+                Enviar
               </div>
             </MDBBtn>
           </MDBRow>

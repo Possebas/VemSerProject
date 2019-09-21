@@ -1,14 +1,16 @@
 import React from "react";
+import * as axios from 'axios';
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 import RequestApi from '../api/RequestApi';
 import '../css/form.css';
 
 class TemplateForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.backData = new RequestApi()
+    this.zipCodeUrl = `http://viacep.com.br/ws`
+    this.baseUrl = `http://localhost:8080`
     this.state = {
-      list: [],
       name: "",
       birthDate: "",
       cpf: "",
@@ -27,18 +29,72 @@ class TemplateForm extends React.Component {
     }
   };
 
-  reqZipCodeData = event => {
-    let zipCodeJSON = [];
-    zipCodeJSON = this.backData.reqZipCode(event.target.value);
-    this.setState({ list: zipCodeJSON});
+
+  reqZipCodeData = async event => {
+    event.preventDefault()
+    const id = event.target.value;
+    if (id) {
+      let url = `/${id}/json/`
+      axios.get(`${this.zipCodeUrl}${url}`)
+        .then(resp => {
+          let json = resp.data
+          console.log(" Chegando na api ", resp.data)
+          this.setState({
+            zipCode: json.cep,
+            city: json.localidade,
+            address: json.logradouro,
+            district: json.bairro,
+            parents: "Brasil"
+          })
+        }).catch(function (error) {
+          console.log("Error that's request: " + url + "  " + error)
+        })
+    }
   };
 
-  getPickerValue = (value) => {
+  getPickerValue = value => {
     console.log(value);
   };
 
   submitHandler = event => {
     event.preventDefault();
+    const { name, birthDate, cpf, zipCode, address, number, complement, city, district, state, parents, education, email, password } = this.state
+    // console.log(name, birthDate, cpf, zipCode, address, number, complement, city, district, state, parents, education, email, password)
+    /* "name": "teste",
+    "email": "test@123.com",
+    "password": "594559d58b2984e23099ea0d90810e33",
+    "cpf": "00745155006",
+    "birthDate": "1985-10-02",
+    "statusProcess": "PEENDING",
+    "dateOfRegistration": "2017-10-02",
+    "educationalInstitution": "ipa",
+    "beenConfirmed": false */
+    const data = new Date()
+    data.toISOString().substring(0,10)
+    let candidateInfos = {
+     name: name,
+     birthDate: birthDate,
+     cpf: cpf, 
+     educationalInstitution: education,
+     email: email,
+     password: password, 
+     dateOfRegistration: data,
+     statusProcess:"PEENDING",
+     beenConfirmed: false, 
+    }
+    try {
+      axios.post(`http://localhost:8080/api/candidate/add`, candidateInfos)
+        .then(resp => {
+          console.log(" Chegando na api ", resp.data)
+        }).catch(function (error) {
+          console.log("Error that's request: " + error)
+        })
+      console.log("CANDIDATO ...", candidateInfos)
+      this.props.history.push("/registerQuestions");
+    } catch (erro) {
+      console.log("Erro na tentativa de salvar")
+    }
+
     event.target.className += " was-validated";
   };
 
@@ -62,7 +118,6 @@ class TemplateForm extends React.Component {
                 onChange={this.changeHandler}
                 type="text"
                 label="Nome completo"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -77,10 +132,8 @@ class TemplateForm extends React.Component {
                 onChange={this.changeHandler}
                 type="date"
                 label="Data de Nascimento"
-                pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}"
                 required
               >
-                <MDBIcon />
                 <div className="invalid-tooltip">
                   campo obrigatório.
                 </div>
@@ -94,7 +147,6 @@ class TemplateForm extends React.Component {
                 name="cpf"
                 label="CPF"
                 required
-                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -139,7 +191,6 @@ class TemplateForm extends React.Component {
                 type="number"
                 name="number"
                 label="Número"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -154,7 +205,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="complement"
                 label="Complemento"
-
                 required
               >
                 <div className="invalid-tooltip">
@@ -171,7 +221,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="city"
                 label="Cidade"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -186,7 +235,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="district"
                 label="Bairro"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -201,7 +249,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="state"
                 label="Estado"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -216,7 +263,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="parents"
                 label="País"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -233,7 +279,6 @@ class TemplateForm extends React.Component {
                 type="email"
                 name="email"
                 label="Seu email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -247,7 +292,6 @@ class TemplateForm extends React.Component {
                 onChange={this.changeHandler}
                 type="password"
                 name="password"
-                pattern=".{6,}" title="Mínimo 6 caracteres"
                 label="Senha"
                 required
               >
@@ -279,7 +323,6 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="education"
                 label="Instituição de ensino"
-                pattern="[a-z\s]+$"
                 required
               >
                 <div className="invalid-tooltip">
@@ -288,26 +331,26 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
             <MDBCol >
-              <form className="md-form">
+              <div className="md-form">
                 <div className="ml-5 file-field medium">
-                  <div className="btn btn-rounded ">
+                  <div className="my-auto">
                     <MDBIcon far icon="file-pdf" size="2x" className="mr-3 ml-2" />
                     <input type="file" />
                   </div>
                 </div>
-              </form>
+              </div>
             </MDBCol>
           </MDBRow>
-          <MDBBtn color="black" id="button" type="submit">
+          <MDBBtn color="black" role="button">
             <div>
               <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
-              Voltar
+              <a href="/">Voltar</a>
             </div>
           </MDBBtn>
           <MDBBtn color="black" id="button" type="submit">
             <div>
               <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
-              <a href="/registerQuestions"> Próximo</a>
+              Próximo
             </div>
           </MDBBtn>
 

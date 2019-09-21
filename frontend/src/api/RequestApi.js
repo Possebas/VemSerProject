@@ -21,8 +21,7 @@ export default class RequestApi {
 
     async reqZipCode( id ) {
         let url = `/${id}/json/`
-        axios.get(`${this.zipCodeUrl}${url}`, { 
-        })
+        axios.get(`${this.zipCodeUrl}${url}`)
         .then( resp => {
             this.data = resp.data
             console.log(" Chegando na api ", resp.data)
@@ -138,6 +137,10 @@ export default class RequestApi {
 
     requestZipCode(id) {
         this.reqZipCode(id)
+    }
+
+    get zipCode() {
+        return this.data;
     }
 
 }
