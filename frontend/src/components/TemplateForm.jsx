@@ -353,7 +353,6 @@ class TemplateForm extends React.Component {
               Próximo
             </div>
           </MDBBtn>
-
         </form>
       </div>
     );
