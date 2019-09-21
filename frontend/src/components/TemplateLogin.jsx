@@ -24,7 +24,7 @@ const TemplateLogin = ( props ) => {
                 <MDBIcon icon="user" className="d-inline-inline mr-1" />{" "}Acessar
                 </h3>
               </MDBCardHeader>
-              <form id="formu">
+              <form id="formulariologin">
                 <div className="grey-text">
                   <MDBInput
                     label="Digite seu email"
