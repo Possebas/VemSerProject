@@ -19,12 +19,12 @@ const CarouselComments = () => {
             <MDBCarouselItem itemId="1">
                 <MDBView>
                         <MDBRow className="my-5">
-                            <MDBCol>
-                                <div className="card" id="borderNone">
+                            <MDBCol className="text-center">
+                            <div className="card" id="borderNone">
                                     <div className="view overlay">
                                         <img className="card-img-center pt-2" src="https://scontent-gru1-1.xx.fbcdn.net/v/t1.0-9/30440868_1662985977142848_604677041249204553_n.jpg?_nc_cat=105&_nc_oc=AQnYgcrYqH1HZ5LSVKh93ViV_zHxYXD022CSYKVWcDnxGEm-RrEX4MB1QkHssrZBKxA&_nc_ht=scontent-gru1-1.xx&oh=7e39cb05a4ab013ecf3e1f4c420a5d17&oe=5E0445DA" alt="Card image cap"></img>
                                     </div>
-                                    <div className="card-body text-center rounded-botton">
+                                    <div className="card-body w-70 text-center rounded-botton">
                                         <h4 className="card-title white-text">Evelin Fausto</h4>
                                         <hr className="white"></hr>
                                         <p className="card-text white-text mb-4">Esse programa é incrivel, alunos increveis, tudo é incrivel. O texto tem que ser grando para teste então estou usando aqui como exemplo, vou falar uns blá blá blá como hagatanga, lulamolusco bob espoja, filme de terror quarteto fantastico , banda dejavu, dj juninho porugal é show parara parara parara rarara rara</p>
