@@ -7,7 +7,7 @@ import '../../css/requirements.css';
 export const Requirements = () => {
     return (
         <React.Fragment>
-            <MDBContainer>
+            <MDBContainer className="pb-5 mb-5">
                 <h1 className="text-center mt-5 font-weight-bold">Pré-requisitos</h1>
                 <MDBContainer className="w-100 h-100 d-inline-block mt-5">
                     <MDBRow lg="6" md="12" sm="12">
@@ -29,7 +29,6 @@ export const Requirements = () => {
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
-                <hr className="hr"></hr>
             </MDBContainer>
         </React.Fragment>
     );
