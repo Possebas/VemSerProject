@@ -1,7 +1,12 @@
 import React from "react";
-import { MDBContainer, MDBCol, MDBCardImage, MDBCard,
-  MDBCardBody, MDBCardText, MDBRow } from
-"mdbreact";
+import { MDBContainer,
+        MDBCol,
+        MDBCardImage,
+        MDBCard,
+        MDBCardBody,
+        MDBCardText,
+        MDBRow
+      } from "mdbreact";
 
 import docker from "../../images/cardTechnology/docker.png";
 import oracle from "../../images/cardTechnology/oracle.jpg";
@@ -14,7 +19,6 @@ import '../../css/card.css';
 const CardTechnology = () => {
   return (
     <MDBContainer >
-      
           <MDBRow className="mt-4">
               <MDBCol className="mt-2" md="4" sm="5" lg="4" xl="2">
                 <MDBCard className="mb-2 h-100">

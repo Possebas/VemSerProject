@@ -13,22 +13,22 @@ export default class Candidate extends Component{
     return(
       <React.Fragment>
         <MDBCol className="col-sm">
-          <table id="dt_candidates" class="table table-striped table-bordered" cellspacing="0">
+          <table id="dt_candidates" className="table table-striped table-bordered" cellspacing="0">
             <thead>
               <tr>
-                <th class="th-sm">Nome completo
+                <th className="th-sm">Nome completo
                 </th>
-                <th class="th-sm">CPF
+                <th className="th-sm">CPF
                 </th>
-                <th class="th-sm">Email
+                <th className="th-sm">Email
                 </th>
-                <th class="th-sm">Data da inscrição
+                <th className="th-sm">Data da inscrição
                 </th>
-                <th class="th-sm">Status inscrição
+                <th className="th-sm">Status inscrição
                 </th>
-                <th class="th-sm">
+                <th className="th-sm">
                 </th>
-                <th class="th-sm">
+                <th className="th-sm">
                 </th>
               </tr>
             </thead>

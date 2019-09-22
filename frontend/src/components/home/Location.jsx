@@ -21,11 +21,11 @@ export const Location = () => {
                         </MDBCol>
                         <MDBCol xl="4" lg="4" md="12" sm="12" className="my-auto">
                             <p className="text-center pt-5 black-text" id="comments">
-                            <i class="fas fa-road mr-3"></i>Av. Andaraí, 531 – Bairro Passo D’Areia<br/>
+                            <i className="fas fa-road mr-3"></i>Av. Andaraí, 531 – Bairro Passo D’Areia<br/>
                                 <br/>
-                                <i class="fas fa-city mr-3"></i>Porto Alegre, RS – CEP: 91350-110<br/>
+                                <i className="fas fa-city mr-3"></i>Porto Alegre, RS – CEP: 91350-110<br/>
                                 <br/>
-                                <i class="fas fa-phone mr-3"></i>Telefone: +55 (51) 3330.7777<br/>
+                                <i className="fas fa-phone mr-3"></i>Telefone: +55 (51) 3330.7777<br/>
                             </p>
                         </MDBCol>
                     </MDBRow>

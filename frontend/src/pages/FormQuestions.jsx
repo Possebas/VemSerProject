@@ -6,9 +6,10 @@ import '../css/form.css';
 import '../css/login.css';
 
 export default class Form extends Component {
-
-    render( ) {
-
+    constructor(props){
+        super(props);
+    }
+    render() {
         return  (
             <div id="container">
                 <div id="form">

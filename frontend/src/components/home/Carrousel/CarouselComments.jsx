@@ -1,6 +1,12 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer, MDBRow, MDBCol } from
-"mdbreact";
+import { MDBCarousel,
+        MDBCarouselInner,
+        MDBCarouselItem,
+        MDBView,
+        MDBContainer,
+        MDBRow,
+        MDBCol
+        } from "mdbreact";
 
 import '../../../css/carouselComments.css'
 
@@ -20,7 +26,7 @@ const CarouselComments = () => {
                 <MDBView>
                         <MDBRow className="my-5">
                             <MDBCol className="text-center">
-                            <div className="card" id="borderNone">
+                                <div className="card" id="borderNone">
                                     <div className="view overlay">
                                         <img className="card-img-center pt-2" src="https://scontent-gru1-1.xx.fbcdn.net/v/t1.0-9/30440868_1662985977142848_604677041249204553_n.jpg?_nc_cat=105&_nc_oc=AQnYgcrYqH1HZ5LSVKh93ViV_zHxYXD022CSYKVWcDnxGEm-RrEX4MB1QkHssrZBKxA&_nc_ht=scontent-gru1-1.xx&oh=7e39cb05a4ab013ecf3e1f4c420a5d17&oe=5E0445DA" alt="Card image cap"></img>
                                     </div>
