@@ -77,22 +77,22 @@ class NavBar extends React.Component {
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
               <MDBCollapse isOpen={this.state.collapse} navbar >
                 <MDBNavbarNav right >
-                  <MDBNavItem className="under mr-2 ">
+                  <MDBNavItem className="text-uppercase under mr-2 ">
                     <MDBNavLink href="#whatis" to="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="under mr-2">
+                  <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#technology" to="#technology" >Tecnologias</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="under mr-2">
+                  <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#phases" to="#phases">Pré-Requisitos</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="under mr-2">
+                  <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#phases" to="#phases">Etapas</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="under mr-2">
+                  <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#brief" to="#brief">Depoimentos</MDBNavLink>
                   </MDBNavItem>
-                  <MDBNavItem className="under mr-2" >
+                  <MDBNavItem className="text-uppercase under mr-2" >
                     <MDBNavLink href="#location" to="#location" >Localização</MDBNavLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
@@ -118,9 +118,10 @@ class NavBar extends React.Component {
               />
             </div>  
               <MDBContainer className="black-text text-center textVideo" id="tt">
-                  <h1 className=" font-weight-bold" id="tituloVS">Vem Ser DBC</h1> 
+                <h1 className="text-uppercase tracking-in-expand" id="tituloVS1">Vem</h1>
+                  <h1 className="text-uppercase tracking-in-expand" id="tituloVS">Ser <span id="tituloVSSpan">DBC</span></h1> 
                   <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br/> Gosta de resolver <span id="desafios">desafios </span> ?  <br/> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br/> Não fique de fora dessa! </p>            
-                  <MDBBtn className="amber darken-4 mb-5 mt-5 button"><a href="/register" className="black-text">INSCREVA-SE</a></MDBBtn>
+                  <MDBBtn color="elegant" className="mb-5 mt-4"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
               </MDBContainer>
           </MDBView>
           

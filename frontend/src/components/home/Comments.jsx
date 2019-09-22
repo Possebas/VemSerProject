@@ -17,7 +17,7 @@ export const Comments = () => {
     
             <React.Fragment>
                 <MDBView src={fundo}>
-                    <MDBRow className="my-5">
+                    <MDBRow className="my-5 mb-1">
                         <Carousel />
                     </MDBRow>
                 </MDBView>

@@ -8,11 +8,11 @@ export const Phases = () => {
     return (
         <React.Fragment>
             <MDBContainer>
-                <h1 className="text-center mt-5 pt-5 font-weight-bold">Etapas</h1>
-                <MDBContainer className="w-100 h-100 d-inline-block pt-5">
-                    <MDBRow className="mb-5">
-                        <MDBRow className="my-auto mx-auto">
-                            <MDBCol xl="4" lg="4" md="12" sm="12" className="text-center" >
+                <h1 className="text-capitalize text-center mt-5 font-weight-bold">Etapas do processo seletivo</h1>
+                <MDBContainer className="w-100 h-100 d-inline-block pt-5 mb-5">
+                   
+                        <MDBRow className="mt-1 mb-5">
+                            <MDBCol size="4" className="text-center" >
                                 <MDBBadge className="phasesmini" pill color="purple">
                                     <MDBIcon icon="users" size="2x" />
                                 </MDBBadge>
@@ -20,7 +20,7 @@ export const Phases = () => {
                                     <p>Inscrições online</p>
                                 </div>
                             </MDBCol>
-                            <MDBCol xl="4" lg="4" md="12" sm="12" className="text-center" >
+                            <MDBCol size="4" className="text-center" >
                                 <MDBBadge className="phasesmini" pill color="purple">
                                     <MDBIcon icon="users" size="2x" />
                                 </MDBBadge>
@@ -28,7 +28,7 @@ export const Phases = () => {
                                     <p>Formulário de perguntas online</p>
                                 </div>
                             </MDBCol>
-                            <MDBCol xl="4" lg="4" md="12" sm="12" className="text-center" >
+                            <MDBCol size="4" className="text-center" >
                                 <MDBBadge className="phasesmini" pill color="purple">
                                     <MDBIcon icon="pencil-alt" size="2x" />
                                 </MDBBadge>
@@ -38,8 +38,8 @@ export const Phases = () => {
                             </MDBCol>
                         </MDBRow>
 
-                        <MDBRow className="my-auto mx-auto">
-                            <MDBCol xl="6" lg="6" md="12" sm="12" className="text-center my-auto mx-autov" >
+                        <MDBRow className="mt-5 mb-5">
+                            <MDBCol size="6" className="text-center my-auto mx-autov" >
                                 <MDBBadge className="phasesmini" pill color="purple">
                                     <MDBIcon icon="users" size="2x" />
                                 </MDBBadge>
@@ -47,7 +47,7 @@ export const Phases = () => {
                                     <p>Avaliação psicológica</p>
                                 </div>
                             </MDBCol>
-                            <MDBCol xl="6" lg="6" md="12" sm="12" className="text-center my-auto mx-auto" >
+                            <MDBCol size="6" className="text-center my-auto mx-auto" >
                                 <MDBBadge className="phasesmini" pill color="purple">
                                     <MDBIcon far icon="comments" size="2x" />
                                 </MDBBadge>
@@ -56,8 +56,6 @@ export const Phases = () => {
                                 </div>
                             </MDBCol>
                         </MDBRow>
-
-                    </MDBRow>
                 </MDBContainer>
             </MDBContainer>
         </React.Fragment>

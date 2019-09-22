@@ -1,20 +1,20 @@
 import React from 'react';
 
 import { MDBCol, MDBRow, MDBContainer, MDBView } from 'mdbreact';
-import requirements from '../../images/requirements.jpg';
+import requirements from '../../images/requirements.png';
 import '../../css/requirements.css';
 
 export const Requirements = () => {
     return (
         <React.Fragment>
             <MDBContainer>
-                <h1 className="text-center mt-5 font-weight-bold">Pré-Requisitos</h1>
+                <h1 className="text-capitalize text-center mt-5 font-weight-bold">Pré-Requisitos</h1>
                 <MDBContainer className="w-100 h-100 d-inline-block mt-5">
                     <MDBRow lg="6" md="12" sm="12">
                         <MDBCol lg="6" md="12" sm="12">
                             <MDBView>
                                 <img
-                                    className="d-block w-100"
+                                    className="imgRequeriments d-block w-100"
                                     src={requirements}
                                     alt="Requirements"
                                 />
@@ -29,7 +29,7 @@ export const Requirements = () => {
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>
-
+                <hr className="hr"></hr>
             </MDBContainer>
         </React.Fragment>
     );
