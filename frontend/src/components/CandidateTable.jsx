@@ -3,7 +3,16 @@ import React, {Component} from 'react';
 export default class CandidateTable extends Component{
   constructor(props){
     super(props);
+    this.state = {
+      sentInvite : this.props.sentInvite
+    }
+    this.sendInvite = this.sendInvite.bind(this);
   };
+
+  sendInvite(){
+    this.setState({sentInvite: true})
+  }
+
   render(){
     return(
       <React.Fragment>
@@ -15,11 +24,11 @@ export default class CandidateTable extends Component{
             <td>{this.props.dateOfRegistration}</td>
             <td>{this.props.statusProcess}</td>
             <td>
-              {this.props.sentInvite &&
+              {this.state.sentInvite &&
                 <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3"> Reenviar Convite </button>
               ||
-              !this.props.sentInvite &&
-                <button className="btn btn-primary btn-sm my-0 mx-0 "> Enviar Convite </button>
+              !this.state.sentInvite &&
+                <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>
               }
             </td>
             <td>
