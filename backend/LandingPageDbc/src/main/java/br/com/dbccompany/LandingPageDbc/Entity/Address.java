@@ -3,6 +3,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Address.class)
@@ -28,7 +30,10 @@ public class Address extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = "FK_ID_NEIGHBORHOOD")
     private Neighborhood neighborhood;
-    
+
+    @OneToMany(mappedBy = "address", cascade = CascadeType.ALL)
+    private List<Candidate> candidates = new ArrayList<>();
+
     @Override
     public Integer getId() {
         return id;
@@ -77,5 +82,13 @@ public class Address extends AbstractEntity{
 
     public void setNeighborhood(Neighborhood neighborhood) {
         this.neighborhood = neighborhood;
+    }
+
+    public List<Candidate> getCandidates() {
+        return candidates;
+    }
+
+    public void setCandidates(List<Candidate> candidates) {
+        this.candidates = candidates;
     }
 }

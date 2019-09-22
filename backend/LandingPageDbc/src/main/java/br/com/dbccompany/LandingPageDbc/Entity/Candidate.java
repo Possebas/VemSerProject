@@ -54,6 +54,10 @@ public class Candidate extends AbstractEntity {
     @Column(name = "BEEN_CONFIRMED")
     private boolean beenConfirmed;
 
+    @ManyToOne
+    @JoinColumn(name = "FK_ID_ADDRESS")
+    private Address address;
+
     public String getName() {
         return name;
     }
@@ -124,6 +128,14 @@ public class Candidate extends AbstractEntity {
 
     public void setBeenConfirmed(boolean beenConfirmed) {
         this.beenConfirmed = beenConfirmed;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override

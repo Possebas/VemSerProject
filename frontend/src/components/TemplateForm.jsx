@@ -11,21 +11,21 @@ class TemplateForm extends React.Component {
     this.zipCodeUrl = `http://viacep.com.br/ws`
     this.baseUrl = `http://localhost:8080`
     this.state = {
-      name: "",
-      birthDate: "",
-      cpf: "",
-      zipCode: "",
-      address: "",
-      number: "",
+      name: "Fulaninho",
+      birthDate: "1994-10-04",
+      cpf: "84191304003",
+      zipCode: "94470100",
+      street: "",
+      number: "700",
       complement: "",
       city: "",
       district: "",
       state: "",
       parents: "",
-      education: "",
-      email: "",
-      password: "",
-      confirmPassword: ""
+      education: "Faculdade",
+      email: "teste@teste.com",
+      password: "12345",
+      confirmPassword: "12345"
     }
   };
 
@@ -40,7 +40,7 @@ class TemplateForm extends React.Component {
           this.setState({
             zipCode: json.cep,
             city: json.localidade,
-            address: json.logradouro,
+            street: json.logradouro,
             district: json.bairro,
             state: json.uf,
             parents: "Brasil"
@@ -61,7 +61,7 @@ class TemplateForm extends React.Component {
             birthDate,
             cpf,
             zipCode,
-            address,
+            street,
             number,
             complement,
             city,
@@ -74,30 +74,63 @@ class TemplateForm extends React.Component {
           } = this.state
     const data = new Date()
     data.toISOString().substring(0,10)
-    let candidateInfos = {
-     name: name,
-     email: email,
-     password: password,
-     cpf: cpf,
-     birthDate: birthDate,
-     statusProcess:"PEENDING",
-     dateOfRegistration: data,
-     educationalInstitution: education,
-     beenConfirmed: "false" 
+
+    let addressCandidate = {
+      country: {name: parents},
+      uf: {name: state, country: this.country},
+      city: {name: city, state: this.uf},
+      neighborhood: {name: district, city: this.city},
+      address: {
+        street: street,
+        number: number,
+        complement:complement,
+        zipCode: zipCode,
+        neighborhood: this.neighborhood
+      },
     }
+
+    let candidateInfos = {
+      name: name,
+      email: email,
+      password: password,
+      cpf: cpf,
+      birthDate: birthDate,
+      statusProcess:"PEENDING",
+      dateOfRegistration: data,
+      educationalInstitution: education,
+      beenConfirmed: "false",
+      address: addressCandidate.address
+     }
+
     try {
-      axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
+      axios.post(`${this.baseUrl}/api/country/add`, addressCandidate.country)
         .then(resp => {
-          alert(`O candidato ${resp.data.name} foi adicionado!`)
-          this.props.history.push("/questions");
-        }).catch(function (error) {
-          console.log("Error that's request: " + error)
-        })
-      } catch (erro) {
-       console.log("Erro na tentativa de salvar")
-      }
-      event.target.className += "was-validated";
-    };
+            console.log(resp.data)
+            axios.post(`${this.baseUrl}/api/state/add`, addressCandidate.uf)
+            .then(resp => {
+              console.log(resp.data)
+              axios.post(`${this.baseUrl}/api/city/add`, addressCandidate.city)
+              .then(resp => {
+                console.log(resp.data)
+                axios.post(`${this.baseUrl}/api/neighborhood/add`, addressCandidate.neighborhood)
+                .then(resp => {
+                  console.log(resp.data)
+                  axios.post(`${this.baseUrl}/api/address/add`, addressCandidate.address)
+                  .then(resp => {
+                    console.log(resp.data)
+                    axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
+                    .then(resp => {
+                      console.log(resp.data)
+                      //this.props.history.push("/questions");
+                  }).catch(function (error) {console.log("Error that's request: " + error)})
+                }).catch(function (error) {console.log("Error that's request: " + error)})
+              }).catch(function (error) {console.log("Error that's request: " + error)})
+            }).catch(function (error) {console.log("Error that's request: " + error)})
+          }).catch(function (error) {console.log("Error that's request: " + error)})
+        }).catch(function (error) {console.log("Error that's request: " + error)}
+    )} catch (erro) {console.log("Erro na tentativa de salvar")}
+    event.target.className += "was-validated";
+  };
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -175,11 +208,11 @@ class TemplateForm extends React.Component {
             </MDBCol>
             <MDBCol>
               <MDBInput className="white-text colorLabel"
-                value={this.state.address}
+                value={this.state.street}
                 onChange={this.changeHandler}
                 type="text"
-                name="address"
-                label="Endereço"
+                name="strees"
+                label="Logradouro"
                 required
               >
                 <div className="invalid-tooltip">
@@ -341,7 +374,6 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
           </MDBRow>
-
 
           {/* Upload de arquivo */}
           <MDBRow>
