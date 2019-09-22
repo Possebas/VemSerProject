@@ -10,11 +10,9 @@ import { MDBContainer } from 'mdbreact';
 import '../css/painel.css';
 
 export default class CandidateDetail extends Component {
-
-    /* constructor(props){
+    constructor(props){
         super(props)
-    } */
-
+    }
     render() {
         return (
             <React.Fragment>

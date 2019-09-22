@@ -88,8 +88,7 @@ class TemplateForm extends React.Component {
     try {
       axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
         .then(resp => {
-          this.props.history.push("/register/questions");
-          window.location.reload();
+          this.props.history.push("/questions");
         }).catch(function (error) {
           console.log("Error that's request: " + error)
         })

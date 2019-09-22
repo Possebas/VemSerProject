@@ -1,6 +1,10 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
-"mdbreact";
+import { MDBCarousel,
+        MDBCarouselInner,
+        MDBCarouselItem,
+        MDBView,
+        MDBContainer
+      } from "mdbreact";
 
 import turma2 from "../../../images/turma.jpg";
 import turma from "../../../images/turma2.jpg";

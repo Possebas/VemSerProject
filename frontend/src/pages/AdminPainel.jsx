@@ -39,7 +39,7 @@ export default class AdminPainel extends Component {
                 <PainelNavBar/>
                 <MDBContainer className="py-2">
                     <MDBCol className="col-sm-4 mx-0 px-0 my-3">
-                        <input type="search" class="form-control" 
+                        <input type="search" className="form-control" 
                             placeholder="Pesquisar" aria-controls="dt_candidates"
                         />
                     </MDBCol>

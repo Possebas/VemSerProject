@@ -12,11 +12,9 @@ import Location from '../components/home/Location';
 import Comments from '../components/home/Comments';
 
 export default class Home extends Component {
-
-    /* constructor(props){
-        super(props)
-    } */
-
+    constructor(props){
+        super(props);
+    }
     render() {
         return (
             <React.Fragment>
