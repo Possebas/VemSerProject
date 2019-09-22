@@ -10,7 +10,7 @@ export default class Candidate extends Component{
     return(
       <React.Fragment>
         <MDBCol className="col-sm">
-          <table id="dt_candidates" className="table table-striped table-bordered" cellspacing="0">
+          <table id="dt_candidates" className="table table-striped table-bordered" cellSpacing="0">
             <thead>
               <tr>
                 <th className="th-sm">Nome completo
@@ -31,7 +31,8 @@ export default class Candidate extends Component{
             </thead>
             {this.props.list.map((item) =>{
               return(
-                <CandidateTable name= {item.name}
+                <CandidateTable key= {item.id}
+                                name= {item.name}
                                 cpf= {item.cpf} 
                                 email= {item.email} 
                                 dateOfRegistration= {item.dateOfRegistration} 

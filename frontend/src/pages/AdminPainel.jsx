@@ -36,7 +36,7 @@ export default class AdminPainel extends Component {
         return (
             <React.Fragment>
                 <div id="painelbackground">
-                <PainelNavBar/>
+                <PainelNavBar name= "RH"/>
                 <MDBContainer className="py-2">
                     <MDBCol className="col-sm-4 mx-0 px-0 my-3">
                         <input type="search" className="form-control" 

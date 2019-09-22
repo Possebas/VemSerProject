@@ -17,7 +17,7 @@ export default class CandidateDetail extends Component {
         return (
             <React.Fragment>
                 <div id="painelbackground">
-                <PainelNavBar/>
+                <PainelNavBar name= "VemSer"/>
                 <MDBContainer className="px-3 py-5">
                     <h4 className="pt-3"> Confira seu status: </h4>
                     <ProgressBar/>

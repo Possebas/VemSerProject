@@ -77,15 +77,15 @@ class TemplateForm extends React.Component {
 
     let addressCandidate = {
       country: {name: parents},
-      uf: {name: state, country: this.country},
-      city: {name: city, state: this.uf},
-      neighborhood: {name: district, city: this.city},
+      uf: {name: state, country: ''},
+      city: {name: city, uf: ''},
+      neighborhood: {name: district, city: ''},
       address: {
         street: street,
         number: number,
         complement:complement,
         zipCode: zipCode,
-        neighborhood: this.neighborhood
+        neighborhood: ''
       },
     }
 
@@ -99,29 +99,29 @@ class TemplateForm extends React.Component {
       dateOfRegistration: data,
       educationalInstitution: education,
       beenConfirmed: "false",
-      address: addressCandidate.address
+      address: ''
      }
 
     try {
       axios.post(`${this.baseUrl}/api/country/add`, addressCandidate.country)
-        .then(resp => {
-            console.log(resp.data)
+        .then(respCountry => {
+            addressCandidate.uf.country = respCountry.data
             axios.post(`${this.baseUrl}/api/state/add`, addressCandidate.uf)
-            .then(resp => {
-              console.log(resp.data)
+            .then(respUF => {
+              addressCandidate.city.uf = respUF.data
               axios.post(`${this.baseUrl}/api/city/add`, addressCandidate.city)
-              .then(resp => {
-                console.log(resp.data)
+              .then(respCity => {
+                addressCandidate.neighborhood.city = respCity.data
                 axios.post(`${this.baseUrl}/api/neighborhood/add`, addressCandidate.neighborhood)
-                .then(resp => {
-                  console.log(resp.data)
+                .then(respNeighborhood => {
+                  addressCandidate.address.neighborhood = respNeighborhood.data
                   axios.post(`${this.baseUrl}/api/address/add`, addressCandidate.address)
-                  .then(resp => {
-                    console.log(resp.data)
+                  .then(respAddress => {
+                    candidateInfos.address = respAddress.data
                     axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
-                    .then(resp => {
-                      console.log(resp.data)
-                      //this.props.history.push("/questions");
+                    .then(respCandidate => {
+                      console.log(respCandidate.data)
+                      this.props.history.push("/questions");
                   }).catch(function (error) {console.log("Error that's request: " + error)})
                 }).catch(function (error) {console.log("Error that's request: " + error)})
               }).catch(function (error) {console.log("Error that's request: " + error)})

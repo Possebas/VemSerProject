@@ -16,9 +16,12 @@ from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default class PainelNavBar extends Component {
-state = {
-  name: "Fulano",
-  isOpen: false
+constructor(props){
+  super(props);
+  this.state = {
+    name: this.props.name,
+    isOpen: false
+  }
 };
 
 toggleCollapse = () => {
@@ -32,15 +35,15 @@ render() {
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left className="pl-2">
-            <MDBNavItem active>
-              <MDBNavLink to="/">
+            <MDBNavItem>
+              <a href="/">
                 <MDBIcon icon="home" />
-              </MDBNavLink>
+              </a>
             </MDBNavItem>
           </MDBNavbarNav>
-          <MDBNavbarNav center>
+          <MDBNavbarNav>
             <MDBNavbarBrand>
-              <strong id="dbclogo">DBC</strong>
+              <strong id="dbclogo">Painel VemSer - DBC</strong>
             </MDBNavbarBrand>
           </MDBNavbarNav>
           <MDBNavbarNav right>
