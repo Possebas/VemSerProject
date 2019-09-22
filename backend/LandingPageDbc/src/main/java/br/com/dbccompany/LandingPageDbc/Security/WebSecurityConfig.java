@@ -15,8 +15,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().frameOptions().sameOrigin().and()
-                .csrf().disable().authorizeRequests().antMatchers("/home")
-                .permitAll().antMatchers(HttpMethod.POST, "/login").permitAll()
+                .csrf().disable().authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/candidate/add").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/question/add").permitAll()
                 .anyRequest().authenticated()
                 .and().cors()
                 .and()
