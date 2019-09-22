@@ -26,7 +26,7 @@ const Footer = () => {
                   <i className="fa fa-home mr-3" /> Porto Alegre, RS, Brasil
                 </p>
                 <p>
-                  <i className="fa fa-envelope mr-3" />vemser@dbccompany.com.br
+                  <i className="fa fa-envelope mr-3" /> vemser@dbccompany.com.br
                 </p>
                 <p>
                   <i className="fa fa-phone mr-3" /> (51) 3092-8400
@@ -41,17 +41,15 @@ const Footer = () => {
           <MDBCol md="2" lg="4" xl="6" className="mx-auto mt-3">
             <h6 className="text-uppercase mb-4 font-weight-bold colorH6">Conheça a DBC</h6>
             <iframe title="player" width="560" height="315" src="https://www.youtube.com/embed/D4TGd-RJt10"
-              
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen></iframe>
           </MDBCol>
-
         </MDBRow>
         <MDBRow className="d-flex align-items-center">
           <MDBCol md="8" lg="8">
             <p className="text-center text-md-left grey-text">
               &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="https://www.dbccompany.com.br/"> DBCCOMPANY.com.br/</a>
+              <a href="https://www.dbccompany.com.br/"> DBCCOMPANY.com.br</a>
             </p>
           </MDBCol>
           <MDBCol md="4" lg="4" className="ml-lg-0">
