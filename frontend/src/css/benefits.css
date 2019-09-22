@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    opacity: 0.6;
+    opacity: 0.9;
     background: rgb(156,39,176); /* Old browsers */
     background: -moz-linear-gradient(-45deg,  rgba(156,39,176,1) 18%, rgba(34,212,160,1) 66%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg,  rgba(156,39,176,1) 18%,rgba(34,212,160,1) 66%); /* Chrome10-25,Safari5.1-6 */

@@ -23,7 +23,6 @@ export default class Home extends Component {
                 <WhatIs id="whatis" key="whatis" />
                 <Requirements id="requirements" key="requirements"/>
                 <Phases />
-                <hr className="hr"/>
                 <Technology id="technology" key="technology" />
                 <Comments />
                 <Benefits/>
