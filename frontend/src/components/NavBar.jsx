@@ -120,7 +120,7 @@ class NavBar extends React.Component {
               <MDBContainer className="black-text text-center textVideo" id="tt">
                 <h1 className="text-uppercase tracking-in-expand" id="tituloVS1">Vem</h1>
                   <h1 className="text-uppercase tracking-in-expand" id="tituloVS">Ser <span id="tituloVSSpan">DBC</span></h1> 
-                  <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br/> Gosta de resolver <span id="desafios">desafios </span> ?  <br/> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br/> Não fique de fora dessa! </p>            
+                  <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br/> Gosta de <span id="desafios">desafios </span> ?  <br/> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br/> Não fique de fora dessa! </p>            
                   <MDBBtn color="elegant" className="mb-5 mt-4"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
               </MDBContainer>
           </MDBView>

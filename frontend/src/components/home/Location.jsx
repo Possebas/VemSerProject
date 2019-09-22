@@ -7,7 +7,7 @@ export const Location = () => {
     return (
         <React.Fragment>
             <MDBContainer>
-                <h1 className="text-capitalize text-center mt-5 font-weight-bold">Local da qualificação</h1>
+                <h1 className="text-center mt-5 font-weight-bold">Local da qualificação</h1>
                 <MDBContainer className="w-100 h-100 mt-4 mb-5">
                     <MDBRow xl="6" lg="6" md="6" sm="6">
                         <MDBCol xl="8" lg="8" md="12" sm="12" className="mt-4">
