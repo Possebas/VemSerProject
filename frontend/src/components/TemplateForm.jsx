@@ -29,7 +29,6 @@ class TemplateForm extends React.Component {
     }
   };
 
-
   reqZipCodeData = async event => {
     event.preventDefault()
     const id = event.target.value;
@@ -38,12 +37,12 @@ class TemplateForm extends React.Component {
       axios.get(`${this.zipCodeUrl}${url}`)
         .then(resp => {
           let json = resp.data
-          console.log(" Chegando na api ", resp.data)
           this.setState({
             zipCode: json.cep,
             city: json.localidade,
             address: json.logradouro,
             district: json.bairro,
+            state: json.uf,
             parents: "Brasil"
           })
         }).catch(function (error) {
@@ -58,44 +57,46 @@ class TemplateForm extends React.Component {
 
   submitHandler = event => {
     event.preventDefault();
-    const { name, birthDate, cpf, zipCode, address, number, complement, city, district, state, parents, education, email, password } = this.state
-    // console.log(name, birthDate, cpf, zipCode, address, number, complement, city, district, state, parents, education, email, password)
-    /* "name": "teste",
-    "email": "test@123.com",
-    "password": "594559d58b2984e23099ea0d90810e33",
-    "cpf": "00745155006",
-    "birthDate": "1985-10-02",
-    "statusProcess": "PEENDING",
-    "dateOfRegistration": "2017-10-02",
-    "educationalInstitution": "ipa",
-    "beenConfirmed": false */
+    const { name,
+            birthDate,
+            cpf,
+            zipCode,
+            address,
+            number,
+            complement,
+            city,
+            district,
+            state,
+            parents,
+            education,
+            email,
+            password
+          } = this.state
     const data = new Date()
     data.toISOString().substring(0,10)
     let candidateInfos = {
      name: name,
-     birthDate: birthDate,
-     cpf: cpf, 
-     educationalInstitution: education,
      email: email,
-     password: password, 
-     dateOfRegistration: data,
+     password: password,
+     cpf: cpf,
+     birthDate: birthDate,
      statusProcess:"PEENDING",
-     beenConfirmed: false, 
+     dateOfRegistration: data,
+     educationalInstitution: education,
+     beenConfirmed: "false" 
     }
     try {
-      axios.post(`http://localhost:8080/api/candidate/add`, candidateInfos)
+      axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
         .then(resp => {
-          console.log(" Chegando na api ", resp.data)
+          this.props.history.push("/register/questions");
+          window.location.reload();
         }).catch(function (error) {
           console.log("Error that's request: " + error)
         })
-      console.log("CANDIDATO ...", candidateInfos)
-      this.props.history.push("/registerQuestions");
     } catch (erro) {
       console.log("Erro na tentativa de salvar")
     }
-
-    event.target.className += " was-validated";
+    event.target.className += "was-validated";
   };
 
   changeHandler = event => {
@@ -205,11 +206,7 @@ class TemplateForm extends React.Component {
                 type="text"
                 name="complement"
                 label="Complemento"
-                required
               >
-                <div className="invalid-tooltip">
-                  Campo obrigatório.
-                </div>
               </MDBInput>
             </MDBCol>
           </MDBRow>
