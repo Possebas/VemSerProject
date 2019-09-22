@@ -16,7 +16,7 @@ import {
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Cover from 'react-video-cover';
-import BlackKeys from '../videos/BlackKeys.webm'
+
 
 /* Image and css */
 import "../css/navbar.css"

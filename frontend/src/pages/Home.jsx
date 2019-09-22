@@ -10,6 +10,7 @@ import Phases from '../components/home/Phases';
 import Requirements from '../components/home/Requirements';
 import Location from '../components/home/Location';
 import Comments from '../components/home/Comments';
+import Benefits from '../components/home/Benefits';
 
 export default class Home extends Component {
     constructor(props){
@@ -21,9 +22,11 @@ export default class Home extends Component {
                 <NavBar />
                 <WhatIs id="whatis" key="whatis" />
                 <Requirements id="requirements" key="requirements"/>
-                <Technology id="technology" key="technology" />
                 <Phases />
+                <hr className="hr"/>
+                <Technology id="technology" key="technology" />
                 <Comments />
+                <Benefits/>
                 <Location />
                 <Footer />
             </React.Fragment>

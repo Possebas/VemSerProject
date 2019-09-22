@@ -8,9 +8,7 @@
 
 #titleNav{
     font-size: 35px;
-    line-height: 45px;
-   
-    
+    line-height: 45px;   
 }
 
 #tecnologia{
@@ -30,7 +28,6 @@
     font-size: 90px;
     line-height: 40px;
     word-spacing: -25px;
-    
 }
 
 #tituloVS1{
@@ -39,13 +36,11 @@
     line-height: 40px;
     margin-right: 350px;
     margin-bottom: 20px;
-   
 }
 
 #tituloVSSpan{
     color: rgb(60, 85, 130);
     font-size: 125px;
-    
 }
 
 .under:hover{
@@ -62,7 +57,6 @@
 
 #tt{
     padding-top: 15%;
-    
 }
 
 #tt p {
