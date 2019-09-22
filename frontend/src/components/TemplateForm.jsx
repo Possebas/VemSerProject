@@ -88,15 +88,16 @@ class TemplateForm extends React.Component {
     try {
       axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
         .then(resp => {
+          alert(`O candidato ${resp.data.name} foi adicionado!`)
           this.props.history.push("/questions");
         }).catch(function (error) {
           console.log("Error that's request: " + error)
         })
-    } catch (erro) {
-      console.log("Erro na tentativa de salvar")
-    }
-    event.target.className += "was-validated";
-  };
+      } catch (erro) {
+       console.log("Erro na tentativa de salvar")
+      }
+      event.target.className += "was-validated";
+    };
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });

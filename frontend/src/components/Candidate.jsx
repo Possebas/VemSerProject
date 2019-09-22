@@ -5,9 +5,6 @@ import {MDBCol} from "mdbreact";
 export default class Candidate extends Component{
   constructor(props){
     super(props);
-    this.state = {
-      list: this.props.list
-    }
   };
   render(){
     return(
@@ -32,14 +29,14 @@ export default class Candidate extends Component{
                 </th>
               </tr>
             </thead>
-            {this.state.list.map((item) =>{
+            {this.props.list.map((item) =>{
               return(
                 <CandidateTable name= {item.name}
                                 cpf= {item.cpf} 
                                 email= {item.email} 
-                                dateApply= {item.dateApply} 
-                                status= {item.status}
-                                sentInvite= {item.sentInvite}
+                                dateOfRegistration= {item.dateOfRegistration} 
+                                statusProcess= {item.statusProcess}
+                                sentInvite= {false}
                 />
               )})
             }

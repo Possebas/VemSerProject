@@ -67,12 +67,12 @@ export default class RequestApi {
 
     requestCandidate(typeRequest) {
         var reqs = this.returnType(typeRequest)
-        this.reqApi( '/api/candidate', reqs )
+        this.reqApi( '/api/candidate/', reqs )
     }
     
     requestCandidateID(typeRequest, id) {
         var reqs = this.returnType(typeRequest)
-        this.reqApi( '/api/candidate', reqs, id )
+        this.reqApi( '/api/candidate/', reqs, id )
     }
 
     requestCity(typeRequest) {

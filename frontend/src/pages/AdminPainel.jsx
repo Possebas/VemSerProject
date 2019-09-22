@@ -1,5 +1,6 @@
 /* All librarys */
 import React, { Component } from 'react';
+import * as axios from 'axios';
 
 /* Components */
 import PainelNavBar from '../components/PainelNavBar';
@@ -15,22 +16,21 @@ export default class AdminPainel extends Component {
     constructor(props){
         super(props)
         this.backData = new RequestApi()
+        this.baseUrl = `http://localhost:8080`
         this.state = {
-            list: [
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente", sentInvite: false},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente", sentInvite: true},
-                {name:"Fulano", cpf: "00000000000", email: "test@test.com.br", dateApply: "20/09/2019", status: "Pendente", sentInvite: false}
-            ]
+            list: []
         }
-    } 
+    }
 
-    //componentDidMount(){
-    //    setTimeout(() => {
-    //        this.setState({
-    //            list: this.backData.requestCountry("ALL")
-    //        })
-    //    }, 2000)
-    //}
+    componentDidMount(){
+        //Pega o token do navegador.
+        const config = {headers:{ Authorization : localStorage.getItem("Authorization")}}
+        axios.get(`${this.baseUrl}/api/candidate/`, (config))
+        .then(resp => {
+            this.setState({list: resp.data})
+            console.log(resp.data)
+        })
+    }
 
     render() {
         return (
@@ -44,7 +44,7 @@ export default class AdminPainel extends Component {
                         />
                     </MDBCol>
                     <MDBRow className="row align-items-start">
-                        <Candidate list={this.state.list}/>
+                        <Candidate list={this.state.list !== null ? this.state.list : ''}/>
                     </MDBRow>
                 </MDBContainer>
                 </div>
