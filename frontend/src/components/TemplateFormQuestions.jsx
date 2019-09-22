@@ -6,7 +6,7 @@ import '../css/form.css';
 
 class TemplateFormQuestions extends React.Component {
   state = {
-    radioMatriculado: "",
+    isCollege: "",
     course: "",
     educationalInstitution: "",
     dayShifys: "",
@@ -32,6 +32,8 @@ class TemplateFormQuestions extends React.Component {
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
+    
+  console.log(event.target.value);
   };
 
   onClick = nr => () => {
@@ -52,8 +54,8 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">1 - Está matriculado em curso relacionado a TI?</h5>
               <MDBFormInline required className="mt-45 mb-4">
-                <MDBInput  gap onClick={this.onClick(1)} checked={this.state.radioMatriculado === 1 ? true : false} label="SIM" type="radio" id="radio1" />
-                <MDBInput gap onClick={this.onClick(2)} checked={this.state.radioMatriculado === 2 ? true : false} label="NÃO" type="radio" id="radio2" />
+                <MDBInput  gap onClick={this.onClick(1)} onChange={this.changeHandler} value={this.state.isCollege} checked={this.state.radio === 1 ? true : false} label="SIM" type="radio" id="radio1" />
+                <MDBInput gap onClick={this.onClick(2)} value={this.state.isCollege} checked={this.state.radio === 2 ? true : false} label="NÃO" type="radio" id="radio2" />
               </MDBFormInline>
             </MDBCol>
           </MDBRow>
@@ -67,6 +69,7 @@ class TemplateFormQuestions extends React.Component {
               type="text" 
               value={this.state.course}
               onChange={this.changeHandler} 
+              name="course"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -84,6 +87,7 @@ class TemplateFormQuestions extends React.Component {
               type="text" 
               value={this.state.educationalInstitution}
               onChange={this.changeHandler} 
+              name="educationalInstitution"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -142,6 +146,7 @@ class TemplateFormQuestions extends React.Component {
               required 
               type="text" 
               value={this.state.otherReason}
+              name="otherReason"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -190,7 +195,8 @@ class TemplateFormQuestions extends React.Component {
                 id="exampleFormControlTextarea3" 
                 rows="5"
                 value= {this.state.whatMotivate}
-                
+                onChange={this.changeHandler} 
+                name="whatMotivate"
                 ></textarea>
               </div>
             </MDBCol>
@@ -206,6 +212,8 @@ class TemplateFormQuestions extends React.Component {
                 id="exampleFormControlTextarea3" 
                 rows="8"
                 value={this.state.referencesThatInspire}
+                onChange={this.changeHandler} 
+                name= "referencesThatInspire"
                 ></textarea>
               </div>
             </MDBCol>
@@ -224,8 +232,6 @@ class TemplateFormQuestions extends React.Component {
               </div>
             </MDBBtn>
           </MDBRow>
-
-
         </form>
       </div>
     );
