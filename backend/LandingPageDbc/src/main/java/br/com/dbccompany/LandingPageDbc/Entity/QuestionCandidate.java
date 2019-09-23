@@ -51,13 +51,15 @@ public class QuestionCandidate extends AbstractEntity {
     @Column(name = "REFERENCES_THAT_INSPIRE")
     private String referencesThatInspire;
 
-    //CRIAR OBJETO CANDIDATO AQUI, OU PELO MENOS O ID DO CANDIDATO!!
+    @OneToOne
+    @JoinColumn(name = "FK_ID_CANDIDATE")
+    private Candidate candidate;
 
     public QuestionCandidate(){
         
     }
     
-    public QuestionCandidate(Integer id, boolean isCollege, String course, String educationalInstitution, String dayShifys, boolean isParticipated, String reasonsForInterest, String otherReason, boolean isLogicalKnowledge, boolean hasAvailability, boolean availabilityAfterTraining, String whatMotivates, String referencesThatInspire) {
+    public QuestionCandidate(Integer id, boolean isCollege, String course, String educationalInstitution, String dayShifys, boolean isParticipated, String reasonsForInterest, String otherReason, boolean isLogicalKnowledge, boolean hasAvailability, boolean availabilityAfterTraining, String whatMotivates, String referencesThatInspire, Candidate candidate) {
         this.id = id;
         this.isCollege = isCollege;
         this.course = course;
@@ -71,6 +73,15 @@ public class QuestionCandidate extends AbstractEntity {
         this.availabilityAfterTraining = availabilityAfterTraining;
         this.whatMotivates = whatMotivates;
         this.referencesThatInspire = referencesThatInspire;
+        this.candidate = candidate;
+    }
+
+    public void setCandidate(Candidate candidate){
+        this.candidate = candidate;
+    }
+
+    public Candidate getCandidate(){
+        return candidate;
     }
 
     public Integer getId() {

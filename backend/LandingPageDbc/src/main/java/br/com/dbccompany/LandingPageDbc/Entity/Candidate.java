@@ -9,7 +9,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Candidate.class)
@@ -57,6 +59,9 @@ public class Candidate extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name = "FK_ID_ADDRESS")
     private Address address;
+
+    @OneToOne(mappedBy="candidate")
+    private QuestionCandidate questionCandidate;
 
     public String getName() {
         return name;
