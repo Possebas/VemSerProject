@@ -9,37 +9,50 @@ import { MDBCarousel,
         } from "mdbreact";
 
 import '../../../css/carouselComments.css'
+import alexandra from '../../../images/carousel/alexandra.jpg'
+import alexandre from '../../../images/carousel/alexandre.jpg'
+import douglas from '../../../images/carousel/douglas.jpg'
+import guilherme from '../../../images/carousel/guilherme.jpg'
+import gustavo from '../../../images/carousel/gustavo.jpg'
+import igor from '../../../images/carousel/igor.jpg'
+import jaqueline from '../../../images/carousel/jaqueline.jpg'
+import jonas from '../../../images/carousel/jonas.jpg'
+import lucas from '../../../images/carousel/lucas.jpg'
+import rodrigo from '../../../images/carousel/rodrigo.jpg'
+import possebon from '../../../images/carousel/possebon.jpg'
+import murilo from '../../../images/carousel/murilo.jpg'
+import evelin from '../../../images/carousel/evelin.jpg'
 
 const CarouselComments = () => {
   return (
     <MDBContainer id="container100">
       <MDBCarousel
         activeItem={1}
-        length={3}
+        length={13}
         showControls={true}
         showIndicators={true}
         className="z-depth-1"
         id="caro"
       >
-        <MDBCarouselInner >
+        <MDBCarouselInner className="mb-5">
             <MDBCarouselItem itemId="1">
                 <MDBView>
-                        <MDBRow className="my-5">
+                        <MDBRow className="my-5 ">
                             <MDBCol className="text-center">
                                 <div className="card" id="borderNone">
                                     <div className="view overlay">
-                                        <img className="card-img-center pt-2" src="https://scontent-gru1-1.xx.fbcdn.net/v/t1.0-9/30440868_1662985977142848_604677041249204553_n.jpg?_nc_cat=105&_nc_oc=AQnYgcrYqH1HZ5LSVKh93ViV_zHxYXD022CSYKVWcDnxGEm-RrEX4MB1QkHssrZBKxA&_nc_ht=scontent-gru1-1.xx&oh=7e39cb05a4ab013ecf3e1f4c420a5d17&oe=5E0445DA" alt="Card image cap"></img>
+                                        <img className="card-img-center pt-2" src={evelin} alt="Card image cap"></img>
                                     </div>
-                                    <div className="card-body w-70 text-center rounded-botton">
+                                    <div id="msg" className="text-center">
                                         <h4 className="card-title white-text">Evelin Fausto</h4>
-                                        <hr className="white"></hr>
-                                        <p className="card-text white-text mb-4">Esse programa é incrivel, alunos increveis, tudo é incrivel. O texto tem que ser grando para teste então estou usando aqui como exemplo, vou falar uns blá blá blá como hagatanga, lulamolusco bob espoja, filme de terror quarteto fantastico , banda dejavu, dj juninho porugal é show parara parara parara rarara rara</p>
+                                        <p className="card-text white-text mt-4 mb-2">Esse programa é incrivel, alunos increveis, tudo é incrivel. O texto tem que ser grando para teste então estou usando aqui como exemplo, vou falar uns blá blá blá como hagatanga, lulamolusco bob espoja, filme de terror quarteto fantastico , banda dejavu, dj juninho porugal é show parara parara parara rarara rara</p>
                                     </div>
                                 </div>
                             </MDBCol>
                         </MDBRow>
                 </MDBView>
             </MDBCarouselItem>
+
             <MDBCarouselItem itemId="2">
                 <MDBView>
                     <MDBContainer>
@@ -47,12 +60,11 @@ const CarouselComments = () => {
                             <MDBCol>
                                 <div className="card" id="borderNone">
                                     <div className="view overlay">
-                                        <img className="card-img-center pt-2" src="https://scontent-gru1-1.xx.fbcdn.net/v/t1.0-9/44757107_650014712067743_453947067883061248_n.jpg?_nc_cat=102&_nc_oc=AQkqxxqi0ShE5xc_i1epeGTRdZ4Pgm5RePSu9lEilbVDr8SPltvYZW599UvIR3wS05o&_nc_ht=scontent-gru1-1.xx&oh=e5d992761378ab64909fe195fa7d5ce8&oe=5E382F96" alt="Card image cap"></img>
+                                        <img className="card-img-center pt-2" src={murilo} alt="Card image cap"></img>
                                     </div>
-                                    <div className="card-body text-center rounded-botton">
+                                    <div id="msg" className="text-center">
                                         <h4 className="card-title white-text">Murilo Rodrigues</h4>
-                                        <hr className="white"></hr>
-                                        <p className="card-text white-text mb-4">Esse programa é incrivel, alunos increveis, tudo é incrivel.</p>
+                                        <p className="card-text white-text mt-4 mb-2">Esse programa é incrivel, alunos increveis, tudo é incrivel.</p>
                                     </div>
                                 </div>
                             </MDBCol>
@@ -60,7 +72,28 @@ const CarouselComments = () => {
                     </MDBContainer>
                 </MDBView>
             </MDBCarouselItem>
+
             <MDBCarouselItem itemId="3">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5 ">
+                            <MDBCol>
+                                <div className="card" id="borderNone">
+                                    <div className="view overlay">
+                                        <img className="card-img-center pt-2" src={alexandre} alt="Card image cap"></img>
+                                    </div>
+                                    <div id="msg" className="text-center">
+                                        <h4 className="card-title white-text">Alexandre Viegas Betti</h4>
+                                        <p className="card-text white-text mt-4 mb-2">"Quero agradecer à equipe DBC e ao Programa Vem Ser pela oportunidade de aprendizado, conhecimento e desenvolvimento profissional. Além do conhecimento técnico que praticamos durante a capacitação, aprendemos também significado do trabalho em equipe, possibilitando o crescimento pessoal e profissional."</p>
+                                    </div>
+                                </div>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="4">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -68,12 +101,11 @@ const CarouselComments = () => {
                                 <MDBContainer className="w-100">
                                     <div className="card" id="borderNone">
                                         <div className="view overlay">
-                                            <img className="card-img-center pt-2" src="https://scontent-gru1-1.xx.fbcdn.net/v/t1.0-9/26815099_1335169356589288_4386191744653987917_n.jpg?_nc_cat=105&_nc_oc=AQkm6w7uSAMkIoNZFnTNL7OXkfOcjwa3Cg98ZC5PxLNFUSu3bH7xgnFR3s5HK-XJTpA&_nc_ht=scontent-gru1-1.xx&oh=e93d63c9d02299bddfc550e842dfca24&oe=5E3D1B72" alt="Card image cap"></img>
+                                            <img className="card-img-center pt-2" src={possebon} alt="Card image cap"></img>
                                         </div>
-                                        <div className="card-body text-center rounded-botton">
+                                        <div id="msg" className="text-center">
                                             <h4 className="card-title white-text">Gustavo Possebon</h4>
-                                            <hr className="white"></hr>
-                                            <p className="card-text white-text mb-4">Esse programa é incrivel, alunos increveis, tudo é incrivel.</p>
+                                            <p className="card-text white-text mt-4 mb-2">Esse programa é incrivel, alunos increveis, tudo é incrivel.</p>
                                         </div>
                                     </div>
                                 </MDBContainer>
@@ -82,9 +114,215 @@ const CarouselComments = () => {
                     </MDBContainer>
                 </MDBView>
             </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="5">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={alexandra} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Alexandra Peres</h4>
+                                            {/* <hr className="white"></hr> */}
+                                            <p className="card-text white-text mt-4 mb-2">"Sempre tive o sonho de trabalhar desenvolvendo software e consegui realizar esse sonho atravéz do projeto VemSerDBC. Esses 3 meses de aprendizado foram incríveis tanto para minha vida pessoal quando profissional. Ter todo o aprendizado, apoio e confiança proporcionados pela empresa me motivou a amar ainda mais a tecnologia e continua me motivando todos os dias."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="6">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={jaqueline} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Jaqueline Paz</h4>
+                                            {/* <hr className="white"></hr> */}
+                                            <p className="card-text white-text mt-4 mb-2">"O Programa Vem Ser surgiu na minha vida no momento certo! A possibilidade de estar totalmente dedicada a este treinamento dentro da DBC me trouxe a evolução profissional e segurança que precisava para entrar no mercado de TI. Sou muito grata por estar entre os selecionados."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="7">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={douglas} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Douglas Marques</h4>
+                                            {/* <hr className="white"></hr> */}
+                                            <p className="card-text white-text mt-4 mb-2">"VemSerDBC está sendo uma experiência incrível para mim. Estar conectado com o mercado de trabalho, com tecnologias atuais mas mais do que isso, ter a oportunidade de construir minha carreira em todos os seus aspectos, isso tudo com o baita suporte de uma organização com o selo de qualidade que a DBC tem, faz esse processo ser único e muito impactante para todos nós envolvidos."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="8">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={igor} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Igor Ceriotti</h4>
+                                            {/* <hr className="white"></hr> */}
+                                            <p className="card-text white-text mt-4 mb-2">"  "</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="9">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={rodrigo} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Rodrigo Abreu</h4>
+                                            {/* <hr className="white"></hr> */}
+                                            <p className="card-text white-text mt-4 mb-2">""</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="10">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={guilherme} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Guilherme Borges</h4>
+                                            <p className="card-text white-text mt-4 mb-2">"O programa VemSerDBC foi a melhor experiência de capacitação que eu já vivi. Isso só foi possível graças aos facilitadores do projeto. Desde o início apresentaram uma imensa consideração pelos integrantes da nossa turma e uma excepcional disposição em compartilhar conhecimento. Portanto quero agradecer a DBC por proporcionar essa experiência."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="11">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={jonas} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Jonas Cruz</h4>
+                                            <p className="card-text white-text mt-4 mb-2">"Uma empresa que dá a oportunidade de obter aprendizado, capacitação e introdução no mercado de trabalho, através de um programa para estudantes sem ou com pouca experiência na área da tecnologia. Essa é a DBC Company, esse é o VemSer DBC. Empresa que investe em pessoas visando qualidade, bem estar e futuro. Eu como aluno do VemSer serei eternamente grato pela oportunidade."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="12">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={lucas} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Lucas Ribeiro</h4>
+                                            <p className="card-text white-text mt-4 mb-2">"O programa VemSerDbc tem sido uma otima oportunidade de crescimento e aprendizado, tanto profissional quanto pessoal. Estar próximo de profissionais qualificados e dedicados tem um impacto muito positivo no nosso desenvolvimento. É uma experiencia única, proporcionada por uma das melhores empresas para se trabalhar no brasil."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
+            <MDBCarouselItem itemId="13">
+                <MDBView>
+                    <MDBContainer>
+                        <MDBRow className="my-5">
+                            <MDBCol>
+                                <MDBContainer className="w-100">
+                                    <div className="card" id="borderNone">
+                                        <div className="view overlay">
+                                            <img className="card-img-center pt-2" src={gustavo} alt="Card image cap"></img>
+                                        </div>
+                                        <div id="msg" className="text-center">
+                                            <h4 className="card-title white-text">Gustavo Comaru</h4>
+                                            <p className="card-text white-text mt-4 mb-2">"O VemSer tem sido pra mim uma grande oportunidade de aprendizagem técnica e pessoal, me colocando em contato com um mundo que eu não conhecia e mudando minha perspectiva sobre o trabalho com TI. É uma experiência muito enriquecedora que vou levar comigo para o resto da vida."</p>
+                                        </div>
+                                    </div>
+                                </MDBContainer>
+                            </MDBCol> 
+                        </MDBRow>
+                    </MDBContainer>
+                </MDBView>
+            </MDBCarouselItem>
+
         </MDBCarouselInner>
       </MDBCarousel>
     </MDBContainer>
+
+    
   );
 }
 

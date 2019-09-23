@@ -30,7 +30,7 @@ class NavBar extends React.Component {
     this.state = {
       collapse: false,
       isWideEnough: false,
-      resizeNotifier: () =>{},
+      resizeNotifier: () => { },
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -47,19 +47,19 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const videoOptions ={
-      src : 'https://storage.coverr.co/videos/Black_Keys?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTY5MDE1MzUxfQ.pCkN9igqxBko73ziO5V3jS3JZTIUJJUXj2EkvP_JRpA',
+    const videoOptions = {
+      src: 'https://storage.coverr.co/videos/Black_Keys?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6IjExNDMyN0NEOTRCMUFCMTFERTE3IiwiaWF0IjoxNTY5MDE1MzUxfQ.pCkN9igqxBko73ziO5V3jS3JZTIUJJUXj2EkvP_JRpA',
       autoPlay: true,
       muted: true,
       loop: true,
     }
-    const style = {
-      width: '100vw',
-      height: '100vh',
-      top: 0,
-      left: 0,
-      zIndex: -1,
-    };
+    // const style = {
+    //   width: '100vw',
+    //   height: '100vh',
+    //   top: 0,
+    //   left: 0,
+    //   zIndex: -1,
+    // };
     return (
       <div>
         <header>
@@ -69,7 +69,7 @@ class NavBar extends React.Component {
                 <MDBContainer className="m-0">
                   <MDBRow className="mb-0 mh-0" >
                     <MDBCol lg="9" md="8" sm="7">
-                        <img src={logoVemSer} text-hide="true" alt="LOGO" className="img-fluid" id="logoVemSer"/>
+                      <img src={logoVemSer} text-hide="true" alt="LOGO" className="img-fluid" id="logoVemSer" />
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
@@ -81,16 +81,19 @@ class NavBar extends React.Component {
                     <MDBNavLink href="#whatis" to="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
-                    <MDBNavLink href="#technology" to="#technology" >Tecnologias</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#phases" to="#phases">Pré-Requisitos</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#phases" to="#phases">Etapas</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
+                    <MDBNavLink href="#technology" to="#technology" >Tecnologias</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem className="text-uppercase under mr-2">
                     <MDBNavLink href="#brief" to="#brief">Depoimentos</MDBNavLink>
+                  </MDBNavItem>
+                  <MDBNavItem className="text-uppercase under mr-2">
+                    <MDBNavLink href="#benefits" to="#benefits" >Benefícios</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2" >
                     <MDBNavLink href="#location" to="#location" >Localização</MDBNavLink>
@@ -107,28 +110,28 @@ class NavBar extends React.Component {
           </Router>
           <MDBView className="dbc">
             <div className="videoCover" >
-              <Cover 
-              videoOptions = {videoOptions}
-              remeasureOnWindowresize
-              getResizeNotifier = {resizeNotifier => {
-                this.state({
-                  resizeNotifier,
-                });
-              }}
+              <Cover
+                videoOptions={videoOptions}
+                remeasureOnWindowresize
+                getResizeNotifier={resizeNotifier => {
+                  this.state({
+                    resizeNotifier,
+                  });
+                }}
               />
-            </div>  
-              <MDBContainer className="black-text text-center textVideo" id="tt">
-                <h1 className="text-uppercase tracking-in-expand" id="tituloVS1">Vem</h1>
-                  <h1 className="text-uppercase tracking-in-expand" id="tituloVS">Ser <span id="tituloVSSpan">DBC</span></h1> 
-                  <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br/> Gosta de <span id="desafios">desafios </span> ?  <br/> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br/> Não fique de fora dessa! </p>            
-                  <MDBBtn color="elegant" className="mb-5 mt-4"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
-              </MDBContainer>
+            </div>
+            <MDBContainer className="black-text text-center textVideo" id="tt">
+              <h1 className="text-uppercase tracking-in-expand" id="tituloVS1">Vem</h1>
+              <h1 className="text-uppercase tracking-in-expand" id="tituloVS">Ser <span id="tituloVSSpan">DBC</span></h1>
+              <p className="" id="titleNav"> Curte <span id="tecnologia">tecnologia</span> ?  <br /> Gosta de <span id="desafios">desafios </span> ?  <br /> Quer aprender a <span id="desenvolver">desenvolver</span> ? <br /> Não fique de fora dessa! </p>
+              <MDBBtn color="elegant" className="mb-5 mt-4"><a href="/register" className="white-text">INSCREVA-SE</a></MDBBtn>
+            </MDBContainer>
           </MDBView>
-          
+
         </header>
 
         <main>
-          
+
         </main>
       </div>
     );
