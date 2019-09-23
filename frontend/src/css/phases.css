@@ -24,4 +24,19 @@
       background: #9c27b0;
     }
   }
+
+  @media (max-width: 415px){
+    .smartphone{
+        font-size: 25px;
+        margin-bottom: -20px;
+    }
+    .iconWeb{
+      width: 70px;
+   }
+   .smartphoneH5{
+     font-size: 14px;
+   }
+   
+   
+}
   

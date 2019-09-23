@@ -5,3 +5,14 @@
 .imgRequeriments{
     border-radius: 80px;
 }
+
+@media (max-width: 415px){
+    .smartphone{
+        font-size: 25px;
+        margin-bottom: -20px;
+    }
+    #listreq{
+        font-size: 2.2vh;
+    }
+   
+}

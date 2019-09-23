@@ -8,7 +8,7 @@ export const Requirements = () => {
     return (
         <React.Fragment>
             <MDBContainer className="pb-5 mb-5">
-                <h1 className="text-center mt-5 font-weight-bold">Pré-requisitos</h1>
+                <h1 className="smartphone text-center mt-5 font-weight-bold">Pré-requisitos</h1>
                 <MDBContainer className="w-100 h-100 d-inline-block mt-5">
                     <MDBRow lg="6" md="12" sm="12">
                         <MDBCol lg="6" md="12" sm="12">

@@ -11,7 +11,7 @@ export const Dates = () => {
             <MDBContainer>
                 <MDBRow className="text-center">
                     <MDBCol className="mt-5 ">
-                    <h1 className="font-weight-bold">Atenção aos prazos!</h1>
+                    <h1 className="smartphone font-weight-bold">Atenção aos prazos!</h1>
                     </MDBCol>
                    
                 </MDBRow>

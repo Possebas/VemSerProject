@@ -5,3 +5,10 @@
     margin-right: auto;
     width: 90%;
 }
+
+@media (max-width: 415px){
+    .smartphone{
+        font-size: 25px;
+        margin-bottom: -20px;
+    }
+}
