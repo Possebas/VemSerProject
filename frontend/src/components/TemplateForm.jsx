@@ -123,7 +123,10 @@ class TemplateForm extends React.Component {
                     axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
                     .then(respCandidate => {
                       console.log(respCandidate.data)
-                      this.props.history.push("/questions");
+                      this.props.history.push({
+                        pathname: '/questions',
+                        state: { detail: respCandidate.data }
+                      })
                   }).catch(function (error) {console.log("Error that's request: " + error)})
                 }).catch(function (error) {console.log("Error that's request: " + error)})
               }).catch(function (error) {console.log("Error that's request: " + error)})

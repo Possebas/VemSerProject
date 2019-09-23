@@ -1,5 +1,6 @@
 package br.com.dbccompany.LandingPageDbc.Service;
 
+import br.com.dbccompany.LandingPageDbc.Entity.Candidate;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -41,6 +42,7 @@ public class QuestionCandidateService extends AbstractService<QuestionCandidateR
         boolean availabilityAfterTraining;
         String whatMotivates;
         String referencesThatInspire;
+        Candidate candidate;
 
         try {
             //Salva no objeto JSONObject o que o parse tratou do arquivo
@@ -59,6 +61,7 @@ public class QuestionCandidateService extends AbstractService<QuestionCandidateR
             availabilityAfterTraining = (boolean) jsonObject.get("availabilityAfterTraining");
             whatMotivates = (String) jsonObject.get("whatMotivates");
             referencesThatInspire = (String) jsonObject.get("referencesThatInspire");
+            candidate = (Candidate) jsonObject.get("candidate");
 
             //Set on atributes quiz
             quiz.setCollege(isCollege);
@@ -73,6 +76,7 @@ public class QuestionCandidateService extends AbstractService<QuestionCandidateR
             quiz.setAvailabilityAfterTraining(availabilityAfterTraining);
             quiz.setWhatMotivates(whatMotivates);
             quiz.setReferencesThatInspire(referencesThatInspire);
+            quiz.setCandidate(candidate);
         }
         catch (ParseException e) {
             e.printStackTrace();
