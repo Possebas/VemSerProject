@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c9fdc3a1-3de5-422c-8284-25f8df05a469",
+		"_postman_id": "217a386f-f0c1-447a-82e6-8465e8d22692",
 		"name": "LandingPage",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -9,7 +9,7 @@
 			"name": "GET",
 			"item": [
 				{
-					"name": "http://localhost:8080/api/country/",
+					"name": "CountryGET",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -30,7 +30,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/state/",
+					"name": "StateGET",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -51,7 +51,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/city/",
+					"name": "CityGET",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -72,7 +72,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/neighborhood/",
+					"name": "NeighborhoodGET",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -93,7 +93,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/address/",
+					"name": "AddressGET",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -114,8 +114,18 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/candidate/",
+					"name": "CandidateGET",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBkYmNjb21wYW55LmNvbS5iciIsImV4cCI6MTU2OTk1NzIyOX0.pYWRT5IluZ3vGmos7ZVZfpZgOYpaMaf2Db2hWvWpED2Tf2-BwXakfOFRyFYczYzzDF9cBxNraHUP_8tDTf0SbQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -133,71 +143,20 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "http://localhost:8080/api/admin/",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/admin/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"admin",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:8080/api/question/",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/question/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"question",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:8080/api/fileStorage/",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "PUT",
-			"item": []
+			"item": [],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "POST",
 			"item": [
 				{
-					"name": "http://localhost:8080/api/country/add",
+					"name": "CountryPOST",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -210,12 +169,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Brasil\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"name\": \"Brasil\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/country/add",
@@ -234,7 +188,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/state/add",
+					"name": "StatePOST",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -247,12 +201,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Rio Grande do Sul\",\r\n    \"country\": {\r\n    \t\"id\": 1,\r\n    \t\"name\": \"Brasil\"\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n    \"name\": \"Rio Grande do Sul\",\r\n    \"country\": {\r\n    \t\"id\": 1,\r\n    \t\"name\": \"Brasil\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/state/add",
@@ -271,7 +220,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/city/add",
+					"name": "CityPOST",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -284,12 +233,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Porto Alegre\",\n\t\"state\": {\n\t\t\"id\": 1,\n\t\t\"name\": \"Rio Grande do Sul\",\n\t\t\"country\": {\n\t\t\t\"id\": 1,\n\t\t\t\"name\": \"Brasil\"\n\t\t}\n\t}\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"name\": \"Porto Alegre\",\n\t\"state\": {\n\t\t\"id\": 2,\n\t\t\"name\": \"Rio Grande do Sul\",\n\t\t\"country\": {\n\t\t\t\"id\": 1,\n\t\t\t\"name\": \"Brasil\"\n\t\t}\n\t}\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/city/add",
@@ -308,7 +252,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/neighborhood/add",
+					"name": "NeighborhoodPOST",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -321,12 +265,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Passo d'Areia\",\r\n\t\"city\":{\"id\": 1,\r\n\t\t\"name\": \"Porto Alegre\",\r\n\t\t\"state\": {\r\n    \t\t\"id\": 1,\r\n    \t\t\"name\": \"Rio Grande do Sul\",\r\n    \t\t\"country\": {\r\n        \t\t\"id\": 1,\r\n        \t\t\"name\": \"Brasil\",\r\n        \t\t\"states\": []\r\n    \t},\r\n    \t\"cities\": []\r\n\t\t},\r\n\t\"neighborhoods\": []\r\n\t}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n\t\"name\": \"Passo d'Areia\",\r\n\t\"city\":{\"id\": 1,\r\n\t\t\"name\": \"Porto Alegre\",\r\n\t\t\"state\": {\r\n    \t\t\"id\": 2,\r\n    \t\t\"name\": \"Rio Grande do Sul\",\r\n    \t\t\"country\": {\r\n        \t\t\"id\": 1,\r\n        \t\t\"name\": \"Brasil\",\r\n        \t\t\"states\": []\r\n    \t},\r\n    \t\"cities\": []\r\n\t\t},\r\n\t\"neighborhoods\": []\r\n\t}\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/neighborhood/add",
@@ -345,7 +284,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/address/add",
+					"name": "AddressPOST",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -358,12 +297,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"street\": \"Andarai\",\r\n\t\"number\": 535,\r\n\t\"complement\":\"\",\r\n\t\"zipCode\": \"95487452\",\r\n\t\"neighborhood\": {\r\n\t\t\"id\": 1,\r\n    \t\"name\": \"Passo d'Areia\",\r\n    \t\"city\": {\r\n        \t\"id\": 1,\r\n        \t\"name\": \"Porto Alegre\",\r\n        \t\"state\": {\r\n            \t\"id\": 1,\r\n            \t\"name\": \"Rio Grande do Sul\",\r\n            \t\"country\": {\r\n                \t\"id\": 1,\r\n                \t\"name\": \"Brasil\",\r\n                \t\"states\": []\r\n            \t},\r\n            \t\"cities\": []\r\n        \t},\r\n        \t\"neighborhoods\": []\r\n    \t},\r\n    \t\"addresses\": []\r\n\t}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\r\n\t\"street\": \"Andarai\",\r\n\t\"number\": 535,\r\n\t\"complement\":\"\",\r\n\t\"zipCode\": \"95487452\",\r\n\t\"neighborhood\": {\r\n\t\t\"id\": 1,\r\n    \t\"name\": \"Passo d'Areia\",\r\n    \t\"city\": {\r\n        \t\"id\": 1,\r\n        \t\"name\": \"Porto Alegre\",\r\n        \t\"state\": {\r\n            \t\"id\": 2,\r\n            \t\"name\": \"Rio Grande do Sul\",\r\n            \t\"country\": {\r\n                \t\"id\": 1,\r\n                \t\"name\": \"Brasil\",\r\n                \t\"states\": []\r\n            \t},\r\n            \t\"cities\": []\r\n        \t},\r\n        \t\"neighborhoods\": []\r\n    \t},\r\n    \t\"addresses\": []\r\n\t}\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/address/add",
@@ -382,28 +316,28 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/admin/add",
+					"name": "http://localhost:8080/api/fileStorage/uploadFile/",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBkYmNjb21wYW55LmNvbS5iciIsImV4cCI6MTU2OTg4MTA4N30.l9f3caweIzWWYTUY4JltLE1ylTjGKv8T78NCBgGBtlsBP035uE93MOV0yJ-FZ-5X1CYezelazdlxuGOlPSqXxg",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\":\"test\",\n\t\"email\":\"test@test.com\",\n\t\"password\":\"123456\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/MIDGARD-1/Pictures/Brazil-Digital-Report_956353730_1536x1536.jpg"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/admin/add",
+							"raw": "http://localhost:8080/api/fileStorage/uploadFile/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -411,17 +345,20 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"admin",
-								"add"
+								"fileStorage",
+								"uploadFile",
+								""
 							]
-						},
-						"description": "Salva um novo admin"
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "http://localhost:8080/api/candidate/add",
+					"name": "CandidatePOST",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -433,12 +370,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"teste\",\n\t\"email\":\"test@123.com\",\n\t\"password\":\"12134455\",\n\t\"cpf\":\"00745155006\",\n\t\"birthDate\":\"1985-10-02\",\n\t\"statusProcess\":\"PEENDING\",\n\t\"dateOfRegistration\":\"2017-10-02\",\n\t\"educationalInstitution\":\"ipa\",\n\t\"beenConfirmed\": false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"raw": "{\n\t\"name\": \"Murilo Israel\",\n\t\"email\": \"murilo@dbc.com\",\n\t\"password\": \"852345\",\n\t\"cpf\": \"04182484002\",\n\t\"birthDate\": \"1990-03-03\",\n\t\"statusProcess\":\"PEENDING\",\n\t\"educationalInstitution\":\"ULBRA\",\n\t\"dateOfRegistration\":\"2019-03-03\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/candidate/add",
@@ -455,56 +387,10 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "http://localhost:8080/api/question/add",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"isCollege\":true,\n\t\"course\":\"ADS\",\n\t\"educationalInstitution\":\"Puc\",\n\t\"dayShifys\":\"Noite\",\n\t\"isParticipated\":false,\n\t\"reasonsForInterest\":\"Por gostar de resolver problemas\",\n\t\"isLogicalKnowledge\":true,\n\t\"hasAvailability\":true,\n\t\"availabilityAfterTraining\":true,\n\t\"whatMotivates\":\"test\",\n\t\"referencesThatInspire\":\"test\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/question/add",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"question",
-								"add"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "http://localhost:8080/api/fileStorage/uploadFile",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

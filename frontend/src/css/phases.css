@@ -1,3 +1,27 @@
-ul{ 
-    list-style: none; 
+.iconWeb{
+   width: 100px;
 }
+
+.color-change-2x {
+	-webkit-animation: color-change-2x 2s linear infinite alternate both;
+	        animation: color-change-2x 2s linear infinite alternate both;
+}
+
+
+ @-webkit-keyframes color-change-2x {
+    0% {
+      background: #22d4a0;
+    }
+    100% {
+      background: #9c27b0;
+    }
+  }
+  @keyframes color-change-2x {
+    0% {
+      background: #22d4a0;
+    }
+    100% {
+      background: #9c27b0;
+    }
+  }
+  

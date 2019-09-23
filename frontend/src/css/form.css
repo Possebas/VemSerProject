@@ -29,6 +29,18 @@
     color: #e0f7fa;
 }
 
+.title{
+    color: #e0f7fa;
+}
+
 .colorLabel{
     color: white;
+}
+
+.padingRadio{
+    padding-left: 10px;
+}
+
+.mt-45{
+    margin-top: 36px;
 }

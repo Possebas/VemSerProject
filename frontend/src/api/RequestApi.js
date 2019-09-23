@@ -3,127 +3,144 @@ import * as axios from 'axios';
 export default class RequestApi {
     constructor() {
         this.data = []
-        this.baseUrl = `http://localhost:8080/`
+        this.baseUrl = `http://localhost:8080`
+        this.zipCodeUrl = `http://viacep.com.br/ws`
     }
 
     async reqApi( url, typeReq, id ) {
         url += typeReq ?  `${typeReq}` : ''
-        console.log("URL 1", url)
-        url += id ? `:${id}` : ''
-        console.log("URL 2", url)
-        axios.get(`${this.baseUrl}${url}`, { 
-        })
+        url += id ? `/${id}` : ''
+        axios.get(`${this.baseUrl}${url}`)
         .then( resp => {
             this.data = resp.data
-            console.log(this.data)
+            console.log(" Chegando na api ", resp.data)
         }).catch( function ( error ) {
             console.log( "Error that's request: "+url+"  "+ error )
         })
     }
 
-    retornaTipo(tipoRequisicao) {
-        if(tipoRequisicao == "ALL"){
-            return "/"
-        }
-        if(tipoRequisicao == "POST"){
-            return "/add"
-        }
-        if(tipoRequisicao == "EDIT"){
-            return "/edit/"
-        }
-        if(tipoRequisicao == "DELETE"){
-            return "/delete/"
+    async reqZipCode( id ) {
+        let url = `/${id}/json/`
+        axios.get(`${this.zipCodeUrl}${url}`)
+        .then( resp => {
+            this.data = resp.data
+            console.log(" Chegando na api ", resp.data)
+        }).catch( function ( error ) {
+            console.log( "Error that's request: "+url+"  "+ error )
+        })
+    }
+
+    returnType(typeRequest) {
+        switch (typeRequest) {
+            case "ALL" || "GET":
+                return "/"
+            case "POST":
+                return "/add"
+            case "EDIT":
+                return "/edit/"
+            case "DELETE":
+                return "/delete/"
+            default:
+                break;
         }
     }
 
-    requestAddress(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestAddress(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/address', reqs )
     }
 
-    requestAddressID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestAddressID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/address', reqs, id )
     }
 
-    requestAdmin(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestAdmin(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/admin', reqs )
     }
 
-    requestAdminID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestAdminID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/admin', reqs, id )
     }
 
-    requestCandidate(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
-        this.reqApi( '/api/candidate', reqs )
+    requestCandidate(typeRequest) {
+        var reqs = this.returnType(typeRequest)
+        this.reqApi( '/api/candidate/', reqs )
     }
     
-    requestCandidateID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
-        this.reqApi( '/api/candidate', reqs, id )
+    requestCandidateID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
+        this.reqApi( '/api/candidate/', reqs, id )
     }
 
-    requestCity(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestCity(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/city', reqs )
     }
 
-    requestCityID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestCityID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/city', reqs, id )
     }
 
-    requestCountry(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestCountry(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/country', reqs )
     }
 
-    requestCountryID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestCountryID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/country', reqs, id )
     }
 
-    requestFileStorage(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestFileStorage(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/fileStorage', reqs )
     }
 
-    requestFileStorageID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestFileStorageID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/fileStorage', reqs, id)
     }
 
-    requestNeighborhood(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestNeighborhood(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/neighborhood', reqs )
     }
 
-    requestNeighborhoodID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestNeighborhoodID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/neighborhood', reqs, id )
     }
 
-    requestQuestion(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestQuestion(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/question', reqs )
     }
 
-    requestQuestionID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestQuestionID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/question', reqs, id )
     }
 
-    requestState(tipoRequisicao) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestState(typeRequest) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/state', reqs )
     }
 
-    requestStateID(tipoRequisicao, id) {
-        var reqs = this.retornaTipo(tipoRequisicao)
+    requestStateID(typeRequest, id) {
+        var reqs = this.returnType(typeRequest)
         this.reqApi( '/api/state', reqs, id )
+    }
+
+    requestZipCode(id) {
+        this.reqZipCode(id)
+    }
+
+    get zipCode() {
+        return this.data;
     }
 
 }

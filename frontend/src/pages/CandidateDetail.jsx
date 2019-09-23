@@ -10,16 +10,14 @@ import { MDBContainer } from 'mdbreact';
 import '../css/painel.css';
 
 export default class CandidateDetail extends Component {
-
-    /* constructor(props){
+    constructor(props){
         super(props)
-    } */
-
+    }
     render() {
         return (
             <React.Fragment>
                 <div id="painelbackground">
-                <PainelNavBar/>
+                <PainelNavBar name= "VemSer"/>
                 <MDBContainer className="px-3 py-5">
                     <h4 className="pt-3"> Confira seu status: </h4>
                     <ProgressBar/>

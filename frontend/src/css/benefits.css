@@ -1,0 +1,34 @@
+.photo {
+    position: relative;
+    color: #fff;
+    background: url('../images/foto.jpeg') no-repeat center top / cover;
+    background-attachment: fixed;
+}
+
+.photo:before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.9;
+    background: rgb(156,39,176); /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  rgba(156,39,176,1) 18%, rgba(34,212,160,1) 66%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  rgba(156,39,176,1) 18%,rgba(34,212,160,1) 66%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  rgba(156,39,176,1) 18%,rgba(34,212,160,1) 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c27b0', endColorstr='#22d4a0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.textPhoto{
+    position: relative;
+    z-index: 10;
+}
+.textPhoto p{
+    font-size: 18px;
+}
+
+
+
