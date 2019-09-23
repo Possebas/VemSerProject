@@ -17,14 +17,16 @@
 @media(max-width: 600px){
     #map{
         width: 68vh;
-      
     }
 }
 
-@media(max-width: 400px){
+@media(max-width: 415px){
     #map{
-        width: 50vh;
-      
+        width: 60vh;
+    }
+    .smartphone{
+        font-size: 25px;
+        margin-bottom: -20px;
     }
 }
 

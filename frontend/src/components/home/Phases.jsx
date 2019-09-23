@@ -11,27 +11,27 @@ import code from '../../images/phases/binary-code.png'
 export const Phases = () => {
     return (
         <React.Fragment>
-            <div className="pt-4 pb-4 color-change-2x">
-                <h1 className="text-center mt-5 font-weight-bold">Etapas do processo seletivo</h1>
+            <div className="pt-4 pb-4 color-change-2x ">
+                <h1 className="smartphone text-center mt-5 font-weight-bold">Etapas do processo seletivo</h1>
                 <MDBContainer className="w-100 h-100 pt-5 mb-5">
 
                     <MDBRow className="mt-1 mb-5">
                         <MDBCol size="4" className="text-center" >
                             <img className="iconWeb" src={group}></img>
                             <div className="mt-2">
-                                <h5>1 - Inscrições online</h5>
+                                <h5 className="smartphoneH5">1 - Inscrições online</h5>
                             </div>
                         </MDBCol>
                         <MDBCol size="4" className="text-center" >
                             <img className="iconWeb" src={web}></img>
                             <div className="mt-2">
-                                <h5>2 - Formulário de <br/> perguntas online</h5>
+                                <h5 className="smartphoneH5">2 - Formulário de <br/> perguntas online</h5>
                             </div>
                         </MDBCol>
                         <MDBCol size="4" className="text-center" >
                             <img className="iconWeb" src={code}></img>
                             <div className="mt-2">
-                                <h5>3 - Prova de lógica <br/> de programação</h5>
+                                <h5 className="smartphoneH5">3 - Prova de lógica <br/> de programação</h5>
                             </div>
                         </MDBCol>
                     </MDBRow>
@@ -40,13 +40,13 @@ export const Phases = () => {
                         <MDBCol size="6" className="text-center my-auto mx-autov" >
                             <img className="iconWeb" src={neurology}></img>
                             <div className="mt-2">
-                                <h5>4 - Avaliação psicológica</h5>
+                                <h5 className="smartphoneH5">4 - Avaliação psicológica</h5>
                             </div>
                         </MDBCol>
                         <MDBCol size="6" className="text-center my-auto mx-auto" >
                             <img className="iconWeb" src={interview}></img>
                             <div className="mt-2">
-                                <h5>5 - Entrevistas presenciais</h5>
+                                <h5 className="smartphoneH5">5 - Entrevistas presenciais</h5>
                             </div>
                         </MDBCol>
                     </MDBRow>
