@@ -9,3 +9,22 @@
     border-width: 2px;
 }
 
+#map{
+    width: 600px;
+    height: 450px;
+}
+
+@media(max-width: 600px){
+    #map{
+        width: 68vh;
+      
+    }
+}
+
+@media(max-width: 400px){
+    #map{
+        width: 50vh;
+      
+    }
+}
+

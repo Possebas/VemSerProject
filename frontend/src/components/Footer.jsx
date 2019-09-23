@@ -40,7 +40,7 @@ const Footer = () => {
           </MDBCol>
           <MDBCol md="2" lg="4" xl="6" className="mx-auto mt-3">
             <h6 className="text-uppercase mb-4 font-weight-bold colorH6">Conheça a DBC</h6>
-            <iframe title="player" width="560" height="315" src="https://www.youtube.com/embed/D4TGd-RJt10"
+            <iframe id="video" title="player" width="560" height="315" src="https://www.youtube.com/embed/D4TGd-RJt10"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen></iframe>
           </MDBCol>
