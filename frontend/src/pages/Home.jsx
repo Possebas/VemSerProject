@@ -11,6 +11,7 @@ import Requirements from '../components/home/Requirements';
 import Location from '../components/home/Location';
 import Comments from '../components/home/Comments';
 import Benefits from '../components/home/Benefits';
+import Dates from '../components/home/Dates'
 
 export default class Home extends Component {
     constructor(props){
@@ -23,6 +24,7 @@ export default class Home extends Component {
                 <WhatIs id="whatis" key="whatis" />
                 <Requirements id="requirements" key="requirements"/>
                 <Phases />
+                <Dates/>
                 <Technology id="technology" key="technology" />
                 <Comments />
                 <Benefits/>
