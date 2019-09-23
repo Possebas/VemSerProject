@@ -1,27 +1,30 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBInput, MDBFormInline, MDBIcon, MDBBtn } from "mdbreact";
-import '../css/formQuestions.css'
+import { MDBRow, MDBCol, MDBInput, MDBIcon, MDBBtn } from "mdbreact";
+import '../css/formQuestions.css';
 import '../css/form.css';
 
 
 class TemplateFormQuestions extends React.Component {
-  state = {
-    isCollege: "",
-    course: "",
-    educationalInstitution: "",
-    dayShifys: "",
-    isParticipated: "",
-    reasonsForInterest: "",
-    otherReason: "",
-    isLogicalKnowledge: "",
-    hasAvailability:"",
-    availabilityAfterTraining: "",
-    whatMotivate: "",
-    referencesThatInspire:"",
-    radio1: 0,
-    radio2: 0
-
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      isCollege: "",
+      course: "",
+      educationalInstitution: "",
+      dayShifys: "",
+      isParticipated: "",
+      reasonsForInterest: "",
+      otherReason: "",
+      isLogicalKnowledge: "",
+      hasAvailability:"",
+      availabilityAfterTraining: "",
+      whatMotivate: "",
+      referencesThatInspire:"",
+      radio1: 0,
+      radio2: 0
+    };
+  }
+  
 
   getPickerValue = (value) => {
     console.log(value);

@@ -2,7 +2,9 @@ import React from "react";
 import * as axios from 'axios';
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 import RequestApi from '../api/RequestApi';
+import PasswordStrengthMeter from './PasswordStrengthMeter';
 import '../css/form.css';
+import '../components/PasswordStrengthMeter/PasswordStrengthMeter.css';
 
 class TemplateForm extends React.Component {
   constructor(props) {
@@ -137,6 +139,7 @@ class TemplateForm extends React.Component {
   };
 
   render() {
+    const { password } = this.state;
     return (
       <div>
         <form
@@ -329,18 +332,21 @@ class TemplateForm extends React.Component {
           {/* Password */}
           <MDBRow>  
             <MDBCol className="text-uppercase">
-              <MDBInput className="white-text colorLabel"
+              <MDBInput type="password" onChange={e => this.setState({ password: e.target.value })}
+                className="white-text colorLabel" autoComplete="off"
                 value={this.state.password}
                 onChange={this.changeHandler}
                 type="password"
                 name="password"
                 label="Senha"
+                id="password"
                 required
               >
                 <div className="invalid-tooltip">
                   Campo obrigatório.
                 </div>
               </MDBInput>
+              <PasswordStrengthMeter password={password} />
             </MDBCol>
             <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
