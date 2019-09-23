@@ -6,6 +6,9 @@ export default class Candidate extends Component{
   constructor(props){
     super(props);
   };
+
+  
+
   render(){
     return(
       <React.Fragment>

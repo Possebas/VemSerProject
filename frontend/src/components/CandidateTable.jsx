@@ -1,20 +1,32 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import sendmail from "../api/sendmail";
 
-export default class CandidateTable extends Component{
-  constructor(props){
+export default class CandidateTable extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      sentInvite : this.props.sentInvite
+      sentInvite: this.props.sentInvite
     }
     this.sendInvite = this.sendInvite.bind(this);
   };
 
-  sendInvite(){
-    this.setState({sentInvite: true})
+  sendInvite() {
+    const { email } = this.props.email
+    this.setState({ sentInvite: true })
+    sendmail({
+      from: 'vemserdbc@gmail.com',
+      to: email,
+      subject: 'test sendmail',
+      html: 'Mail of test sendmail ',
+    }, function (err, reply) {
+      console.log("entrando aqui")
+      console.log(err && err.stack);
+      console.dir(reply);
+    });
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <React.Fragment>
         <tbody>
           <tr>
@@ -26,8 +38,8 @@ export default class CandidateTable extends Component{
             <td>
               {this.state.sentInvite &&
                 <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3"> Reenviar Convite </button>
-              ||
-              !this.state.sentInvite &&
+                ||
+                !this.state.sentInvite &&
                 <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>
               }
             </td>
