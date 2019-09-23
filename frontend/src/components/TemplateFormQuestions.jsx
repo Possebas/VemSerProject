@@ -219,13 +219,13 @@ class TemplateFormQuestions extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow className="mt-3 text-center justify-content-center">
-            <MDBBtn color="black" id="button" role="button">
+            <MDBBtn color="elegant" id="button" role="button">
               <div>
                 <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
-                <a href="/register">Voltar</a>
+                <a className="white-text" href="/register">Voltar</a>
             </div>
             </MDBBtn>
-            <MDBBtn color="black" id="button" type="submit">
+            <MDBBtn color="elegant" id="button" type="submit">
               <div>
                 <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
                 Enviar

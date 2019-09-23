@@ -145,7 +145,7 @@ class TemplateForm extends React.Component {
           noValidate
         >
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.name}
                 name="name"
@@ -161,7 +161,7 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.birthDate}
                 name="birthDate"
@@ -175,7 +175,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.cpf}
                 onChange={this.changeHandler}
@@ -191,7 +191,7 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.zipCode}
                 onChange={this.changeHandler}
@@ -206,7 +206,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.street}
                 onChange={this.changeHandler}
@@ -223,7 +223,7 @@ class TemplateForm extends React.Component {
           </MDBRow>
 
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.number}
                 onChange={this.changeHandler}
@@ -237,7 +237,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.complement}
                 onChange={this.changeHandler}
@@ -249,7 +249,7 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.city}
                 onChange={this.changeHandler}
@@ -263,7 +263,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.district}
                 onChange={this.changeHandler}
@@ -279,7 +279,7 @@ class TemplateForm extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.state}
                 onChange={this.changeHandler}
@@ -293,7 +293,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.parents}
                 onChange={this.changeHandler}
@@ -310,7 +310,7 @@ class TemplateForm extends React.Component {
           </MDBRow>
 
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.email}
                 onChange={this.changeHandler}
@@ -328,7 +328,7 @@ class TemplateForm extends React.Component {
           
           {/* Password */}
           <MDBRow>  
-            <MDBCol >
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.password}
                 onChange={this.changeHandler}
@@ -342,7 +342,7 @@ class TemplateForm extends React.Component {
                 </div>
               </MDBInput>
             </MDBCol>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.confirmPassword}
                 onChange={this.changeHandler}
@@ -359,7 +359,7 @@ class TemplateForm extends React.Component {
           </MDBRow>
 
           <MDBRow>
-            <MDBCol>
+            <MDBCol className="text-uppercase">
               <MDBInput className="white-text colorLabel"
                 value={this.state.education}
                 onChange={this.changeHandler}
@@ -380,9 +380,10 @@ class TemplateForm extends React.Component {
             <MDBCol>
               <div className="md-form">
                 <div className="file-field meddium">
+                  <span className="text-uppercase">Adicione seu currículo</span>
                   <div className="my-auto">
                     <MDBIcon far icon="file-pdf" size="2x" className="mr-3 ml-2" />
-                    <input type="file" />
+                    <input type="file"/>
                   </div>
                 </div>
               </div>
@@ -392,13 +393,13 @@ class TemplateForm extends React.Component {
           {/*Botões*/}
           <MDBRow>
             <MDBCol>
-              <MDBBtn color="black" role="button">
+              <MDBBtn color="elegant" role="button">
                 <div>
                   <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
-                  <a href="/">Voltar</a>
+                  <a className="white-text" href="/">Voltar</a>
                 </div>
               </MDBBtn>
-              <MDBBtn color="black" id="button" type="submit">
+              <MDBBtn color="elegant" id="button" type="submit">
                 <div>
                   <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
                   Próximo

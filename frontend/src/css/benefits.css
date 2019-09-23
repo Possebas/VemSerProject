@@ -1,7 +1,7 @@
 .photo {
     position: relative;
     color: #fff;
-    background: url('../images/foto.jpg') no-repeat center / cover;
+    background: url('../images/foto.jpeg') no-repeat center top / cover;
     background-attachment: fixed;
 }
 
