@@ -39,7 +39,7 @@ const CarouselComments = () => {
                 <MDBView>
                         <MDBRow className="my-5 ">
                             <MDBCol className="text-center">
-                                <div className="card" id="borderNone">
+                                <div className="cardizinho" id="borderNone">
                                     <div className="view overlay">
                                         <img className="card-img-center pt-2" src={evelin} alt="Card image cap"></img>
                                     </div>
@@ -58,7 +58,7 @@ const CarouselComments = () => {
                     <MDBContainer>
                         <MDBRow className="my-5">
                             <MDBCol>
-                                <div className="card" id="borderNone">
+                                <div className="cardizinho" id="borderNone">
                                     <div className="view overlay">
                                         <img className="card-img-center pt-2" src={murilo} alt="Card image cap"></img>
                                     </div>
@@ -78,7 +78,7 @@ const CarouselComments = () => {
                     <MDBContainer>
                         <MDBRow className="my-5 ">
                             <MDBCol>
-                                <div className="card" id="borderNone">
+                                <div className="cardizinho" id="borderNone">
                                     <div className="view overlay">
                                         <img className="card-img-center pt-2" src={alexandre} alt="Card image cap"></img>
                                     </div>
@@ -99,7 +99,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={possebon} alt="Card image cap"></img>
                                         </div>
@@ -121,7 +121,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={alexandra} alt="Card image cap"></img>
                                         </div>
@@ -144,7 +144,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={jaqueline} alt="Card image cap"></img>
                                         </div>
@@ -167,7 +167,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={douglas} alt="Card image cap"></img>
                                         </div>
@@ -190,7 +190,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={igor} alt="Card image cap"></img>
                                         </div>
@@ -213,7 +213,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={rodrigo} alt="Card image cap"></img>
                                         </div>
@@ -236,7 +236,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={guilherme} alt="Card image cap"></img>
                                         </div>
@@ -258,7 +258,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={jonas} alt="Card image cap"></img>
                                         </div>
@@ -280,7 +280,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={lucas} alt="Card image cap"></img>
                                         </div>
@@ -302,7 +302,7 @@ const CarouselComments = () => {
                         <MDBRow className="my-5">
                             <MDBCol>
                                 <MDBContainer className="w-100">
-                                    <div className="card" id="borderNone">
+                                    <div className="cardizinho" id="borderNone">
                                         <div className="view overlay">
                                             <img className="card-img-center pt-2" src={gustavo} alt="Card image cap"></img>
                                         </div>
