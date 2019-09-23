@@ -128,21 +128,142 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c222d4a0', e
     }
   }
   
-
-
-
-
-/* @media (min-width: 600px){
-
-    #titleNav{
-        font-size: 20px;
-        line-height: 25px;
-        padding-top: 15%;
+  @media (max-width: 600px) {
+    #tituloVS{
+        color: rgb(60, 85, 130);
+        font-size: 50px;
+        line-height: 1px;
+        word-spacing: -15px;
     }
     
-
-    .view{
-        height: 70vh !important;
+    #tituloVS1{
+        color: rgb(60, 85, 130);
+        font-size: 50px;
+        line-height: 20px;
+        margin-top: 100px;
+        margin-right: 226px;
+        margin-bottom: 18px;
     }
+    #tituloVSSpan{
+        color: rgb(60, 85, 130);
+        font-size: 85px;
+        
+    }
+    #titleNav{
+        font-size: 25px;
+        line-height: 35px;   
+        margin-top:30px;
+    }
+    
+    #tecnologia{
+        color: rgb(59, 58, 58);
+    }
+    
+    #desafios{
+        color:rgb(59, 58, 58);
+    }
+    
+    #desenvolver{
+        color: rgb(59, 58, 58);
+    }
+    .videoCover{
+        position: absolute;
+        z-index: -1;
+        width: '200vw';
+        height: 600px;
+        top: 0;
+        left: 0;
+    }
+}
 
-}  */
+@media (max-width: 899px) {
+    #tituloVS{
+        color: rgb(60, 85, 130);
+        font-size: 60px;
+        line-height: 8px;
+        word-spacing: -15px;
+    }
+    
+    #tituloVS1{
+        color: rgb(60, 85, 130);
+        font-size: 60px;
+        line-height: 20px;
+        margin-top: 60px;
+        margin-right: 281px;
+        margin-bottom: 18px;
+    }
+    #tituloVSSpan{
+        color: rgb(60, 85, 130);
+        font-size: 105px;
+        
+    }
+    #titleNav{
+        font-size: 35px;
+        line-height: 43px;   
+        margin-top:40px;
+    }
+    
+    #tecnologia{
+        color: rgb(59, 58, 58);
+    }
+    
+    #desafios{
+        color:rgb(59, 58, 58);
+    }
+    
+    #desenvolver{
+        color: rgb(59, 58, 58);
+    }
+    .videoCover{
+        position: absolute;
+        z-index: -1;
+        width: '200vw';
+        height: 660px;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 1200px){
+    .navBar{
+        font-size: 12.5px;
+    }
+    .videoCover{
+        position: absolute;
+        z-index: -1;
+        width: '200vw';
+        height: 760px;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 1050px){
+    .navBar{
+        font-size: 11px;
+    }
+    .videoCover{
+        position: absolute;
+        z-index: -1;
+        width: '200vw';
+        height: 650px;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 942px){
+    .navBar{
+        font-size: 10px;
+        word-spacing: 1px;
+    }
+}
+
+@media (max-width: 899px){
+    .navBar{
+        font-size: 9px;
+        word-spacing: 1px;
+    }
+}
+
+

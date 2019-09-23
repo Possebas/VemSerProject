@@ -23,7 +23,7 @@ export const Benefits = () => {
 
                             <MDBCol>
                                 <MDBIcon className="white-text pr-3 mb-3 mt-3" size="5x" icon="briefcase" />
-                                <p>Possibilidade de ser efetivado após o treinamentos e trabalhar em uma empresa com reconhecimento <br /> Great Place to Work.</p>
+                                <p>Possibilidade de ser efetivado após o treinamento e trabalhar em uma empresa com reconhecimento <br /> Great Place to Work.</p>
                             </MDBCol>
 
                             <MDBCol >

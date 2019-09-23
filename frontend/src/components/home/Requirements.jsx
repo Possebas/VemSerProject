@@ -24,7 +24,7 @@ export const Requirements = () => {
                             <ul id="listreq"className="list-group list-group-flush">
                                 <li className="list-group-item"><i className="mr-3 ml-2 my-2 fas fa-graduation-cap" aria-hidden="true"></i><span className="black-text">Possuir conhecimento em Lógica de programação</span></li>
                                 <li className="list-group-item"><i className="mr-3 ml-2 my-2 fas fa-book"></i><span className="black-text">Estar matriculado em um curso de TI (técnico ou superior)</span></li>
-                                <li className="list-group-item"><i className="mr-3 ml-2 my-2 fas fa-clock"></i><span className="black-text">Disponibilidade de horário durante as tardes</span></li>
+                                <li className="list-group-item"><i className="mr-3 ml-2 my-2 fas fa-clock"></i><span className="black-text">Disponibilidade de horário no turno da tarde</span></li>
                             </ul>
                         </MDBCol>
                     </MDBRow>

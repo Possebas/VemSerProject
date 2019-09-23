@@ -17,12 +17,9 @@ import {
 import { BrowserRouter as Router } from 'react-router-dom';
 import Cover from 'react-video-cover';
 
-
 /* Image and css */
 import "../css/navbar.css"
-import background from "../images/fundoDBC.jpg";
 import logoVemSer from '../images/logoVemSer.png';
-import { isAbsolute } from 'path';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -53,13 +50,6 @@ class NavBar extends React.Component {
       muted: true,
       loop: true,
     }
-    // const style = {
-    //   width: '100vw',
-    //   height: '100vh',
-    //   top: 0,
-    //   left: 0,
-    //   zIndex: -1,
-    // };
     return (
       <div>
         <header>
@@ -75,8 +65,8 @@ class NavBar extends React.Component {
                 </MDBContainer>
               </MDBNavbarBrand>
               {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
-              <MDBCollapse isOpen={this.state.collapse} navbar >
-                <MDBNavbarNav right >
+              <MDBCollapse isOpen={this.state.collapse} navbar className="navBar">
+                <MDBNavbarNav right>
                   <MDBNavItem className="text-uppercase under mr-2 ">
                     <MDBNavLink href="#whatis" to="#whatis" >O que é?</MDBNavLink>
                   </MDBNavItem>
