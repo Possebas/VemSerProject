@@ -45,7 +45,7 @@ const CarouselComments = () => {
                                     </div>
                                     <div id="msg" className="text-center">
                                         <h4 className="card-title white-text">Evelin Fausto</h4>
-                                        <p className="card-text white-text mt-4 mb-2">Esse programa é incrivel, alunos increveis, tudo é incrivel. O texto tem que ser grando para teste então estou usando aqui como exemplo, vou falar uns blá blá blá como hagatanga, lulamolusco bob espoja, filme de terror quarteto fantastico , banda dejavu, dj juninho porugal é show parara parara parara rarara rara</p>
+                                        <p className="card-text white-text mt-4 mb-2">Eu queria muito entrar na area de desenvolvimento e a DBC me deu essa oportunidade, participar do projeto VemSerDBC, o vemser me mostrou muito principalmente como é trabalhar em equipe, quais ferramentas se usam oque e como é começar um projeto e ir até o fim, então eu tenho só a agradecer. Obrigada pela oportunidade de participar desse projeto incrível, e parabéns por dar essa oportunidade a todos que estão iniciando. </p>
                                     </div>
                                 </div>
                             </MDBCol>
