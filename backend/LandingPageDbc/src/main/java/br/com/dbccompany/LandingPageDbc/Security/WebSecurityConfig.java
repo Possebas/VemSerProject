@@ -33,6 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/city/").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/state/").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/country/").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/email/").permitAll()
                 .anyRequest().authenticated()
                 .and().cors()
                 .and()
