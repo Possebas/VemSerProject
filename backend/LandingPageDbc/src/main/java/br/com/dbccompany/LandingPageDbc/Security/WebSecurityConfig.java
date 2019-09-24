@@ -33,7 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/city/").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/state/").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/country/").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/email/").permitAll()
                 .anyRequest().authenticated()
                 .and().cors()
                 .and()
@@ -44,8 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("admin@dbccompany.com.br")
-                .password("{noop}admin")
+                .withUser("teste@dbccompany.com.br")
+                .password("{noop}1234")
                 .roles("ADMIN");
     }
 }

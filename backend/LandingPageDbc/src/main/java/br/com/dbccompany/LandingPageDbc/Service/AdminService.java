@@ -26,7 +26,10 @@ public class AdminService extends AbstractService<AdminRepository, Admin> {
     public Admin getAdmin(AccountCredentials user){
         Admin admin = super.repository.findAdminByEmail(user.getEmail());
         String passwordUser = Cryptography.md5(user.getPassword());
-        if(admin.getPassword().equals(passwordUser)){
+        if(admin.getPassword().equals(passwordUser)) {
+            AccountCredentials nvUser = new AccountCredentials();
+            nvUser.setEmail(admin.getEmail());
+            nvUser.setPassword(admin.getPassword());
             return admin;
         }
         return null;
