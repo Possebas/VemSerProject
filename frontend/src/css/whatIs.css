@@ -1,6 +1,6 @@
 #text-comentarios{
-    font-size: 26px;
-    line-height: 35px;
+    font-size: 17px;
+    line-height: 30px;
 }
 
 #test{
@@ -23,8 +23,9 @@
         height: 40vh;
     }
     #text-comentarios{
-        font-size: 15px;
+        font-size: 13px;
         line-height: 20px;
+        margin-bottom: 40px;
     }
     .mt-6{
         margin-top: 90px;
