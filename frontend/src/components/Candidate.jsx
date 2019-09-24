@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
+import * as axios from 'axios';
 import CandidateTable from './CandidateTable';
 import {MDBCol} from "mdbreact";
 
 export default class Candidate extends Component{
   constructor(props){
     super(props);
+    this.baseUrl = `http://localhost:8080`;
   };
+
+  componentDidMount() {
+      axios.get(`${this.baseUrl}/api/question`)
+          .then(respCandidate => {
+              console.log("resp",respCandidate);
+      });
+  }
 
   render(){
     return(

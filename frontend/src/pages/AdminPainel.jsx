@@ -31,7 +31,7 @@ export default class AdminPainel extends Component {
         const config = { headers: { Authorization: localStorage.getItem("Authorization") } }
         axios.get(`${this.baseUrl}/api/candidate/`, (config))
             .then(resp => {
-                this.setState({
+               this.setState({
                     oldList: resp.data,
                     list: resp.data
                 })
@@ -99,8 +99,6 @@ export default class AdminPainel extends Component {
             }
         }
     }
-
-
     render() {
         return (
             <React.Fragment>
