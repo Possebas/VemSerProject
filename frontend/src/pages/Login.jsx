@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import {MDBContainer} from 'mdbreact';
 import { login } from "../api/LoginAuth";
+import RequestApi from '../api/RequestApi';
+import * as axios from 'axios';
 
 /* Components */
 import TemplateLogin from '../components/TemplateLogin';
@@ -9,10 +11,13 @@ import TemplateLogin from '../components/TemplateLogin';
 /* Styles */
 import '../css/login.css';
 import config from '../api/Config';
+import { jsxClosingElement } from '@babel/types';
 
 export default class Login extends Component {
     constructor(props){
         super(props);
+        this.backData = new RequestApi()
+        this.baseUrl = `http://localhost:8080`
         this.state = {
             email: '',
             password: ''
@@ -27,29 +32,45 @@ export default class Login extends Component {
         })
     }
 
+    verificaTipoUsuario(email){
+        const dominio = email.split("@")[1]
+        if(dominio === 'dbccompany.com.br') {
+            return "admin";
+         }else{
+            return "candidate";
+         }
+    }    
+
     logar = async e => { 
         e.preventDefault();
-
         const { email, password } = this.state
+        const tipoUsuario = this.verificaTipoUsuario(email);
+        let usuario = {
+            email:email,
+            password:password
+        }
         try {
-            const response = await config.post("/login", { email, password });
-            login(response.headers.authorization);
-            const dominio = this.state.email.split("@")[1]
-            if(dominio === 'dbccompany.com.br') {
-                this.props.history.push("/admin");
-            } else {
-                this.props.history.push("/candidateDetail");
-            }
-            console.log(dominio);
-        }catch (err) {
-            alert("Email ou senha inválida")
+            axios.post(`${this.baseUrl}/api/${tipoUsuario}/login`, usuario)
+                .then(respUsuario => {
+                    console.log("resp",usuario = respUsuario.data);
+                    //login(response.headers.authorization);
+
+                    if(tipoUsuario === "admin"){
+                        this.props.history.push({
+                            pathname: '/admin',
+                          })
+                    }else{
+                        this.props.history.push({
+                            pathname: `/candidateDetail/${respUsuario.data.id}`,
+                            state: { detail: respUsuario.data }
+                          })
+                    }
+
+                }).catch(function (error) {console.log("Error that's request: " + error)}
+        )} catch (erro) {
+            console.log("Erro na tentativa de salvar")
         }
     }
-
-
-
-
-
     render() {
 
         return (

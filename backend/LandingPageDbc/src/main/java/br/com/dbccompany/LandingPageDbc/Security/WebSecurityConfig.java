@@ -16,6 +16,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().frameOptions().sameOrigin().and()
                 .csrf().disable().authorizeRequests()
+                .antMatchers(HttpMethod.POST, "/api/admin/add").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/admin/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/candidate/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/candidate/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/candidate/add").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/question/add").permitAll()
@@ -39,8 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("admin@teste.com.br")
-                .password("{noop}admin")
+                .withUser("teste@dbccompany.com.br")
+                .password("{noop}1234")
                 .roles("ADMIN");
     }
 }
