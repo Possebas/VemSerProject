@@ -13,7 +13,6 @@ export default class RequestApi {
         axios.get(`${this.baseUrl}${url}`)
         .then( resp => {
             this.data = resp.data
-            console.log(" Chegando na api ", resp.data)
         }).catch( function ( error ) {
             console.log( "Error that's request: "+url+"  "+ error )
         })
@@ -24,7 +23,6 @@ export default class RequestApi {
         axios.get(`${this.zipCodeUrl}${url}`)
         .then( resp => {
             this.data = resp.data
-            console.log(" Chegando na api ", resp.data)
         }).catch( function ( error ) {
             console.log( "Error that's request: "+url+"  "+ error )
         })

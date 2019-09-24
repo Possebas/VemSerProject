@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuestionsCandidate from './QuestionsCandidate';
+import * as axios from 'axios';
 
 export default class CandidateTable extends Component {
   constructor(props) {
@@ -11,7 +12,10 @@ export default class CandidateTable extends Component {
   }
 
   sendInvite() {
-    this.setState({sentInvite: true})
+    axios.post(`${this.baseUrl}/api/email/${this.props.email}`)
+    .then(respCandidate => { 
+      console.log(respCandidate.data)
+      this.setState({sentInvite: true})});
   }
 
   render() {
@@ -33,7 +37,7 @@ export default class CandidateTable extends Component {
               }
             </td>
             <td>
-              <QuestionsCandidate candidate={this.props.list !== null ? this.props.list : ''}/>
+              <QuestionsCandidate candidate={this.props.candidate}/>
             </td>
           </tr>
         </tbody>

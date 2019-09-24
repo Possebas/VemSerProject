@@ -5,8 +5,7 @@ export default class QuestionsCandidate extends Component{
   constructor(props){
     super(props);
     this.state = { 
-      visible: false,
-      candidate: this.props.candidate
+      visible: false
     };
   };
 
@@ -39,7 +38,20 @@ export default class QuestionsCandidate extends Component{
         <Modal title="Informações do candidato: " visible={this.state.visible}
           onOk={this.handleOk} onCancel={this.handleCancel}
         >
-          {console.log(this.state)}
+          {this.props.candidate.name}<br/>
+          {this.props.candidate.birthDate}<br/>
+          
+          Endereço:<br/>
+          {this.props.candidate.street}, 
+          {this.props.candidate.number}<br/>
+          {this.props.candidate.complement} -
+          {this.props.candidate.district}<br/>
+          {this.props.candidate.city} -
+          {this.props.candidate.state} /
+          {this.props.candidate.parents} <br/>
+
+          Instituição de Ensino:<br/>
+          {this.props.candidate.education}
         </Modal>
       </div>
     );

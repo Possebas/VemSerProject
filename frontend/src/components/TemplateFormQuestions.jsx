@@ -1,6 +1,6 @@
 import React from "react";
 import * as axios from 'axios';
-import { MDBRow, MDBCol, MDBInput, MDBFormInline, MDBIcon, MDBBtn } from "mdbreact";
+import { MDBRow, MDBCol, MDBInput, MDBIcon, MDBBtn } from "mdbreact";
 import RequestApi from '../api/RequestApi';
 import '../css/formQuestions.css'
 import '../css/form.css';
