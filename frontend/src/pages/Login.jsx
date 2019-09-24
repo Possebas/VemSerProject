@@ -49,26 +49,27 @@ export default class Login extends Component {
             email:email,
             password:password
         }
+        
         try {
             axios.post(`${this.baseUrl}/api/${tipoUsuario}/login`, usuario)
                 .then(respUsuario => {
                     console.log("resp",usuario = respUsuario.data);
+                    //const response = axios.post("/login", { email, password })
                     //login(response.headers.authorization);
-
+                    console.log("aki");
                     if(tipoUsuario === "admin"){
                         this.props.history.push({
                             pathname: '/admin',
                           })
                     }else{
-                        this.props.history.push({
-                            pathname: `/candidateDetail/${respUsuario.data.id}`,
-                            state: { detail: respUsuario.data }
-                          })
+                        this.props.history.push("/candidateDetail/", { ...response })
                     }
 
-                }).catch(function (error) {console.log("Error that's request: " + error)}
+                }).catch(function (error) {
+                    
+                }
         )} catch (erro) {
-            console.log("Erro na tentativa de salvar")
+
         }
     }
     render() {
@@ -77,7 +78,7 @@ export default class Login extends Component {
             <MDBContainer fluid id="login" className="mh-100">
                     <h2 id="titulo" className="pt-3 pb-2"><span id="welcome" > Bem vindo, </span> Vem Ser!</h2>
                     <TemplateLogin logar={ this.logar.bind( this ) } trocaValoresState={ this.trocaValoresState } />
-                    <div className="mt-5 text-center font-weight-bold">&copy; 2018 DBC Company — Todos os direitos reservados</div>
+                    <div className="mt-5 text-center font-weight-bold">&copy; {new Date().getFullYear()} DBC Company — Todos os direitos reservados</div>
             </MDBContainer >
         )
     }

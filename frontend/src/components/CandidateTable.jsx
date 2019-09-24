@@ -5,13 +5,16 @@ import * as axios from 'axios';
 export default class CandidateTable extends Component {
   constructor(props) {
     super(props);
+    this.baseUrl = `http://localhost:8080`
     this.state = {
       sentInvite: this.props.sentInvite
     }
     this.sendInvite = this.sendInvite.bind(this);
+    
   }
 
   sendInvite() {
+    console.log(this.props.email)
     axios.post(`${this.baseUrl}/api/email/${this.props.email}`)
     .then(respCandidate => { 
       console.log(respCandidate.data)
@@ -30,7 +33,7 @@ export default class CandidateTable extends Component {
             <td>{this.props.statusProcess}</td>
             <td>
               {this.state.sentInvite &&
-                <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3"> Reenviar Convite </button>
+                <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendInvite}> Reenviar Convite </button>
                 ||
                 !this.state.sentInvite &&
                 <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>
