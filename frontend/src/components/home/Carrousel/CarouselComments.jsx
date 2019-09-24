@@ -28,7 +28,7 @@ const CarouselComments = () => {
     <MDBContainer id="container100">
       <MDBCarousel
         activeItem={1}
-        length={13}
+        length={10}
         showControls={true}
         showIndicators={true}
         className="z-depth-1"
@@ -93,7 +93,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="4">
+            {/* <MDBCarouselItem itemId="4">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -113,9 +113,9 @@ const CarouselComments = () => {
                         </MDBRow>
                     </MDBContainer>
                 </MDBView>
-            </MDBCarouselItem>
+            </MDBCarouselItem> */}
 
-            <MDBCarouselItem itemId="5">
+            <MDBCarouselItem itemId="4">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -138,7 +138,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="6">
+            <MDBCarouselItem itemId="5">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -161,7 +161,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="7">
+            <MDBCarouselItem itemId="6">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -184,53 +184,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="8">
-                <MDBView>
-                    <MDBContainer>
-                        <MDBRow className="my-5">
-                            <MDBCol>
-                                <MDBContainer className="w-100">
-                                    <div className="cardizinho" id="borderNone">
-                                        <div className="view overlay">
-                                            <img className="card-img-center pt-2" src={igor} alt="Card image cap"></img>
-                                        </div>
-                                        <div id="msg" className="text-center">
-                                            <h4 className="card-title white-text">Igor Ceriotti</h4>
-                                            {/* <hr className="white"></hr> */}
-                                            <p className="card-text white-text mt-4 mb-2">"  "</p>
-                                        </div>
-                                    </div>
-                                </MDBContainer>
-                            </MDBCol> 
-                        </MDBRow>
-                    </MDBContainer>
-                </MDBView>
-            </MDBCarouselItem>
-
-            <MDBCarouselItem itemId="9">
-                <MDBView>
-                    <MDBContainer>
-                        <MDBRow className="my-5">
-                            <MDBCol>
-                                <MDBContainer className="w-100">
-                                    <div className="cardizinho" id="borderNone">
-                                        <div className="view overlay">
-                                            <img className="card-img-center pt-2" src={rodrigo} alt="Card image cap"></img>
-                                        </div>
-                                        <div id="msg" className="text-center">
-                                            <h4 className="card-title white-text">Rodrigo Abreu</h4>
-                                            {/* <hr className="white"></hr> */}
-                                            <p className="card-text white-text mt-4 mb-2">""</p>
-                                        </div>
-                                    </div>
-                                </MDBContainer>
-                            </MDBCol> 
-                        </MDBRow>
-                    </MDBContainer>
-                </MDBView>
-            </MDBCarouselItem>
-
-            <MDBCarouselItem itemId="10">
+            <MDBCarouselItem itemId="7">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -252,7 +206,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="11">
+            <MDBCarouselItem itemId="8">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -274,7 +228,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="12">
+            <MDBCarouselItem itemId="9">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">
@@ -296,7 +250,7 @@ const CarouselComments = () => {
                 </MDBView>
             </MDBCarouselItem>
 
-            <MDBCarouselItem itemId="13">
+            <MDBCarouselItem itemId="10">
                 <MDBView>
                     <MDBContainer>
                         <MDBRow className="my-5">

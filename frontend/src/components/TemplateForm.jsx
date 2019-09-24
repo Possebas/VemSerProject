@@ -386,7 +386,7 @@ class TemplateForm extends React.Component {
           </MDBRow>
 
           {/* Upload de arquivo */}
-          <MDBRow>
+          {/* <MDBRow>
             <MDBCol>
               <div className="md-form">
                 <div className="file-field meddium">
@@ -398,7 +398,7 @@ class TemplateForm extends React.Component {
                 </div>
               </div>
             </MDBCol>
-          </MDBRow>
+          </MDBRow> */}
 
           {/*Botões*/}
           <MDBRow>
