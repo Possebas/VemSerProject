@@ -13,6 +13,7 @@ import Comments from '../components/home/Comments';
 import Benefits from '../components/home/Benefits';
 import Dates from '../components/home/Dates'
 
+
 export default class Home extends Component {
     constructor(props){
         super(props);
@@ -21,14 +22,14 @@ export default class Home extends Component {
         return (
             <React.Fragment>
                 <NavBar />
-                <WhatIs id="whatis" key="whatis" />
-                <Requirements id="requirements" key="requirements"/>
-                <Phases />
+                <WhatIs/>
+                <Requirements/>
+                <Phases/>
                 <Dates/>
-                <Technology id="technology" key="technology" />
-                <Comments />
+                <Technology/>
+                <Comments/>
                 <Benefits/>
-                <Location />
+                <Location/>
                 <Footer />
             </React.Fragment>
         )

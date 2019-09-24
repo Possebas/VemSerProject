@@ -6,7 +6,7 @@ import "../../css/benefits.css"
 export const Benefits = () => {
     return (
         <React.Fragment>
-            <MDBView className="photo">
+            <MDBView id="benefits" className="photo">
                 <MDBContainer className="textPhoto">
                     <h1 className="smartphone text-center mt-4 pt-5 white-text font-weight-bold">Benefícios</h1>
                     <MDBContainer className="w-100 h-100 pt-5 pb-5">

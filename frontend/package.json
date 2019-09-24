@@ -11,6 +11,7 @@
     "nodemailer": "^6.3.0",
     "nodemailer-react": "^0.1.0",
     "react": "^16.9.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.9.0",
     "react-native-svg": "^9.9.4",
     "react-password-strength": "^2.4.0",
