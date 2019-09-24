@@ -6,11 +6,15 @@
 }
 
 .md-form label{
-    color: white !important;
+    color: white;
 }
 
 #formu label{
     color:#777777 !important;
+}
+
+#form label {
+    color: #fff;
 }
 
 

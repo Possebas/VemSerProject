@@ -24,14 +24,14 @@ const TemplateLogin = ( props ) => {
                 <MDBIcon icon="user" className="d-inline-inline mr-1" />{" "}Acessar
                 </h3>
               </MDBCardHeader>
-              <form id="formulariologin">
+              <form>
                 <div className="grey-text">
                   <MDBInput
                     label="Digite seu email"
                     icon="envelope"
                     group
                     type="email"
-                    name="email" id="email"
+                    name="email" id="emaillogin"
                     validate
                     onChange={props.trocaValoresState}
                     error="invalido"
@@ -40,7 +40,7 @@ const TemplateLogin = ( props ) => {
                   <MDBInput
                     label="Digite sua senha"
                     icon="lock"
-                    name="password" id="password"
+                    name="password" id="passwordlogin"
                     group
                     onChange={props.trocaValoresState}
                     type="password"

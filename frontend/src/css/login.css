@@ -18,3 +18,14 @@
     color: #fff;
 }
 
+#emaillogin{
+    color: black;
+}
+
+#passwordlogin{
+    color: black;
+}
+
+.md-form #emaillogin label{
+    color: black;
+}
