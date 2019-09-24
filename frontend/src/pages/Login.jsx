@@ -62,7 +62,7 @@ export default class Login extends Component {
                             pathname: '/admin',
                           })
                     }else{
-                        this.props.history.push("/candidateDetail/", { ...response })
+                        this.props.history.push("/candidateDetail/")
                     }
 
                 }).catch(function (error) {

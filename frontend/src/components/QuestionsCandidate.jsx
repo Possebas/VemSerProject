@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Modal, Button } from 'antd';
+import * as axios from 'axios';
 
 export default class QuestionsCandidate extends Component{
   constructor(props){
@@ -7,12 +8,15 @@ export default class QuestionsCandidate extends Component{
     this.state = { 
       visible: false
     };
-    console.log("aki",this.props.candidate.address);
   };
 
   showModal = () => {
-    this.setState({
-      visible: true
+    axios.get(`http://localhost:8080/api/question/`)
+    .then(respUsuario => {
+        console.log("resp",respUsuario.data);
+        this.setState({
+          visible: true
+        });
     });
   };
 
@@ -29,6 +33,7 @@ export default class QuestionsCandidate extends Component{
       visible: false
     });
   };
+
 
   render() {
     return (
@@ -47,12 +52,7 @@ export default class QuestionsCandidate extends Component{
           {this.props.candidate.address.number}<br/>
           {this.props.candidate.address.complement} -
           {this.props.candidate.address.neighborhood.name}<br/>
-          {this.props.candidate.address.neighborhood.city.name} -
-          {/* {this.props.candidate.address.neighborhood.city.state.name} /
-          {this.props.candidate.address.countr.name} <br/> */}
-
-          Instituição de Ensino:<br/>
-          {this.props.candidate.education}
+          {this.props.candidate.address.neighborhood.city.name}
         </Modal>
       </div>
     );
