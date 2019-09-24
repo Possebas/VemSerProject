@@ -34,11 +34,21 @@ export default class Login extends Component {
         try {
             const response = await config.post("/login", { email, password });
             login(response.headers.authorization);
-            this.props.history.push("/admin");
+            const dominio = this.state.email.split("@")[1]
+            if(dominio === 'dbccompany.com.br') {
+                this.props.history.push("/admin");
+            } else {
+                this.props.history.push("/candidateDetail");
+            }
+            console.log(dominio);
         }catch (err) {
             alert("Email ou senha inválida")
         }
     }
+
+
+
+
 
     render() {
 
