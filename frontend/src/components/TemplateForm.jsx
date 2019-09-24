@@ -405,14 +405,14 @@ class TemplateForm extends React.Component {
             <MDBCol>
               <MDBBtn color="elegant" role="button">
                 <div>
-                  <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
+                  <MDBIcon icon="arrow-left" size="1x" className="mr-3" />
                   <a className="white-text" href="/">Voltar</a>
                 </div>
               </MDBBtn>
               <MDBBtn color="elegant" id="button" type="submit">
                 <div>
-                  <MDBIcon far icon="paper-plane" size="1x" className="mr-1" />
                   Próximo
+                  <MDBIcon icon="arrow-right"  size="1x" className="ml-3"  />
                 </div>
               </MDBBtn>
             </MDBCol>
