@@ -68,7 +68,7 @@ class TemplateFormQuestions extends React.Component {
           } = this.state
           
     let questionsCandidate = {
-      isCollege,
+        isCollege: isCollege,
         course: course,
         educationalInstitution: educationalInstitution,
         dayShifys: dayShifys,

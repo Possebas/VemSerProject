@@ -15,4 +15,6 @@ public class LandingPageDbcApplication {
 		SpringApplication.run(LandingPageDbcApplication.class, args);
 	}
 
+
+
 }
