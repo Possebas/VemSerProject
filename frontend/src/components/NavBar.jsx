@@ -16,6 +16,7 @@ import {
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Cover from 'react-video-cover';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 /* Image and css */
 import "../css/navbar.css"
@@ -68,25 +69,25 @@ class NavBar extends React.Component {
               <MDBCollapse isOpen={this.state.collapse} navbar className="navBar">
                 <MDBNavbarNav right>
                   <MDBNavItem className="text-uppercase under mr-2 ">
-                    <MDBNavLink href="#whatis" to="#whatis" >O que é?</MDBNavLink>
+                  <AnchorLink href='#whatis'><MDBNavLink>O que é?</MDBNavLink></AnchorLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
-                    <MDBNavLink href="#phases" to="#phases">Pré-Requisitos</MDBNavLink>
+                   <AnchorLink href='#requirements'><MDBNavLink>Pré-Requisitos</MDBNavLink></AnchorLink> 
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
-                    <MDBNavLink href="#phases" to="#phases">Etapas</MDBNavLink>
+                    <AnchorLink href="#phases"><MDBNavLink >Etapas</MDBNavLink></AnchorLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
-                    <MDBNavLink href="#technology" to="#technology" >Tecnologias</MDBNavLink>
+                    <AnchorLink href="#technology"><MDBNavLink >Tecnologias</MDBNavLink></AnchorLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
-                    <MDBNavLink href="#brief" to="#brief">Depoimentos</MDBNavLink>
+                    <AnchorLink href="#brief"><MDBNavLink >Depoimentos</MDBNavLink></AnchorLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2">
-                    <MDBNavLink href="#benefits" to="#benefits" >Benefícios</MDBNavLink>
+                    <AnchorLink  href="#benefits"> <MDBNavLink>Benefícios</MDBNavLink></AnchorLink>
                   </MDBNavItem>
                   <MDBNavItem className="text-uppercase under mr-2" >
-                    <MDBNavLink href="#location" to="#location" >Localização</MDBNavLink>
+                    <AnchorLink href="#location"><MDBNavLink >Localização</MDBNavLink></AnchorLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
                 <MDBNavbarNav className="ml-1" right style={this.specialCaseNavbarStyles}>

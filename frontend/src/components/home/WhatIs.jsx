@@ -8,7 +8,7 @@ import '../../css/whatIs.css'
 export const WhatIs = () => {
     return (
         <React.Fragment>
-            <MDBContainer>
+            <MDBContainer id="whatis" >
                 <h1 className="smartphone text-center mt-5 font-weight-bold">O que é?</h1>
                 <MDBContainer className="w-100 h-100 d-inline-block pt-1">
                     <MDBRow lg="6" md="12" sm="12">

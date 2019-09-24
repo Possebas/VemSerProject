@@ -8,7 +8,7 @@ import fundo from '../../images/fundoDBC.jpg'
 export const Comments = () => {
      return (
             <React.Fragment>
-                <MDBView src={fundo}>
+                <MDBView  id="brief" src={fundo}>
                     <MDBRow className="my-5 mb-1">
                         <Carousel />
                     </MDBRow>

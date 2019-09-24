@@ -11,7 +11,7 @@ import code from '../../images/phases/binary-code.png'
 export const Phases = () => {
     return (
         <React.Fragment>
-            <div className="pt-4 pb-4 color-change-2x ">
+            <div id="phases" className="pt-4 pb-4 color-change-2x ">
                 <h1 className="smartphone text-center mt-5 font-weight-bold">Etapas do processo seletivo</h1>
                 <MDBContainer className="w-100 h-100 pt-5 mb-5">
 
