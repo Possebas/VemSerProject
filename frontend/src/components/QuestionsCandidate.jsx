@@ -7,6 +7,7 @@ export default class QuestionsCandidate extends Component{
     this.state = { 
       visible: false
     };
+    console.log("aki",this.props.candidate.address);
   };
 
   showModal = () => {
@@ -42,13 +43,13 @@ export default class QuestionsCandidate extends Component{
           {this.props.candidate.birthDate}<br/>
           
           Endereço:<br/>
-          {this.props.candidate.street}, 
-          {this.props.candidate.number}<br/>
-          {this.props.candidate.complement} -
-          {this.props.candidate.district}<br/>
-          {this.props.candidate.city} -
-          {this.props.candidate.state} /
-          {this.props.candidate.parents} <br/>
+          {this.props.candidate.address.street}, 
+          {this.props.candidate.address.number}<br/>
+          {this.props.candidate.address.complement} -
+          {this.props.candidate.address.neighborhood.name}<br/>
+          {this.props.candidate.address.neighborhood.city.name} -
+          {/* {this.props.candidate.address.neighborhood.city.state.name} /
+          {this.props.candidate.address.countr.name} <br/> */}
 
           Instituição de Ensino:<br/>
           {this.props.candidate.education}
