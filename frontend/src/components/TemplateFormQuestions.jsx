@@ -29,8 +29,6 @@ class TemplateFormQuestions extends React.Component {
     console.log(this.candidate.id)
   };
 
-  
-
   getPickerValue = (value) => {
     console.log(value);
   }

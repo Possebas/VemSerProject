@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 
 import AdminPainel from "./pages/AdminPainel";
 import CandidateDetail from './pages/CandidateDetail';
-import { PrivateRoute } from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 import Register from './pages/Form';
 import RegisterQuestions from './pages/FormQuestions';
 
@@ -16,13 +16,16 @@ import RegisterQuestions from './pages/FormQuestions';
 import "./App.css";
 
 export default class App extends Component {
+  constructor(props){
+    super(props);
+  }
   render() {
     return (
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/admin" component={AdminPainel} />
+          <PrivateRoute path="/admin" component={AdminPainel} />
           <Route path="/candidateDetail" component={CandidateDetail} />
           <Route path="/register" component={Register} />
           <Route path="/questions" component={RegisterQuestions} />

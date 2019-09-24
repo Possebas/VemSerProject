@@ -5,39 +5,39 @@ export default class PasswordStrengthMeter extends Component {
     createPasswordLabel = (result) => {
         switch (result.score) {
           case 0:
-            return 'Weak';
+            return 'Ruim';
           case 1:
-            return 'Weak';
+            return 'Fraca';
           case 2:
-            return 'Fair';
+            return 'Intermediária';
           case 3:
-            return 'Good';
+            return 'Boa';
           case 4:
-            return 'Strong';
+            return 'Forte';
           default:
-            return 'Weak';
+            return 'Ruim';
         }
     }
     render() {
         const { password } = this.props;
         const testedResult = zxcvbn(password);
         return (
-        <div className="password-strength-meter">
-            <progress className={`password-strength-meter-progress strength-${this.createPasswordLabel(testedResult)}`}
-            value={testedResult.score}
-            max="4"
-            />
-            <br />
-            <label
-            className="password-strength-meter-label"
-            >
-            {password && (
-                <>
-                <strong>Password strength:</strong> {this.createPasswordLabel(testedResult)}
-                </>
-            )}
-            </label>
-        </div>
-        );
-    }
+          password && (
+          <>
+            <div className="password-strength-meter">
+              <progress className={`password-strength-meter-progress strength-${this.createPasswordLabel(testedResult)}`}
+                value={testedResult.score}
+                max="4"
+              />
+              <br />
+              <label
+                className="password-strength-meter-label"
+              >
+                {this.createPasswordLabel(testedResult)}
+              </label>
+            </div>
+        </>
+      )
+    )
+  }
 }

@@ -41,6 +41,7 @@ export default class Candidate extends Component{
                                 dateOfRegistration= {item.dateOfRegistration} 
                                 statusProcess= {item.statusProcess}
                                 sentInvite= {false}
+                                candidate={this.props.candidate !== null ? this.props.candidate : ''}
                 />
               )})
             }

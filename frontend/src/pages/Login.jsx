@@ -11,9 +11,8 @@ import '../css/login.css';
 import config from '../api/Config';
 
 export default class Login extends Component {
-
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             email: '',
             password: ''
@@ -26,7 +25,6 @@ export default class Login extends Component {
         this.setState({
             [name]: value
         })
-        console.log("Atualizando campo: ", name)
     }
 
     logar = async e => { 
@@ -36,10 +34,8 @@ export default class Login extends Component {
         try {
             const response = await config.post("/login", { email, password });
             login(response.headers.authorization);
-            this.props.history.push("/");
-            console.log(" Response aaa", response)
+            this.props.history.push("/admin");
         }catch (err) {
-
             alert("Email ou senha inválida")
         }
     }

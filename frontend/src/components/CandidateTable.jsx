@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import sendmail from "../api/sendmail";
+import QuestionsCandidate from './QuestionsCandidate';
 
 export default class CandidateTable extends Component {
   constructor(props) {
@@ -8,21 +8,10 @@ export default class CandidateTable extends Component {
       sentInvite: this.props.sentInvite
     }
     this.sendInvite = this.sendInvite.bind(this);
-  };
+  }
 
   sendInvite() {
-    const { email } = this.props.email
-    this.setState({ sentInvite: true })
-    sendmail({
-      from: 'vemserdbc@gmail.com',
-      to: email,
-      subject: 'test sendmail',
-      html: 'Mail of test sendmail ',
-    }, function (err, reply) {
-      console.log("entrando aqui")
-      console.log(err && err.stack);
-      console.dir(reply);
-    });
+    this.setState({sentInvite: true})
   }
 
   render() {
@@ -44,7 +33,7 @@ export default class CandidateTable extends Component {
               }
             </td>
             <td>
-              <button className="btn btn-warning btn-sm my-0 mx-0 "> Visualizar </button>
+              <QuestionsCandidate candidate={this.props.list !== null ? this.props.list : ''}/>
             </td>
           </tr>
         </tbody>

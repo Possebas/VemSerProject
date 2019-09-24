@@ -64,7 +64,7 @@ const CarouselComments = () => {
                                     </div>
                                     <div id="msg" className="text-center">
                                         <h4 className="card-title white-text">Murilo Rodrigues</h4>
-                                        <p className="card-text white-text mt-4 mb-2">Esse programa é incrivel, alunos increveis, tudo é incrivel.</p>
+                                        <p className="card-text white-text mt-4 mb-2">O projeto é incrível, nestes 3 meses de treinamento aprendi muito. Muito obrigado pela grande oportunidade DBC! </p>
                                     </div>
                                 </div>
                             </MDBCol>

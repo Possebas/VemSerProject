@@ -6,6 +6,7 @@ import PasswordStrengthMeter from './PasswordStrengthMeter';
 import '../css/form.css';
 import '../components/PasswordStrengthMeter/PasswordStrengthMeter.css';
 
+
 class TemplateForm extends React.Component {
   constructor(props) {
     super(props);
