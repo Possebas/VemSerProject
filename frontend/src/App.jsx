@@ -25,8 +25,8 @@ export default class App extends Component {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
-          <PrivateRoute path="/admin" component={AdminPainel} />
-          <PrivateRoute path="/candidateDetail" component={CandidateDetail} />
+          <Route path="/admin" component={AdminPainel} />
+          <Route path="/candidateDetail" component={CandidateDetail} />
           <Route path="/register" component={Register} />
           <Route path="/questions" component={RegisterQuestions} />
           <Route path="*" component={() => <h1 className="text-center my-5">Página não encontrada</h1>} />
