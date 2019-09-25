@@ -58,22 +58,25 @@ class TemplateForm extends React.Component {
     event.preventDefault();
     event.target.className += " was-validated";
 
-    if((this.state.password === this.state.confirmPassword) !== undefined){
     const { name,
-            birthDate,
-            cpf,
-            zipCode,
-            street,
-            number,
-            complement,
-            city,
-            district,
-            state,
-            parents,
-            education,
-            email,
-            password
-          } = this.state
+      birthDate,
+      cpf,
+      zipCode,
+      street,
+      number,
+      complement,
+      city,
+      district,
+      state,
+      parents,
+      education,
+      email,
+      password,
+      confirmPassword
+    } = this.state
+
+    if((password && confirmPassword) && (password === confirmPassword)){
+    
     const data = new Date()
     data.toISOString().substring(0,10)
 

@@ -71,7 +71,7 @@ export default class AdminPainel extends Component {
     }
 
     getTypes = type => {
-        const listCandidates = this.state.list
+        let listCandidates = this.state.list
         const config = { headers: { Authorization: localStorage.getItem("Authorization") } }
 
         const translate = this.parseRadio(type)
@@ -82,20 +82,25 @@ export default class AdminPainel extends Component {
                     this.setState({ 
                         list: resp.data,
                         oldList: resp.data,
-                     })
+                    })
                 })
 
         } else if (translate) {
-            console.log("lista",listCandidates)
-            const filter = listCandidates.filter(a => a.candidate.statusProcess.toUpperCase().includes(translate.toUpperCase()))
-            if (filter) {
-                this.setState({
-                    oldList: this.state.list,
-                    list: filter
-                })
-            }
+            axios.get(`${this.baseUrl}/api/question/`, (config))
+            .then(resp => {
+                listCandidates = resp.data
+
+                const filter = listCandidates.filter(a => a.candidate.statusProcess.toUpperCase().includes(translate.toUpperCase()))
+                if (filter) {
+                    this.setState({
+                        oldList: this.state.list,
+                        list: filter
+                    })
+                }
+            })
         }
     }
+    
     render() {
         return (
             <React.Fragment>

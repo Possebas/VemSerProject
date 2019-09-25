@@ -10,8 +10,6 @@ import TemplateLogin from '../components/TemplateLogin';
 
 /* Styles */
 import '../css/login.css';
-import config from '../api/Config';
-import { jsxClosingElement } from '@babel/types';
 
 export default class Login extends Component {
     constructor(props){
