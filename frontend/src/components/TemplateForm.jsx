@@ -15,20 +15,20 @@ class TemplateForm extends React.Component {
     this.baseUrl = `http://localhost:8080`
     this.state = {
       name: "Fulaninho",
-      birthDate: "1994-10-04",
-      cpf: "84191304003",
-      zipCode: "94470100",
+      birthDate: "2012-12-12",
+      cpf: "86569813072",
+      zipCode: "92410100",
       street: "",
-      number: "700",
+      number: "100",
       complement: "",
       city: "",
       district: "",
       state: "",
       parents: "",
-      education: "Faculdade",
+      education: "escola educação",
       email: "teste@teste.com",
-      password: "12345",
-      confirmPassword: "12345"
+      password: "12",
+      confirmPassword: "13"
     }
   };
 
@@ -54,12 +54,11 @@ class TemplateForm extends React.Component {
     }
   };
 
-  getPickerValue = value => {
-    console.log(value);
-  };
-
   submitHandler = event => {
     event.preventDefault();
+    event.target.className += " was-validated";
+
+    if((this.state.password === this.state.confirmPassword) !== undefined){
     const { name,
             birthDate,
             cpf,
@@ -135,8 +134,8 @@ class TemplateForm extends React.Component {
           }).catch(function (error) {console.log("Error that's request: " + error)})
         }).catch(function (error) {console.log("Error that's request: " + error)}
     )} catch (erro) {console.log("Erro na tentativa de salvar")}
-    event.target.className += "was-validated";
-  };
+  }};
+  
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -161,7 +160,7 @@ class TemplateForm extends React.Component {
                 label="Nome completo"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip " id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -177,7 +176,7 @@ class TemplateForm extends React.Component {
                 label="Data de Nascimento"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -191,7 +190,7 @@ class TemplateForm extends React.Component {
                 label="CPF"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -208,7 +207,7 @@ class TemplateForm extends React.Component {
                 label="CEP"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -222,7 +221,7 @@ class TemplateForm extends React.Component {
                 label="Logradouro"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -239,7 +238,7 @@ class TemplateForm extends React.Component {
                 label="Número"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -265,7 +264,7 @@ class TemplateForm extends React.Component {
                 label="Cidade"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -279,7 +278,7 @@ class TemplateForm extends React.Component {
                 label="Bairro"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -295,7 +294,7 @@ class TemplateForm extends React.Component {
                 label="Estado"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -309,7 +308,7 @@ class TemplateForm extends React.Component {
                 label="País"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -326,7 +325,7 @@ class TemplateForm extends React.Component {
                 label="Seu email"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -346,7 +345,7 @@ class TemplateForm extends React.Component {
                 id="password"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -361,7 +360,7 @@ class TemplateForm extends React.Component {
                 label="Confirme sua senha"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -378,7 +377,7 @@ class TemplateForm extends React.Component {
                 label="Instituição de ensino"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
