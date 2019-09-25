@@ -14,7 +14,10 @@ import {
   MDBDropdownToggle,
   MDBDropdownMenu,
   MDBDropdownItem,
-  MDBIcon } from "mdbreact";
+  MDBIcon }
+from "mdbreact";
+import { BrowserRouter as Router } from 'react-router-dom';
+import { logout } from "../api/LoginAuth";
 
 export default class PainelNavBar extends Component {
 constructor(props){
@@ -24,6 +27,10 @@ constructor(props){
     isOpen: false
   }
 };
+
+log_out() {
+  logout();
+}
 
 toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
@@ -55,7 +62,7 @@ render() {
                   <MDBIcon icon="user" />
                 </MDBDropdownToggle>
                 <MDBDropdownMenu right className="dropdown-default">
-                  <MDBDropdownItem><a href="/">Sair</a></MDBDropdownItem>
+                  <MDBDropdownItem><a href="/" onClick={this.log_out}>Sair</a></MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>

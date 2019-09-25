@@ -8,16 +8,17 @@ export default class CandidateTable extends Component {
     this.baseUrl = `http://localhost:8080`
     this.state = {
       sentInvite: this.props.sentInvite,
+      sentReject: this.props.sentReject,
       statusProcess: this.props.candidate.candidate.statusProcess,
       candidate: this.props.candidate.candidate
     }
     this.sendInvite = this.sendInvite.bind(this);
-
+    this.sendReject = this.sendReject.bind(this);
   }
 
   async sendInvite() {
-    const state = this.state;
-    const config = { headers: { Authorization: localStorage.getItem("Authorization") } }
+    let state = this.state;
+    let config = { headers: { Authorization: localStorage.getItem("Authorization") } }
     await axios.post(`${this.baseUrl}/api/email/${this.props.email}`)
       .then( ()  => {
         state.sentInvite = true;
@@ -26,6 +27,22 @@ export default class CandidateTable extends Component {
         );
       })
 
+    await axios.put(`${this.baseUrl}/api/candidate/edit/${this.state.candidate.id}`, this.state.candidate, (config))
+      .then(respStatus => {
+        this.setState({statusProcess: respStatus.data.statusProcess});
+      })
+  }
+ 
+  async sendReject() {
+    let state = this.state;
+    let config = { headers: { Authorization: localStorage.getItem("Authorization") } }
+    await axios.post(`${this.baseUrl}/api/email/reject/${this.props.email}`)
+      .then( ()  => {
+        state.sentReject = true;
+        state.candidate.statusProcess = "REJECTED";
+        this.setState(state
+        );
+      })
     await axios.put(`${this.baseUrl}/api/candidate/edit/${this.state.candidate.id}`, this.state.candidate, (config))
       .then(respStatus => {
         this.setState({statusProcess: respStatus.data.statusProcess});
@@ -48,6 +65,14 @@ export default class CandidateTable extends Component {
                 ||
                 (!this.state.sentInvite &&
                 <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>)
+              }
+            </td>
+            <td>
+              {this.state.statusProcess === "REJECTED" &&
+                <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendReject}> Candidato Rejeitado </button>
+              ||
+              !this.state.sentReject &&
+                <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendReject}> Rejeitar </button>
               }
             </td>
             <td>

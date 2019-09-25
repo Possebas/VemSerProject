@@ -28,6 +28,8 @@ export default class Candidate extends Component{
                 </th>
                 <th className="th-sm">
                 </th>
+                <th className="th-sm">
+                </th>
               </tr>
             </thead>
             
@@ -40,6 +42,7 @@ export default class Candidate extends Component{
                                 dateOfRegistration= {item.candidate.dateOfRegistration} 
                                 statusProcess= {item.candidate.statusProcess}
                                 sentInvite= {false}
+                                sentReject= {false}
                                 candidate={item}
                 />
               )})
