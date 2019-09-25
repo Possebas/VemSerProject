@@ -30,7 +30,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": ["react-app", "airbnb-base"],
+    "extends": [
+      "react-app",
+      "airbnb-base"
+    ],
     "rules": {
       "semi": "off",
       "no-console": "off",

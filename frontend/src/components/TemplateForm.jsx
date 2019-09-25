@@ -142,13 +142,14 @@ class TemplateForm extends React.Component {
           )
       } catch (erro) { console.log("Erro na tentativa de salvar") }
       event.target.className += "was-validated";
-    };
+    }
+  };
 
-    changeHandler = event => {
-      this.setState({ [event.target.name]: event.target.value });
-    };
+  changeHandler = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-    render()
+  render() {
     const { password } = this.state;
     return (
       <div>

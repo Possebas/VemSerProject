@@ -26,7 +26,7 @@ public class CandidateService extends AbstractService<CandidateRepository, Candi
         }
     }
 
-    public Candidate getCandidate(AccountCredentials user){
+    public Candidate getCandidate(AccountCredentials user) throws Exception{
         Candidate candidate = super.repository.findCandidateByEmail(user.getEmail());
         String passwordUser = Cryptography.md5(user.getPassword());
         if(candidate.getPassword().equals(passwordUser)){
