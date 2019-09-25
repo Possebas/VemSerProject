@@ -1,17 +1,15 @@
 /* All librarys */
 import React, { Component } from 'react';
-import {MDBContainer} from 'mdbreact';
-import { login } from "../api/LoginAuth";
 import RequestApi from '../api/RequestApi';
+import { login } from "../api/LoginAuth";
 import * as axios from 'axios';
 
 /* Components */
 import TemplateLogin from '../components/TemplateLogin';
+import { MDBContainer } from 'mdbreact';
 
-/* Styles */
+/* CSS */
 import '../css/login.css';
-import config from '../api/Config';
-import { jsxClosingElement } from '@babel/types';
 
 export default class Login extends Component {
     constructor(props){
@@ -32,8 +30,8 @@ export default class Login extends Component {
         })
     }
 
-    verificaTipoUsuario(email){
-        const dominio = email.split("@")[1]
+    verificaTipoUsuario( email ){
+        const dominio = email.split( "@" )[1]
         if(dominio === 'dbccompany.com.br') {
             return "admin";
          }else{
@@ -44,14 +42,14 @@ export default class Login extends Component {
     logar = async e => { 
         e.preventDefault();
         const { email, password } = this.state
-        const tipoUsuario = this.verificaTipoUsuario(email);
+        const tipoUsuario = this.verificaTipoUsuario( email );
         let usuario = {
             email:email,
             password:password
         }
         
         try {
-            axios.post(`${this.baseUrl}/api/${tipoUsuario}/login`, usuario)
+            axios.post( `${this.baseUrl}/api/${tipoUsuario}/login`, usuario )
                 .then(respUsuario => {
                     (usuario = respUsuario.data);
                     if(tipoUsuario === "admin"){
@@ -69,7 +67,7 @@ export default class Login extends Component {
                     }
 
                 }).catch(function (error) {
-                    
+                    console.log("Error in login =>", error)
                 }
         )} catch (erro) {
 

@@ -1,7 +1,10 @@
+/* All librarys */
 import React, { Component } from 'react';
 
+/* Components */
 import TemplateFormQuestions from '../components/TemplateFormQuestions';
 
+/* CSS */
 import '../css/form.css';
 import '../css/login.css';
 

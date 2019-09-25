@@ -1,4 +1,7 @@
+/* All librarys */
 import React from "react";
+
+/* Components */
 import {
   MDBContainer,
   MDBRow,
@@ -9,8 +12,7 @@ import {
   MDBCardHeader,
   MDBBtn,
   MDBInput,
-  MDBIcon
-} from "mdbreact";
+  MDBIcon} from "mdbreact";
 
 const TemplateLogin = ( props ) => {
   return (

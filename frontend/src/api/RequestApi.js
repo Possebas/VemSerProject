@@ -1,3 +1,4 @@
+/* Axios library base for requests */
 import * as axios from 'axios';
 
 export default class RequestApi {

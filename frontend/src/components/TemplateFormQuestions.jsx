@@ -1,10 +1,14 @@
+/* All librarys */
 import React from "react";
-import * as axios from 'axios';
-import { MDBRow, MDBCol, MDBInput, MDBIcon, MDBBtn } from "mdbreact";
 import RequestApi from '../api/RequestApi';
+import * as axios from 'axios';
+
+/* Components */
+import { MDBRow, MDBCol, MDBInput, MDBIcon, MDBBtn } from "mdbreact";
+
+/* CSS */
 import '../css/formQuestions.css'
 import '../css/form.css';
-
 
 class TemplateFormQuestions extends React.Component {
   constructor(props) {
@@ -13,25 +17,20 @@ class TemplateFormQuestions extends React.Component {
     this.baseUrl = `http://localhost:8080`
     this.candidate = this.props.idCandidate
     this.state = {
-      isCollege: true,
-      course: "test",
-      educationalInstitution: "test",
-      dayShifys: "MANHÃ",
-      isParticipated: true,
-      reasonsForInterest: "Outros",
-      otherReason: "outro",
-      isLogicalKnowledge: true,
-      hasAvailability:true,
-      availabilityAfterTraining: true,
-      whatMotivate: "test",
-      referencesThatInspire:"test"
+      isCollege: "",
+      course: "",
+      educationalInstitution: "",
+      dayShifys: "",
+      isParticipated: "",
+      reasonsForInterest: "",
+      otherReason: "",
+      isLogicalKnowledge: "",
+      hasAvailability: "",
+      availabilityAfterTraining: "",
+      whatMotivate: "",
+      referencesThatInspire: ""
     }
-    console.log(this.candidate.id)
   };
-
-  getPickerValue = (value) => {
-    console.log(value);
-  }
 
   submitHandler = event => {
     event.preventDefault();
@@ -40,58 +39,56 @@ class TemplateFormQuestions extends React.Component {
 
   changeHandler = event => {
     this.setState({ [event.target.name]: event.target.value });
-    
   };
 
   onClick = nr => (evt) => {
-    
     this.setState({
-      [evt.target.name]:nr
+      [evt.target.name]: nr
     });
   }
 
   submitHandler = event => {
     event.preventDefault();
     const { isCollege,
-            course,
-            educationalInstitution,
-            dayShifys,
-            isParticipated,
-            reasonsForInterest,
-            otherReason,
-            isLogicalKnowledge,
-            hasAvailability,
-            availabilityAfterTraining,
-            whatMotivate,
-            referencesThatInspire,
-            candidate
-          } = this.state
-          
+      course,
+      educationalInstitution,
+      dayShifys,
+      isParticipated,
+      reasonsForInterest,
+      otherReason,
+      isLogicalKnowledge,
+      hasAvailability,
+      availabilityAfterTraining,
+      whatMotivate,
+      referencesThatInspire
+    } = this.state
+
     let questionsCandidate = {
-        isCollege: isCollege,
-        course: course,
-        educationalInstitution: educationalInstitution,
-        dayShifys: dayShifys,
-        isParticipated: isParticipated,
-        reasonsForInterest: reasonsForInterest,
-        otherReason: otherReason,
-        isLogicalKnowledge: isLogicalKnowledge,
-        hasAvailability: hasAvailability,
-        availabilityAfterTraining: availabilityAfterTraining,
-        whatMotivate: whatMotivate,
-        referencesThatInspire: referencesThatInspire,
-        candidate: this.candidate
-     }
+      isCollege: isCollege,
+      course: course,
+      educationalInstitution: educationalInstitution,
+      dayShifys: dayShifys,
+      isParticipated: isParticipated,
+      reasonsForInterest: reasonsForInterest,
+      otherReason: otherReason,
+      isLogicalKnowledge: isLogicalKnowledge,
+      hasAvailability: hasAvailability,
+      availabilityAfterTraining: availabilityAfterTraining,
+      whatMotivate: whatMotivate,
+      referencesThatInspire: referencesThatInspire,
+      candidate: this.candidate
+    }
 
     try {
       axios.post(`${this.baseUrl}/api/question/add`, questionsCandidate)
         .then(respQuestions => {
-            questionsCandidate = respQuestions.data
-            this.props.history.push("/");
-        }).catch(function (error) {console.log("Error that's request: " + error)}
-    )} catch (erro) {console.log("Erro na tentativa de salvar")}
+          questionsCandidate = respQuestions.data
+          this.props.history.push("/");
+        }).catch(function (error) { 
+          console.log("Error that's request: " + error) }
+        )
+    } catch (erro) { console.log("Erro na tentativa de salvar") }
     event.target.className += "was-validated";
-    
   };
 
   render() {
@@ -106,8 +103,8 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">1 - Está matriculado em curso relacionado a TI?</h5>
               <MDBRow required className="ml-1 mt-45 mb-4">
-                <MDBInput  gap onClick={this.onClick(true)} value={this.state.isCollege} name="isCollege" checked={this.state.isCollege === true ? true : false} label="SIM" type="radio" id="radio1" />
-                <MDBInput gap onClick={this.onClick(false)}  value={this.state.isCollege} name="isCollege" checked={this.state.isCollege === false ? true : false} label="NÃO" type="radio" id="radio1" />
+                <MDBInput gap onClick={this.onClick(true)} value={this.state.isCollege} name="isCollege" checked={this.state.isCollege === true ? true : false} label="SIM" type="radio" id="radio1" />
+                <MDBInput gap onClick={this.onClick(false)} value={this.state.isCollege} name="isCollege" checked={this.state.isCollege === false ? true : false} label="NÃO" type="radio" id="radio1" />
               </MDBRow>
             </MDBCol>
           </MDBRow>
@@ -115,13 +112,13 @@ class TemplateFormQuestions extends React.Component {
           <MDBRow className="mt-3 text-left">
             <MDBCol>
               <h5 className="white-text">2 - Se sua resposta foi "Sim", qual o curso?</h5>
-              <MDBInput 
-              className="white-text" 
-              required  
-              type="text" 
-              value={this.state.course}
-              onChange={this.changeHandler} 
-              name="course"
+              <MDBInput
+                className="white-text"
+                required
+                type="text"
+                value={this.state.course}
+                onChange={this.changeHandler}
+                name="course"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -133,13 +130,13 @@ class TemplateFormQuestions extends React.Component {
           <MDBRow className="mt-45 text-left">
             <MDBCol>
               <h5 className="white-text">3 - Em qual instituição de ensino está estudando?</h5>
-              <MDBInput 
-              className="white-text" 
-              required 
-              type="text" 
-              value={this.state.educationalInstitution}
-              onChange={this.changeHandler} 
-              name="educationalInstitution"
+              <MDBInput
+                className="white-text"
+                required
+                type="text"
+                value={this.state.educationalInstitution}
+                onChange={this.changeHandler}
+                name="educationalInstitution"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -194,12 +191,12 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">7 - Se você respondeu "Outro", nos diga qual o motivo pelo qual se interessou pela carreira na área de tecnologia? </h5>
               <MDBInput
-              className="white-text" 
-              required 
-              type="text" 
-              value={this.state.otherReason}
-              onChange={this.changeHandler}
-              name="otherReason"
+                className="white-text"
+                required
+                type="text"
+                value={this.state.otherReason}
+                onChange={this.changeHandler}
+                name="otherReason"
               >
                 <div className="invalid-tooltip">
                   campo obrigatório.
@@ -242,14 +239,14 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">11 - Nos conte o que te inspira e motiva a fazer parte do programa de formação Vem Ser DBC:</h5>
               <div className="form-group mt-4">
-                <textarea 
-                required 
-                className="form-control" 
-                id="exampleFormControlTextarea3" 
-                rows="5"
-                value= {this.state.whatMotivate}
-                onChange={this.changeHandler} 
-                name="whatMotivate"
+                <textarea
+                  required
+                  className="form-control"
+                  id="exampleFormControlTextarea3"
+                  rows="5"
+                  value={this.state.whatMotivate}
+                  onChange={this.changeHandler}
+                  name="whatMotivate"
                 ></textarea>
               </div>
             </MDBCol>
@@ -259,14 +256,14 @@ class TemplateFormQuestions extends React.Component {
             <MDBCol>
               <h5 className="white-text">12 - Quais são as suas referências de pessoas que você acompanha ou que o inspiram? Quais ideias elas defendem que você se identifica e considera importantes? Aqui, você pode falar de pensadores, artistas, escritores, atletas ou quaisquer pessoas importantes pra você.</h5>
               <div className="form-group mt-4">
-                <textarea 
-                required 
-                className="form-control" 
-                id="exampleFormControlTextarea3" 
-                rows="8"
-                value={this.state.referencesThatInspire}
-                onChange={this.changeHandler} 
-                name= "referencesThatInspire"
+                <textarea
+                  required
+                  className="form-control"
+                  id="exampleFormControlTextarea3"
+                  rows="8"
+                  value={this.state.referencesThatInspire}
+                  onChange={this.changeHandler}
+                  name="referencesThatInspire"
                 ></textarea>
               </div>
             </MDBCol>
@@ -276,7 +273,7 @@ class TemplateFormQuestions extends React.Component {
               <div>
                 <MDBIcon icon="arrow-left" size="1x" className="mr-1" />
                 <a className="white-text" href="/register">Voltar</a>
-            </div>
+              </div>
             </MDBBtn>
             <MDBBtn color="elegant" id="button" type="submit">
               <div>

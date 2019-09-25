@@ -1,5 +1,10 @@
+/* All librarys */
 import React from "react";
+
+/* Components */
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+
+/* CSS */
 import "../css/footer.css"
 
 const Footer = () => {

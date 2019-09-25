@@ -1,6 +1,11 @@
+/* All librarys */
 import React from 'react';
+
+/* Components */
 import { MDBCol, MDBRow, MDBContainer } from 'mdbreact';
 import CardTechnology from './CardTechnology';
+
+/* CSS */
 import '../../css/card.css';
 
 export const Technology = () => {

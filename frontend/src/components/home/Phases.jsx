@@ -1,12 +1,18 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
-import "../../css/phases.css";
+
+/* Images */
 import web from '../../images/phases/web.png'
 import group from '../../images/phases/group.png'
 import neurology from '../../images/phases/neurology.png'
 import interview from '../../images/phases/job-interview.png'
 import code from '../../images/phases/binary-code.png'
+
+/* CSS */
+import "../../css/phases.css";
 
 export const Phases = () => {
     return (
@@ -17,19 +23,19 @@ export const Phases = () => {
 
                     <MDBRow className="mt-1 mb-5">
                         <MDBCol size="4" className="text-center" >
-                            <img className="iconWeb" src={group}></img>
+                            <img className="iconWeb" src={group} alt="logo-fail"></img>
                             <div className="mt-2">
                                 <h5 className="smartphoneH5">1 - Inscrições online</h5>
                             </div>
                         </MDBCol>
                         <MDBCol size="4" className="text-center" >
-                            <img className="iconWeb" src={web}></img>
+                            <img className="iconWeb" src={web} alt="logo-fail"></img>
                             <div className="mt-2">
                                 <h5 className="smartphoneH5">2 - Formulário de <br/> perguntas online</h5>
                             </div>
                         </MDBCol>
                         <MDBCol size="4" className="text-center" >
-                            <img className="iconWeb" src={code}></img>
+                            <img className="iconWeb" src={code} alt="logo-fail"></img>
                             <div className="mt-2">
                                 <h5 className="smartphoneH5">3 - Prova de lógica <br/> de programação</h5>
                             </div>
@@ -38,13 +44,13 @@ export const Phases = () => {
 
                     <MDBRow className="mt-5 mb-5">
                         <MDBCol size="6" className="text-center my-auto mx-autov" >
-                            <img className="iconWeb" src={neurology}></img>
+                            <img className="iconWeb" src={neurology} alt="logo-fail"></img>
                             <div className="mt-2">
                                 <h5 className="smartphoneH5">4 - Avaliação psicológica</h5>
                             </div>
                         </MDBCol>
                         <MDBCol size="6" className="text-center my-auto mx-auto" >
-                            <img className="iconWeb" src={interview}></img>
+                            <img className="iconWeb" src={interview} alt="logo-fail"></img>
                             <div className="mt-2">
                                 <h5 className="smartphoneH5">5 - Entrevistas presenciais</h5>
                             </div>

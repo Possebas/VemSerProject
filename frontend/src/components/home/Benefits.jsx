@@ -1,6 +1,10 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import { MDBIcon, MDBRow, MDBContainer, MDBCol, MDBView } from 'mdbreact';
+
+/* CSS */
 import "../../css/benefits.css"
 
 export const Benefits = () => {

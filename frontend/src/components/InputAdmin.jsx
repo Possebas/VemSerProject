@@ -1,8 +1,10 @@
+/* All librarys */
 import React, { Component } from "react";
+
+/* Components */
 import { MDBFormInline, MDBInput } from "mdbreact";
 
 class InputAdmin extends Component {
-
 
     state = {
         radio: "Todos"

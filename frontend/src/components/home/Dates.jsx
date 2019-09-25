@@ -1,9 +1,12 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 import Stepper from 'react-stepper-horizontal';
-import "../../css/dates.css";
 
+/* Images */
+import "../../css/dates.css";
 
 export const Dates = () => {
     return (

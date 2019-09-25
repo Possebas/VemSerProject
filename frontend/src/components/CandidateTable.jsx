@@ -43,11 +43,11 @@ export default class CandidateTable extends Component {
             <td>{this.props.dateOfRegistration}</td>
             <td>{this.state.statusProcess}</td>
             <td>
-              {this.state.statusProcess === "INVITATION_SENT" &&
-                <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendInvite}> Reenviar Convite </button>
+              {(this.state.statusProcess === "INVITATION_SENT" &&
+                <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendInvite}> Reenviar Convite </button>)
                 ||
-                !this.state.sentInvite &&
-                <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>
+                (!this.state.sentInvite &&
+                <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>)
               }
             </td>
             <td>

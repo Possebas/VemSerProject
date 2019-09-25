@@ -1,11 +1,11 @@
+/* All librarys */
 import React, {Component} from 'react';
+
+/* Components */
 import CandidateTable from './CandidateTable';
-import {MDBCol} from "mdbreact";
+import { MDBCol } from "mdbreact";
 
 export default class Candidate extends Component{
-  constructor(props){
-    super(props);
-  };
 
   render(){
     return(

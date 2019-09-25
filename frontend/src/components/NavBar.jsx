@@ -1,4 +1,7 @@
+/* All librarys */
 import React from 'react';
+
+/* Components */
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -18,8 +21,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Cover from 'react-video-cover';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-/* Image and css */
+/* CSS */
 import "../css/navbar.css"
+
+/* Images */
 import logoVemSer from '../images/logoVemSer.png';
 
 class NavBar extends React.Component {

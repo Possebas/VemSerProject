@@ -30,7 +30,23 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app", "airbnb-base"],
+    "rules": {
+      "semi": "off",
+      "no-console": "off",
+      "arrow-parens": "off",
+      "class-methods-use-this": "off",
+      "no-underscore-dangle": "off",
+      "space-in-parens": [
+        "error",
+        "always"
+      ],
+      "template-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "no-trailing-spaces": "error"
+    }
   },
   "browserslist": {
     "production": [

@@ -1,8 +1,11 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import { MDBRow, MDBView } from 'mdbreact';
-
 import Carousel from './Carrousel/CarouselComments'
+
+/* Images */
 import fundo from '../../images/fundoDBC.jpg'
 
 export const Comments = () => {

@@ -1,4 +1,7 @@
+/* All librarys */
 import React from "react";
+
+/* Components */
 import { MDBContainer,
         MDBCol,
         MDBCardImage,
@@ -8,12 +11,15 @@ import { MDBContainer,
         MDBRow
       } from "mdbreact";
 
+/* Images */
 import docker from "../../images/cardTechnology/docker.png";
 import oracle from "../../images/cardTechnology/oracle.jpg";
 import react from "../../images/cardTechnology/react.png";
 import spring from "../../images/cardTechnology/spring.png";
 import js from "../../images/cardTechnology/js.jpg";
 import java from "../../images/cardTechnology/java.png";
+
+/* CSS */
 import '../../css/card.css';
 
 const CardTechnology = () => {

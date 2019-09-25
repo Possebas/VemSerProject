@@ -1,6 +1,10 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import { MDBCol, MDBRow, MDBContainer} from 'mdbreact';
+
+/* CSS */
 import "../../css/location.css";
 
 export const Location = () => {
@@ -13,7 +17,6 @@ export const Location = () => {
                         <MDBCol xl="8" lg="8" md="12" sm="12" className="mt-4">
                             <iframe id="map" className="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3454.735128886662!2d-51.168754!3d-30.015761000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6de693cbd6b0b5e5!2sDBC%20Company!5e0!3m2!1spt-BR!2sus!4v1568953807747!5m2!1spt-BR!2sus"
                                 title="maps"
-                               
                                 frameBorder="0"
                                 allowFullScreen="">
                             </iframe>

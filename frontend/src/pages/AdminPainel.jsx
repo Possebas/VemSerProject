@@ -5,11 +5,11 @@ import * as axios from 'axios';
 /* Components */
 import PainelNavBar from '../components/PainelNavBar';
 import Candidate from '../components/Candidate';
+import InputAdmin from '../components/InputAdmin';
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 /* CSS */
 import '../css/painel.css';
-import InputAdmin from '../components/InputAdmin';
 
 export default class AdminPainel extends Component {
     constructor(props) {
@@ -24,7 +24,6 @@ export default class AdminPainel extends Component {
     }
 
     componentDidMount() {
-        //Pega o token do navegador.
         const config = { headers: { Authorization: localStorage.getItem("Authorization") } }
         axios.get(`${this.baseUrl}/api/question/`, (config))
             .then(resp => {
@@ -76,7 +75,7 @@ export default class AdminPainel extends Component {
 
         const translate = this.parseRadio(type)
 
-        if (translate == "ALL") {
+        if (translate === "ALL") {
             axios.get(`${this.baseUrl}/api/question/`, (config))
                 .then(resp => {
                     this.setState({ 
@@ -86,7 +85,6 @@ export default class AdminPainel extends Component {
                 })
 
         } else if (translate) {
-            console.log("lista",listCandidates)
             const filter = listCandidates.filter(a => a.candidate.statusProcess.toUpperCase().includes(translate.toUpperCase()))
             if (filter) {
                 this.setState({

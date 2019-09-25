@@ -1,9 +1,16 @@
+/* All librarys */
 import React from "react";
-import * as axios from 'axios';
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 import RequestApi from '../api/RequestApi';
+import * as axios from 'axios';
+
+/* Components */
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBIcon } from "mdbreact";
 import PasswordStrengthMeter from './PasswordStrengthMeter';
+
+/* CSS */
 import '../css/form.css';
+
+/* Image */
 import '../components/PasswordStrengthMeter/PasswordStrengthMeter.css';
 
 
@@ -14,21 +21,21 @@ class TemplateForm extends React.Component {
     this.zipCodeUrl = `http://viacep.com.br/ws`
     this.baseUrl = `http://localhost:8080`
     this.state = {
-      name: "Fulaninho",
-      birthDate: "1994-10-04",
-      cpf: "84191304003",
-      zipCode: "94470100",
+      name: "",
+      birthDate: "",
+      cpf: "",
+      zipCode: "",
       street: "",
-      number: "700",
+      number: "",
       complement: "",
       city: "",
       district: "",
       state: "",
       parents: "",
-      education: "Faculdade",
-      email: "teste@teste.com",
-      password: "12345",
-      confirmPassword: "12345"
+      education: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
     }
   };
 
@@ -54,39 +61,35 @@ class TemplateForm extends React.Component {
     }
   };
 
-  getPickerValue = value => {
-    console.log(value);
-  };
-
   submitHandler = event => {
     event.preventDefault();
     const { name,
-            birthDate,
-            cpf,
-            zipCode,
-            street,
-            number,
-            complement,
-            city,
-            district,
-            state,
-            parents,
-            education,
-            email,
-            password
-          } = this.state
+      birthDate,
+      cpf,
+      zipCode,
+      street,
+      number,
+      complement,
+      city,
+      district,
+      state,
+      parents,
+      education,
+      email,
+      password
+    } = this.state
     const data = new Date()
-    data.toISOString().substring(0,10)
+    data.toISOString().substring(0, 10)
 
     let addressCandidate = {
-      country: {name: parents},
-      uf: {name: state, country: ''},
-      city: {name: city, uf: ''},
-      neighborhood: {name: district, city: ''},
+      country: { name: parents },
+      uf: { name: state, country: '' },
+      city: { name: city, uf: '' },
+      neighborhood: { name: district, city: '' },
       address: {
         street: street,
         number: number,
-        complement:complement,
+        complement: complement,
         zipCode: zipCode,
         neighborhood: ''
       },
@@ -98,43 +101,43 @@ class TemplateForm extends React.Component {
       password: password,
       cpf: cpf,
       birthDate: birthDate,
-      statusProcess:"PEENDING",
+      statusProcess: "PEENDING",
       dateOfRegistration: data,
       educationalInstitution: education,
       beenConfirmed: "false",
       address: ''
-     }
+    }
 
     try {
       axios.post(`${this.baseUrl}/api/country/add`, addressCandidate.country)
         .then(respCountry => {
-            addressCandidate.uf.country = respCountry.data
-            axios.post(`${this.baseUrl}/api/state/add`, addressCandidate.uf)
+          addressCandidate.uf.country = respCountry.data
+          axios.post(`${this.baseUrl}/api/state/add`, addressCandidate.uf)
             .then(respUF => {
               addressCandidate.city.uf = respUF.data
               axios.post(`${this.baseUrl}/api/city/add`, addressCandidate.city)
-              .then(respCity => {
-                addressCandidate.neighborhood.city = respCity.data
-                axios.post(`${this.baseUrl}/api/neighborhood/add`, addressCandidate.neighborhood)
-                .then(respNeighborhood => {
-                  addressCandidate.address.neighborhood = respNeighborhood.data
-                  axios.post(`${this.baseUrl}/api/address/add`, addressCandidate.address)
-                  .then(respAddress => {
-                    candidateInfos.address = respAddress.data
-                    axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
-                    .then(respCandidate => {
-                      console.log(respCandidate.data)
-                      this.props.history.push({
-                        pathname: '/questions',
-                        state: { detail: respCandidate.data }
-                      })
-                  }).catch(function (error) {console.log("Error that's request: " + error)})
-                }).catch(function (error) {console.log("Error that's request: " + error)})
-              }).catch(function (error) {console.log("Error that's request: " + error)})
-            }).catch(function (error) {console.log("Error that's request: " + error)})
-          }).catch(function (error) {console.log("Error that's request: " + error)})
-        }).catch(function (error) {console.log("Error that's request: " + error)}
-    )} catch (erro) {console.log("Erro na tentativa de salvar")}
+                .then(respCity => {
+                  addressCandidate.neighborhood.city = respCity.data
+                  axios.post(`${this.baseUrl}/api/neighborhood/add`, addressCandidate.neighborhood)
+                    .then(respNeighborhood => {
+                      addressCandidate.address.neighborhood = respNeighborhood.data
+                      axios.post(`${this.baseUrl}/api/address/add`, addressCandidate.address)
+                        .then(respAddress => {
+                          candidateInfos.address = respAddress.data
+                          axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
+                            .then(respCandidate => {
+                              this.props.history.push({
+                                pathname: '/questions',
+                                state: { detail: respCandidate.data }
+                              })
+                            }).catch(function (error) { console.log("Error that's request: " + error) })
+                        }).catch(function (error) { console.log("Error that's request: " + error) })
+                    }).catch(function (error) { console.log("Error that's request: " + error) })
+                }).catch(function (error) { console.log("Error that's request: " + error) })
+            }).catch(function (error) { console.log("Error that's request: " + error) })
+        }).catch(function (error) { console.log("Error that's request: " + error) }
+        )
+    } catch (erro) { console.log("Erro na tentativa de salvar") }
     event.target.className += "was-validated";
   };
 
@@ -332,11 +335,11 @@ class TemplateForm extends React.Component {
               </MDBInput>
             </MDBCol>
           </MDBRow>
-          
+
           {/* Password */}
-          <MDBRow>  
+          <MDBRow>
             <MDBCol className="text-uppercase">
-              <MDBInput type="password" onChange={e => this.setState({ password: e.target.value })}
+              <MDBInput
                 className="white-text colorLabel" autoComplete="off"
                 value={this.state.password}
                 onChange={this.changeHandler}
@@ -412,7 +415,7 @@ class TemplateForm extends React.Component {
               <MDBBtn color="elegant" id="button" type="submit">
                 <div>
                   Próximo
-                  <MDBIcon icon="arrow-right"  size="1x" className="ml-3"  />
+                  <MDBIcon icon="arrow-right" size="1x" className="ml-3" />
                 </div>
               </MDBBtn>
             </MDBCol>

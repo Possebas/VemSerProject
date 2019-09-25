@@ -1,15 +1,20 @@
+/* All librarys */
 import React from "react";
+
+/* Components */
 import { MDBCarousel,
         MDBCarouselInner,
         MDBCarouselItem,
         MDBView,
         MDBContainer
-      } from "mdbreact";
+       } from "mdbreact";
 
+/* Images */
 import turma2 from "../../../images/turma.jpg";
 import turma from "../../../images/turma2.jpg";
 import timeDBC from "../../../images/timeDBC.jpg";
 
+/* CSS */
 import '../../../css/whatIs.css'
 
 const CarouselPage = () => {

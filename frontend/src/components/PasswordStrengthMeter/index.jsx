@@ -1,4 +1,7 @@
+/* All librarys */
 import React, { Component } from 'react';
+
+/* Components */
 import zxcvbn from 'zxcvbn';
 
 export default class PasswordStrengthMeter extends Component {

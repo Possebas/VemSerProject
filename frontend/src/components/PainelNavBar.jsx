@@ -1,4 +1,8 @@
+/* All librarys */
 import React, { Component } from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
+
+/* Components */
 import { 
   MDBNavbar,
   MDBNavbarBrand,
@@ -10,9 +14,7 @@ import {
   MDBDropdownToggle,
   MDBDropdownMenu,
   MDBDropdownItem,
-  MDBIcon }
-from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
+  MDBIcon } from "mdbreact";
 
 export default class PainelNavBar extends Component {
 constructor(props){

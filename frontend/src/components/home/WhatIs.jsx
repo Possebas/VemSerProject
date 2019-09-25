@@ -1,8 +1,11 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import Carousel from './Carrousel/CarouselWhatIs';
 import { MDBCol, MDBRow, MDBContainer } from 'mdbreact';
 
+/* CSS */
 import '../../css/whatIs.css'
 
 export const WhatIs = () => {

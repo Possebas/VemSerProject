@@ -1,7 +1,13 @@
+/* All librarys */
 import React from 'react';
 
+/* Components */
 import { MDBCol, MDBRow, MDBContainer, MDBView } from 'mdbreact';
+
+/* Images */
 import requirements from '../../images/requirements.png';
+
+/* CSS */
 import '../../css/requirements.css';
 
 export const Requirements = () => {

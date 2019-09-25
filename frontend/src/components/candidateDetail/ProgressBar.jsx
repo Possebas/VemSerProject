@@ -1,4 +1,7 @@
+/* All librarys */
 import React, {Component} from "react";
+
+/* Components */
 import { MDBProgress } from 'mdbreact';
 
 export default class ProgressBar extends Component{
