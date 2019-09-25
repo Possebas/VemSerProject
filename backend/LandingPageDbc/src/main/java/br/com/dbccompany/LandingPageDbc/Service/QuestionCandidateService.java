@@ -1,17 +1,13 @@
 package br.com.dbccompany.LandingPageDbc.Service;
 
 import br.com.dbccompany.LandingPageDbc.Entity.Candidate;
+import br.com.dbccompany.LandingPageDbc.Entity.QuestionCandidate;
+import br.com.dbccompany.LandingPageDbc.Repository.QuestionCandidateRepository;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.com.dbccompany.LandingPageDbc.Entity.QuestionCandidate;
-import br.com.dbccompany.LandingPageDbc.Repository.QuestionCandidateRepository;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 @Service
 public class QuestionCandidateService extends AbstractService<QuestionCandidateRepository, QuestionCandidate> {
