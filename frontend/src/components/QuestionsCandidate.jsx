@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Modal, Button } from 'antd';
-import * as axios from 'axios';
 
 export default class QuestionsCandidate extends Component{
   constructor(props){

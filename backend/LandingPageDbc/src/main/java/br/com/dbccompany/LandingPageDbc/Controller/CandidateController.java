@@ -1,6 +1,7 @@
 package br.com.dbccompany.LandingPageDbc.Controller;
 
 import br.com.dbccompany.LandingPageDbc.Entity.Candidate;
+import br.com.dbccompany.LandingPageDbc.Enum.StatusProcess;
 import br.com.dbccompany.LandingPageDbc.Repository.CandidateRepository;
 import br.com.dbccompany.LandingPageDbc.Security.AccountCredentials;
 import br.com.dbccompany.LandingPageDbc.Service.CandidateService;

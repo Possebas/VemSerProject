@@ -12,4 +12,6 @@ public interface CandidateRepository extends CrudRepository<Candidate, Integer> 
     Candidate findCandidateByName(String name);
 
     Candidate findCandidateByEmail(String email);
+
+    Candidate findCandidateById(Integer id);
 }
