@@ -1,5 +1,6 @@
 package br.com.dbccompany.LandingPageDbc.Controller;
 import br.com.dbccompany.LandingPageDbc.Security.AccountCredentials;
+import oracle.jdbc.proxy.annotation.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -20,4 +21,5 @@ public class AdminController extends AbstractController<Admin, AdminRepository, 
     public Admin getEmailAdmin(@RequestBody AccountCredentials user) throws Exception{
         return service.getAdmin(user);
     }
+
 }

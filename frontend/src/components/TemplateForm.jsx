@@ -63,89 +63,92 @@ class TemplateForm extends React.Component {
 
   submitHandler = event => {
     event.preventDefault();
-    const { name,
-      birthDate,
-      cpf,
-      zipCode,
-      street,
-      number,
-      complement,
-      city,
-      district,
-      state,
-      parents,
-      education,
-      email,
-      password
-    } = this.state
-    const data = new Date()
-    data.toISOString().substring(0, 10)
+    event.target.className += " was-validated";
 
-    let addressCandidate = {
-      country: { name: parents },
-      uf: { name: state, country: '' },
-      city: { name: city, uf: '' },
-      neighborhood: { name: district, city: '' },
-      address: {
-        street: street,
-        number: number,
-        complement: complement,
-        zipCode: zipCode,
-        neighborhood: ''
-      },
-    }
+    if ((this.state.password === this.state.confirmPassword) !== undefined) {
+      const { name,
+        birthDate,
+        cpf,
+        zipCode,
+        street,
+        number,
+        complement,
+        city,
+        district,
+        state,
+        parents,
+        education,
+        email,
+        password
+      } = this.state
+      const data = new Date()
+      data.toISOString().substring(0, 10)
 
-    let candidateInfos = {
-      name: name,
-      email: email,
-      password: password,
-      cpf: cpf,
-      birthDate: birthDate,
-      statusProcess: "PEENDING",
-      dateOfRegistration: data,
-      educationalInstitution: education,
-      beenConfirmed: "false",
-      address: ''
-    }
+      let addressCandidate = {
+        country: { name: parents },
+        uf: { name: state, country: '' },
+        city: { name: city, uf: '' },
+        neighborhood: { name: district, city: '' },
+        address: {
+          street: street,
+          number: number,
+          complement: complement,
+          zipCode: zipCode,
+          neighborhood: ''
+        },
+      }
 
-    try {
-      axios.post(`${this.baseUrl}/api/country/add`, addressCandidate.country)
-        .then(respCountry => {
-          addressCandidate.uf.country = respCountry.data
-          axios.post(`${this.baseUrl}/api/state/add`, addressCandidate.uf)
-            .then(respUF => {
-              addressCandidate.city.uf = respUF.data
-              axios.post(`${this.baseUrl}/api/city/add`, addressCandidate.city)
-                .then(respCity => {
-                  addressCandidate.neighborhood.city = respCity.data
-                  axios.post(`${this.baseUrl}/api/neighborhood/add`, addressCandidate.neighborhood)
-                    .then(respNeighborhood => {
-                      addressCandidate.address.neighborhood = respNeighborhood.data
-                      axios.post(`${this.baseUrl}/api/address/add`, addressCandidate.address)
-                        .then(respAddress => {
-                          candidateInfos.address = respAddress.data
-                          axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
-                            .then(respCandidate => {
-                              this.props.history.push({
-                                pathname: '/questions',
-                                state: { detail: respCandidate.data }
-                              })
-                            }).catch(function (error) { console.log("Error that's request: " + error) })
-                        }).catch(function (error) { console.log("Error that's request: " + error) })
-                    }).catch(function (error) { console.log("Error that's request: " + error) })
-                }).catch(function (error) { console.log("Error that's request: " + error) })
-            }).catch(function (error) { console.log("Error that's request: " + error) })
-        }).catch(function (error) { console.log("Error that's request: " + error) }
-        )
-    } catch (erro) { console.log("Erro na tentativa de salvar") }
-    event.target.className += "was-validated";
-  };
+      let candidateInfos = {
+        name: name,
+        email: email,
+        password: password,
+        cpf: cpf,
+        birthDate: birthDate,
+        statusProcess: "PEENDING",
+        dateOfRegistration: data,
+        educationalInstitution: education,
+        beenConfirmed: "false",
+        address: ''
+      }
 
-  changeHandler = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+      try {
+        axios.post(`${this.baseUrl}/api/country/add`, addressCandidate.country)
+          .then(respCountry => {
+            addressCandidate.uf.country = respCountry.data
+            axios.post(`${this.baseUrl}/api/state/add`, addressCandidate.uf)
+              .then(respUF => {
+                addressCandidate.city.uf = respUF.data
+                axios.post(`${this.baseUrl}/api/city/add`, addressCandidate.city)
+                  .then(respCity => {
+                    addressCandidate.neighborhood.city = respCity.data
+                    axios.post(`${this.baseUrl}/api/neighborhood/add`, addressCandidate.neighborhood)
+                      .then(respNeighborhood => {
+                        addressCandidate.address.neighborhood = respNeighborhood.data
+                        axios.post(`${this.baseUrl}/api/address/add`, addressCandidate.address)
+                          .then(respAddress => {
+                            candidateInfos.address = respAddress.data
+                            axios.post(`${this.baseUrl}/api/candidate/add`, candidateInfos)
+                              .then(respCandidate => {
+                                this.props.history.push({
+                                  pathname: '/questions',
+                                  state: { detail: respCandidate.data }
+                                })
+                              }).catch(function (error) { console.log("Error that's request: " + error) })
+                          }).catch(function (error) { console.log("Error that's request: " + error) })
+                      }).catch(function (error) { console.log("Error that's request: " + error) })
+                  }).catch(function (error) { console.log("Error that's request: " + error) })
+              }).catch(function (error) { console.log("Error that's request: " + error) })
+          }).catch(function (error) { console.log("Error that's request: " + error) }
+          )
+      } catch (erro) { console.log("Erro na tentativa de salvar") }
+      event.target.className += "was-validated";
+    };
 
-  render() {
+    changeHandler = event => {
+      this.setState({ [event.target.name]: event.target.value });
+    };
+
+    render()
     const { password } = this.state;
     return (
       <div>
@@ -164,7 +167,7 @@ class TemplateForm extends React.Component {
                 label="Nome completo"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip " id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -180,7 +183,7 @@ class TemplateForm extends React.Component {
                 label="Data de Nascimento"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -194,7 +197,7 @@ class TemplateForm extends React.Component {
                 label="CPF"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -211,7 +214,7 @@ class TemplateForm extends React.Component {
                 label="CEP"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -225,7 +228,7 @@ class TemplateForm extends React.Component {
                 label="Logradouro"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -242,7 +245,7 @@ class TemplateForm extends React.Component {
                 label="Número"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -268,7 +271,7 @@ class TemplateForm extends React.Component {
                 label="Cidade"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -282,7 +285,7 @@ class TemplateForm extends React.Component {
                 label="Bairro"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -298,7 +301,7 @@ class TemplateForm extends React.Component {
                 label="Estado"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -312,7 +315,7 @@ class TemplateForm extends React.Component {
                 label="País"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -329,7 +332,7 @@ class TemplateForm extends React.Component {
                 label="Seu email"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -349,7 +352,7 @@ class TemplateForm extends React.Component {
                 id="password"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   Campo obrigatório.
                 </div>
               </MDBInput>
@@ -364,7 +367,7 @@ class TemplateForm extends React.Component {
                 label="Confirme sua senha"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
@@ -381,7 +384,7 @@ class TemplateForm extends React.Component {
                 label="Instituição de ensino"
                 required
               >
-                <div className="invalid-tooltip">
+                <div className="invalid-tooltip" id="fonte-invalid">
                   campo obrigatório.
                 </div>
               </MDBInput>
