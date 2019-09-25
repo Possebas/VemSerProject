@@ -7,17 +7,12 @@ export default class QuestionsCandidate extends Component{
     super(props);
     this.state = { 
       visible: false,
-      detailOfCandidate: {}
     };
   };
 
   showModal = () => {
-    axios.get(`http://localhost:8080/api/question/`)
-    .then(respUsuario => {
         this.setState({
-          visible: true,
-          detailOfCandidate: respUsuario.data
-        });
+          visible: true
     });
   };
 
@@ -37,7 +32,9 @@ export default class QuestionsCandidate extends Component{
 
 
   render() {
+    const info = this.props.candidate;
     return (
+      
       <div>
         <Button className="btn btn-warning btn-sm my-0 mx-0 " type="primary" onClick={this.showModal}>
           Visualizar
@@ -45,39 +42,28 @@ export default class QuestionsCandidate extends Component{
         <Modal title="Informações do candidato: " visible={this.state.visible}
           onOk={this.handleOk} onCancel={this.handleCancel}
         >
-          {this.props.candidate.name}<br/>
-          {this.props.candidate.birthDate}<br/>
+          {info.candidate.name}<br/>
+          {info.candidate.birthDate}<br/>
           
           Endereço:<br/>
-          {this.props.candidate.address.street}, 
-          {this.props.candidate.address.number}<br/>
-          {this.props.candidate.address.complement} -
-          {this.props.candidate.address.neighborhood.name}<br/>
-          {this.props.candidate.address.neighborhood.city.name}
-          
-          {console.log(this.state.detailOfCandidate)}
-
-          {//this.state.detailOfCandidate.map((item) =>{
-             // if(item.cpf === this.props.candidate.cpf) {
-               // return(
-                 // <>
-                  // Questionário: 
-                  //  {item.detailOfCandidate.availabilityAfterTraining}
-                  //  {item.detailOfCandidate.college}
-                  //  {item.detailOfCandidate.course}
-                  //  {item.detailOfCandidate.dayShifys}
-                  //  {item.detailOfCandidate.educationalInstitution}
-                  //  {item.detailOfCandidate.hasAvailability}
-                  //  {item.detailOfCandidate.logicalKnowledge}
-                  //  {item.detailOfCandidate.otherReason}
-                  //  {item.detailOfCandidate.participated}
-                  //  {item.detailOfCandidate.reasonsForInterest}
-                  //  {item.detailOfCandidate.referencesThatInspire}
-                  //  {item.detailOfCandidate.whatMotivates}
-                  //</>
-              //);}
-            //})
-          }
+          {info.candidate.address.street}, 
+          {info.candidate.address.number}<br/>
+          {info.candidate.address.complement} <br/>
+          {info.candidate.address.neighborhood.name}<br/>
+          {info.candidate.address.neighborhood.city.name}<br/>
+          Questionário: <br/>
+                    {info.availabilityAfterTraining}<br/>
+                    {info.college}<br/>
+                    {info.course}<br/>
+                    {info.dayShifys}<br/>
+                    {info.educationalInstitution}<br/>
+                    {info.hasAvailability}<br/>
+                    {info.logicalKnowledge}<br/>
+                    {info.otherReason}<br/>
+                    {info.participated}<br/>
+                   {info.reasonsForInterest}<br/>
+                   {info.referencesThatInspire}<br/>
+                   {info.whatMotivates}<br/>
 
         </Modal>
       </div>

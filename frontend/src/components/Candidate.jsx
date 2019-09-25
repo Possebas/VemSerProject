@@ -9,13 +9,6 @@ export default class Candidate extends Component{
     this.baseUrl = `http://localhost:8080`;
   };
 
-  componentDidMount() {
-      axios.get(`${this.baseUrl}/api/question`)
-          .then(respCandidate => {
-              console.log("resp",respCandidate);
-      });
-  }
-
   render(){
     return(
       <React.Fragment>
@@ -41,12 +34,12 @@ export default class Candidate extends Component{
             </thead>
             {this.props.list.map((item) =>{
               return(
-                <CandidateTable key= {item.id}
-                                name= {item.name}
-                                cpf= {item.cpf} 
-                                email= {item.email} 
-                                dateOfRegistration= {item.dateOfRegistration} 
-                                statusProcess= {item.statusProcess}
+                <CandidateTable key= {item.candidate.id}
+                                name= {item.candidate.name}
+                                cpf= {item.candidate.cpf} 
+                                email= {item.candidate.email} 
+                                dateOfRegistration= {item.candidate.dateOfRegistration} 
+                                statusProcess= {item.candidate.statusProcess}
                                 sentInvite= {false}
                                 candidate={item}
                 />

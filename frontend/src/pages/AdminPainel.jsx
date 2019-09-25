@@ -5,7 +5,7 @@ import * as axios from 'axios';
 /* Components */
 import PainelNavBar from '../components/PainelNavBar';
 import Candidate from '../components/Candidate';
-import { MDBContainer, MDBRow, MDBCol, MDBIcon, MDBInput, MDBFormInline } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import RequestApi from '../api/RequestApi';
 
 
@@ -29,7 +29,7 @@ export default class AdminPainel extends Component {
     componentDidMount() {
         //Pega o token do navegador.
         const config = { headers: { Authorization: localStorage.getItem("Authorization") } }
-        axios.get(`${this.baseUrl}/api/candidate/`, (config))
+        axios.get(`${this.baseUrl}/api/question/`, (config))
             .then(resp => {
                this.setState({
                     oldList: resp.data,
