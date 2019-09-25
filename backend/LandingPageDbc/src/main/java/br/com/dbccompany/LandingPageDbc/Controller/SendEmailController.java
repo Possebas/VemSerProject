@@ -60,10 +60,18 @@ public class SendEmailController {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: header field
-            message.setSubject("VEM SER DBC");
+            message.setSubject("[Vem Ser DBC] Você foi selecionado para participar da primeira etapa de seleção!\n");
 
             // Now set the actual message
-            message.setText("VOCÊ É O CARA!!!");
+            message.setText("Boa tarde!\n" +
+                    "\n" +
+                    " \n" +
+                    "\n" +
+                    "Parabéns! Você foi pré-selecionado para a primeira etapa de seleção do Vem Ser DBC," +
+                    " que consiste na realização da prova técnica. \\o/" +
+                    " \n" +
+                    "\n" +
+                    "Entre no site do Vem Ser DBC com seu Login e confirme sua presença.");
 
             // Send message
             Transport.send(message);
