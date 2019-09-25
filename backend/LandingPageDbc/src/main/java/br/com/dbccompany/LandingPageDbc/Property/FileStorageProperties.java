@@ -1,3 +1,4 @@
+/*
 package br.com.dbccompany.LandingPageDbc.Property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -13,4 +14,4 @@ public class FileStorageProperties {
     public void setUploadDir(String uploadDir) {
         this.uploadDir = uploadDir;
     }
-}
+}*/

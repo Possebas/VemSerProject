@@ -1,3 +1,4 @@
+/*
 package br.com.dbccompany.LandingPageDbc.Controller;
 
 import br.com.dbccompany.LandingPageDbc.Payload.UploadFileResponse;
@@ -60,4 +61,4 @@ public class FileController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
                 .body(resource);
     }
-}
+}*/

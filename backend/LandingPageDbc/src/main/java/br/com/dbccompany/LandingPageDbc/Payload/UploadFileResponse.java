@@ -1,3 +1,4 @@
+/*
 package br.com.dbccompany.LandingPageDbc.Payload;
 
 public class UploadFileResponse {
@@ -44,4 +45,5 @@ public class UploadFileResponse {
     public void setSize(long size) {
         this.size = size;
     }
-}
+
+}*/
