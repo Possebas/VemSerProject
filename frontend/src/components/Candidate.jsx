@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import * as axios from 'axios';
 import CandidateTable from './CandidateTable';
 import {MDBCol} from "mdbreact";
 
 export default class Candidate extends Component{
   constructor(props){
     super(props);
-    this.baseUrl = `http://localhost:8080`;
   };
 
   render(){
@@ -32,6 +30,7 @@ export default class Candidate extends Component{
                 </th>
               </tr>
             </thead>
+            
             {this.props.list.map((item) =>{
               return(
                 <CandidateTable key= {item.candidate.id}

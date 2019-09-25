@@ -34,9 +34,9 @@ public abstract class AbstractService <
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public Entity editByID(Integer id, Entity Entity) throws Exception{
+    public Entity editByID(Integer id, Entity entity) throws Exception{
         Entity news = repository.findById(id).get();
-        news.setId(id);
-        return repository.save(news);
+        entity.setId(news.getId());
+        return repository.save(entity);
     }
 }

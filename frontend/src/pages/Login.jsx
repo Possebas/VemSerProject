@@ -53,18 +53,19 @@ export default class Login extends Component {
         try {
             axios.post(`${this.baseUrl}/api/${tipoUsuario}/login`, usuario)
                 .then(respUsuario => {
-                    console.log("resp",usuario = respUsuario.data);
+                    (usuario = respUsuario.data);
                     if(tipoUsuario === "admin"){
                         axios.post(`${this.baseUrl}/login`, { email, password }).then(resp => {
                             login(resp.headers.authorization);
                             this.props.history.push({
                                 pathname: '/admin'})
                         }
-
                         )
-                        
                     }else{
-                        this.props.history.push("/candidateDetail/")
+                        this.props.history.push({
+                        pathname: `/candidateDetail/${usuario.id}`,
+                        state: { detail: respUsuario.data }
+                        })
                     }
 
                 }).catch(function (error) {

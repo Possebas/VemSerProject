@@ -6,8 +6,6 @@ import * as axios from 'axios';
 import PainelNavBar from '../components/PainelNavBar';
 import Candidate from '../components/Candidate';
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import RequestApi from '../api/RequestApi';
-
 
 /* CSS */
 import '../css/painel.css';
@@ -15,9 +13,8 @@ import InputAdmin from '../components/InputAdmin';
 
 export default class AdminPainel extends Component {
     constructor(props) {
-        super(props)
-        this.backData = new RequestApi()
-        this.baseUrl = `http://localhost:8080`
+        super(props);
+        this.baseUrl = `http://localhost:8080`;
         this.state = {
             oldList: [],
             list: [],
@@ -35,7 +32,6 @@ export default class AdminPainel extends Component {
                     oldList: resp.data,
                     list: resp.data
                 })
-                console.log(resp.data)
             })
     }
 
@@ -44,13 +40,13 @@ export default class AdminPainel extends Component {
         const config = { headers: { Authorization: localStorage.getItem("Authorization") } }
         const pesquisa = evt.target.value
         if (pesquisa) {
-            const filter = listCandidates.filter(a => a.name.toUpperCase().includes(pesquisa.toUpperCase()))
+            const filter = listCandidates.filter(a => a.candidate.name.toUpperCase().includes(pesquisa.toUpperCase()))
             this.setState({
                 oldList: this.state.list,
                 list: filter
             })
         } else {
-            axios.get(`${this.baseUrl}/api/candidate/`, (config))
+            axios.get(`${this.baseUrl}/api/question/`, (config))
                 .then(resp => {
                     this.setState({ list: resp.data })
                 })
@@ -81,7 +77,7 @@ export default class AdminPainel extends Component {
         const translate = this.parseRadio(type)
 
         if (translate == "ALL") {
-            axios.get(`${this.baseUrl}/api/candidate/`, (config))
+            axios.get(`${this.baseUrl}/api/question/`, (config))
                 .then(resp => {
                     this.setState({ 
                         list: resp.data,
@@ -90,7 +86,8 @@ export default class AdminPainel extends Component {
                 })
 
         } else if (translate) {
-            const filter = listCandidates.filter(a => a.statusProcess.toUpperCase().includes(translate.toUpperCase()))
+            console.log("lista",listCandidates)
+            const filter = listCandidates.filter(a => a.candidate.statusProcess.toUpperCase().includes(translate.toUpperCase()))
             if (filter) {
                 this.setState({
                     oldList: this.state.list,

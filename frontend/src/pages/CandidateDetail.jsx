@@ -1,6 +1,5 @@
 /* All librarys */
 import React, { Component } from 'react';
-import * as axios from 'axios';
 
 /* Components */
 import PainelNavBar from '../components/PainelNavBar';
@@ -13,17 +12,9 @@ import '../css/painel.css';
 export default class CandidateDetail extends Component {
     constructor(props){
         super(props);
-        this.baseUrl = `http://localhost:8080`;
         this.state = {
-            details : this.props.location.state
+            candidate: this.props.location.state.detail
         }
-    }
-
-    componentDidMount() {
-        axios.get(`${this.baseUrl}/api/candidate/${this.state.details}`)
-        .then(respCandidate => {
-            console.log("resp",respCandidate);
-        });
     }
 
     render() {
@@ -33,7 +24,7 @@ export default class CandidateDetail extends Component {
                 <PainelNavBar name= "VemSer"/>
                 <MDBContainer className="px-3 py-5">
                     <h4 className="pt-3"> Confira seu status: </h4>
-                    <ProgressBar/>
+                    <ProgressBar candidate={this.state.candidate}/>
                 </MDBContainer>
                 </div>
             </React.Fragment>
