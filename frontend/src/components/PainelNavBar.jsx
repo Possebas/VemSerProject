@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
 /* Components */
+import { logout } from "../api/LoginAuth";
 import { 
   MDBNavbar,
   MDBNavbarBrand,
@@ -16,8 +17,6 @@ import {
   MDBDropdownItem,
   MDBIcon }
 from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
-import { logout } from "../api/LoginAuth";
 
 export default class PainelNavBar extends Component {
 constructor(props){

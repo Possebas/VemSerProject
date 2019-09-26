@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/city/").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/state/").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/country/").permitAll()
-                //.antMatchers(HttpMethod.PUT, "/api/candidate/edit/*").permitAll()
+                .antMatchers(HttpMethod.PUT, "/api/candidate/edit/*").permitAll()
                 .anyRequest().authenticated()
                 .and().cors()
                 .and()

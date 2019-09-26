@@ -63,7 +63,7 @@ public class SendEmailController {
             message.setSubject("[Vem Ser DBC] Você foi selecionado para participar da primeira etapa de seleção!\n");
 
             // Now set the actual message
-            message.setText("Boa tarde!\n" +
+            message.setText("Olá!\n" +
                     "\n" +
                     " \n" +
                     "\n" +
