@@ -18,10 +18,27 @@ export default class Login extends Component {
         this.baseUrl = `http://localhost:8080`
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            erro:false
         }
         this.trocaValoresState = this.trocaValoresState.bind( this )
     }
+
+    erro(){
+        return(
+          <div>
+            {
+              this.state.erro && (
+                <div>
+                <div className="erro text-center pt-2">
+                    <h4 className="white-text red">Login ou senha invalida</h4>
+                </div>
+                </div>
+              )
+            }
+          </div>
+        )
+      }
 
     trocaValoresState( e ) {
         const { name, value } = e.target
@@ -51,22 +68,27 @@ export default class Login extends Component {
         try {
             axios.post( `${this.baseUrl}/api/${tipoUsuario}/login`, usuario )
                 .then(respUsuario => {
-                    (usuario = respUsuario.data);
-                    if(tipoUsuario === "admin"){
-                        axios.post(`${this.baseUrl}/login`, { email, password }).then(resp => {
-                            login(resp.headers.authorization);
-                            this.props.history.push({
-                                pathname: '/admin'})
-                        }
-                        )
+                    (console.log("aki",usuario = respUsuario.data));
+                    if((usuario === undefined) || (usuario === "") || (usuario === null)){
+                        console.log("consegui");
                     }else{
-                        this.props.history.push({
-                        pathname: `/candidateDetail/${usuario.id}`,
-                        state: { detail: respUsuario.data }
-                        })
+                        if(tipoUsuario === "admin"){
+                            axios.post(`${this.baseUrl}/login`, { email, password }).then(resp => {
+                                login(resp.headers.authorization);
+                                this.props.history.push({
+                                    pathname: '/admin'})
+                            }
+                            )
+                        }else{
+                            this.props.history.push({
+                            pathname: `/candidateDetail/${usuario.id}`,
+                            state: { detail: respUsuario.data }
+                            })
+                        }
                     }
+                    
 
-                }).catch(function (error) {
+                }).catch(this.setState({erro:true}),function (error) {
                     console.log("Error in login =>", error)
                 }
         )} catch (erro) {
@@ -79,6 +101,7 @@ export default class Login extends Component {
             <MDBContainer fluid id="login" className="mh-100">
                     <h2 id="titulo" className="pt-3 pb-2"><span id="welcome" > Bem vindo, </span> Vem Ser!</h2>
                     <TemplateLogin logar={ this.logar.bind( this ) } trocaValoresState={ this.trocaValoresState } />
+                    {this.erro()}
                     <div className="mt-5 text-center font-weight-bold">&copy; {new Date().getFullYear()} DBC Company — Todos os direitos reservados</div>
             </MDBContainer >
         )
