@@ -20,6 +20,11 @@ export default class ProgressBar extends Component{
                     Parabéns! Você foi selecionado para a próxima etapa! :)
                 </MDBProgress>
             }
+            {this.state.status === "CONFIRMED_PRESENCE" && 
+                <MDBProgress value={100} className="my-2" height= "35px" color="success">
+                    Parabéns! Você foi selecionado para a próxima etapa! :)
+                </MDBProgress>
+            }
             {this.state.status === "REJECTED" &&
                 <MDBProgress value={100} className="my-2" height= "35px" color="warning">
                     Infelizmente você não foi selecionado! :'(

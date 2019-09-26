@@ -49,6 +49,7 @@ class TemplateFormQuestions extends React.Component {
 
   submitHandler = event => {
     event.preventDefault();
+    event.target.className += "was-validated";
     const { isCollege,
       course,
       educationalInstitution,
@@ -64,31 +65,32 @@ class TemplateFormQuestions extends React.Component {
     } = this.state
 
     let questionsCandidate = {
-      isCollege: isCollege,
+      college: isCollege,
       course: course,
       educationalInstitution: educationalInstitution,
       dayShifys: dayShifys,
-      isParticipated: isParticipated,
+      participated: isParticipated,
       reasonsForInterest: reasonsForInterest,
       otherReason: otherReason,
-      isLogicalKnowledge: isLogicalKnowledge,
+      logicalKnowledge: isLogicalKnowledge,
       hasAvailability: hasAvailability,
       availabilityAfterTraining: availabilityAfterTraining,
-      whatMotivate: whatMotivate,
+      whatMotivates: whatMotivate,
       referencesThatInspire: referencesThatInspire,
       candidate: this.candidate
     }
-
+    console.log("Antes",questionsCandidate)
     try {
       axios.post(`${this.baseUrl}/api/question/add`, questionsCandidate)
         .then(respQuestions => {
+          console.log("Durante",respQuestions)
           questionsCandidate = respQuestions.data
-          this.props.history.push("/");
+          console.log("Tentativa",questionsCandidate)
+          this.props.history.push("/login");
         }).catch(function (error) { 
           console.log("Error that's request: " + error) }
         )
     } catch (erro) { console.log("Erro na tentativa de salvar") }
-    event.target.className += "was-validated";
   };
 
   render() {

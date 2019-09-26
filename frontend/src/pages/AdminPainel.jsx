@@ -88,7 +88,6 @@ export default class AdminPainel extends Component {
             axios.get(`${this.baseUrl}/api/question/`, (config))
             .then(resp => {
                 listCandidates = resp.data
-
                 const filter = listCandidates.filter(a => a.candidate.statusProcess.toUpperCase().includes(translate.toUpperCase()))
                 if (filter) {
                     this.setState({

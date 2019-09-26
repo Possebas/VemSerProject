@@ -27,7 +27,7 @@ export default class CandidateTable extends Component {
         );
       })
 
-    await axios.put(`${this.baseUrl}/api/candidate/edit/${this.state.candidate.id}`, this.state.candidate, (config))
+    await axios.put(`${this.baseUrl}/api/candidate/edit/${this.state.candidate.id}`, this.state.candidate)
       .then(respStatus => {
         this.setState({statusProcess: respStatus.data.statusProcess});
       })
@@ -49,6 +49,21 @@ export default class CandidateTable extends Component {
       })
   }
 
+  translator(typePT){
+    switch (typePT) {
+        case "PEENDING":
+            return "Pendente"
+        case "INVITATION_SENT":
+            return "Convite enviado"
+        case "REJECTED":
+            return "Rejeitado"
+        case "CONFIRMED_PRESENCE":
+            return "Presença confirmada"
+        default:
+            break;
+        }
+    }
+
   render() {
     return (
       <React.Fragment>
@@ -58,12 +73,16 @@ export default class CandidateTable extends Component {
             <td>{this.props.cpf}</td>
             <td>{this.props.email}</td>
             <td>{this.props.dateOfRegistration}</td>
-            <td>{this.state.statusProcess}</td>
+            <td>
+              {
+              this.translator(this.state.candidate.statusProcess)
+              }
+
+            </td>
             <td>
               {(this.state.statusProcess === "INVITATION_SENT" &&
                 <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendInvite}> Reenviar Convite </button>)
-                ||
-                (!this.state.sentInvite &&
+              }{(!this.state.sentInvite &&
                 <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>)
               }
             </td>
@@ -72,7 +91,7 @@ export default class CandidateTable extends Component {
                 <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendReject}> Candidato Rejeitado </button>
               ||
               !this.state.sentReject &&
-                <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendReject}> Rejeitar </button>
+                <button className="btn red btn-sm my-0 mx-0 white-text" onClick={this.sendReject}> Rejeitar </button>
               }
             </td>
             <td>
