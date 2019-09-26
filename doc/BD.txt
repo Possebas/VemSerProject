@@ -53,32 +53,24 @@
 			<type label="SQL Variant" quote="" sql="sql_variant" length="1" bytes="" note="Stores any datatype except text, ntext, image, timestamp"/>
 			<type label="Uniqueidentifier" quote="" sql="uniqueidentifier" length="1" bytes="16" note="GUID"/>
 		</group>
-	</datatypes><table x="32" y="59" name="USERS">
-<row name="ID_USER" null="0" autoincrement="1">
+	</datatypes><table x="152" y="254" name="CANDIDATE">
+<row name="ID_CANDIDATE" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
-<row name="NAME" null="0" autoincrement="0">
+<row name="NOME" null="1" autoincrement="0">
 <datatype>varchar</datatype>
-<default>'NULL'</default></row>
-<row name="EMAIL" null="0" autoincrement="0">
-<datatype>varchar</datatype>
-<default>'NULL'</default></row>
-<row name="PASSWORD" null="1" autoincrement="0">
-<datatype>tinyint</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>ID_USER</part>
-</key>
-</table>
-<table x="183" y="43" name="CANDIDATES">
-<row name="ID_CANDIDATES" null="0" autoincrement="1">
-<datatype>int</datatype>
 <default>NULL</default></row>
 <row name="CPF" null="0" autoincrement="0">
 <datatype>varchar</datatype>
 <default>'NULL'</default></row>
 <row name="BIRTH_DATE" null="1" autoincrement="0">
 <datatype>datetime</datatype>
+<default>NULL</default></row>
+<row name="EMAIL" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="PASSWORD" null="1" autoincrement="0">
+<datatype>varchar</datatype>
 <default>NULL</default></row>
 <row name="STATUS PROCESS" null="0" autoincrement="0">
 <datatype>sql_variant</datatype>
@@ -90,11 +82,18 @@
 <row name="BEEN_CONFIRMED" null="1" autoincrement="0">
 <datatype>bit</datatype>
 <default>NULL</default></row>
+<row name="EDUCATIONAL_INSTITUTION" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="ID_ADDRESS_ADDRESS" null="1" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="ADDRESS" row="ID_ADDRESS" />
+</row>
 <key type="PRIMARY" name="">
-<part>ID_CANDIDATES</part>
+<part>ID_CANDIDATE</part>
 </key>
 </table>
-<table x="1012" y="107" name="COUNTRY">
+<table x="1057" y="67" name="COUNTRY">
 <row name="ID_COUNTRY" null="1" autoincrement="1">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
@@ -105,45 +104,57 @@
 <part>ID_COUNTRY</part>
 </key>
 </table>
-<table x="884" y="109" name="STATE">
+<table x="892" y="56" name="STATE">
 <row name="ID_STATE" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="1" autoincrement="0">
 <datatype>varchar</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_COUNTRY" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default><relation table="COUNTRY" row="ID_COUNTRY" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_STATE</part>
 </key>
 </table>
-<table x="768" y="110" name="CITY">
+<table x="745" y="57" name="CITY">
 <row name="ID_CITY" null="0" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="1" autoincrement="0">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_STATE" null="1" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="STATE" row="ID_STATE" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_CITY</part>
 </key>
 </table>
-<table x="573" y="106" name="NEIGHBORHOOD">
+<table x="521" y="57" name="NEIGHBORHOOD">
 <row name="ID_NEIGHBORHOOD" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="NAME" null="1" autoincrement="0">
 <datatype>tinyint</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_CITY" null="0" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="CITY" row="ID_CITY" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_NEIGHBORHOOD</part>
 </key>
 </table>
-<table x="417" y="78" name="ADDRESS">
+<table x="294" y="27" name="ADDRESS">
 <row name="ID_ADDRESS" null="1" autoincrement="1">
 <datatype>int</datatype>
 <default>NULL</default></row>
 <row name="STREET" null="1" autoincrement="0">
-<datatype>tinyint</datatype>
+<datatype>varchar</datatype>
 <default>NULL</default></row>
 <row name="NUMBER" null="0" autoincrement="0">
 <datatype>int</datatype>
@@ -154,8 +165,77 @@
 <row name="ZIP_CODE" null="1" autoincrement="0">
 <datatype>varchar</datatype>
 <default>NULL</default></row>
+<row name="FK_ID_NEIGHBORHOOD" null="1" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="NEIGHBORHOOD" row="ID_NEIGHBORHOOD" />
+</row>
 <key type="PRIMARY" name="">
 <part>ID_ADDRESS</part>
+</key>
+</table>
+<table x="546" y="188" name="QUESTIONS">
+<row name="ID_QUESTIONS" null="1" autoincrement="1">
+<datatype>int</datatype>
+<default>NULL</default></row>
+<row name="IS_COLLEGE" null="0" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="COURSE" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="EDUCATIONAL_INSTITUTION" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="DAY_SHIFTS" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="IS_PARTICIPATED" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="REASONS_FOR_INTEREST" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="OTHER_REASON" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="IS_LOGICAL_KNOWLEDGE" null="0" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="HAS_AVAILABILITY" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="AVAILABLE_AFTER_TRAINING" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
+<row name="WHAT_MOTIVATES" null="0" autoincrement="0">
+<datatype>varchar</datatype>
+<default>'NULL'</default></row>
+<row name="REFERENCES_THAT_INSPIRE" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="ID_CANDIDATE_CANDIDATE" null="0" autoincrement="0">
+<datatype>int</datatype>
+<default>NULL</default><relation table="CANDIDATE" row="ID_CANDIDATE" />
+</row>
+<key type="PRIMARY" name="">
+<part>ID_QUESTIONS</part>
+</key>
+</table>
+<table x="133" y="34" name="ADMIN">
+<row name="ID_ADMIN" null="1" autoincrement="1">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<row name="NAME" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="EMAIL" null="1" autoincrement="0">
+<datatype>varchar</datatype>
+<default>NULL</default></row>
+<row name="PASSWORD" null="1" autoincrement="0">
+<datatype>tinyint</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>ID_ADMIN</part>
 </key>
 </table>
 </sql>

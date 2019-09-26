@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "217a386f-f0c1-447a-82e6-8465e8d22692",
+		"name": "LandingPage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "CountryGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/country/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"country",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StateGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/state/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"state",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CityGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/city/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"city",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NeighborhoodGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/neighborhood/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"neighborhood",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddressGET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/address/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CandidateGET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBkYmNjb21wYW55LmNvbS5iciIsImV4cCI6MTU2OTk1NzIyOX0.pYWRT5IluZ3vGmos7ZVZfpZgOYpaMaf2Db2hWvWpED2Tf2-BwXakfOFRyFYczYzzDF9cBxNraHUP_8tDTf0SbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PUT",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "CountryPOST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Brasil\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/country/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"country",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StatePOST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rio Grande do Sul\",\r\n    \"country\": {\r\n    \t\"id\": 1,\r\n    \t\"name\": \"Brasil\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/state/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"state",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CityPOST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Porto Alegre\",\n\t\"state\": {\n\t\t\"id\": 2,\n\t\t\"name\": \"Rio Grande do Sul\",\n\t\t\"country\": {\n\t\t\t\"id\": 1,\n\t\t\t\"name\": \"Brasil\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/city/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"city",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NeighborhoodPOST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Passo d'Areia\",\r\n\t\"city\":{\"id\": 1,\r\n\t\t\"name\": \"Porto Alegre\",\r\n\t\t\"state\": {\r\n    \t\t\"id\": 2,\r\n    \t\t\"name\": \"Rio Grande do Sul\",\r\n    \t\t\"country\": {\r\n        \t\t\"id\": 1,\r\n        \t\t\"name\": \"Brasil\",\r\n        \t\t\"states\": []\r\n    \t},\r\n    \t\"cities\": []\r\n\t\t},\r\n\t\"neighborhoods\": []\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/neighborhood/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"neighborhood",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddressPOST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"street\": \"Andarai\",\r\n\t\"number\": 535,\r\n\t\"complement\":\"\",\r\n\t\"zipCode\": \"95487452\",\r\n\t\"neighborhood\": {\r\n\t\t\"id\": 1,\r\n    \t\"name\": \"Passo d'Areia\",\r\n    \t\"city\": {\r\n        \t\"id\": 1,\r\n        \t\"name\": \"Porto Alegre\",\r\n        \t\"state\": {\r\n            \t\"id\": 2,\r\n            \t\"name\": \"Rio Grande do Sul\",\r\n            \t\"country\": {\r\n                \t\"id\": 1,\r\n                \t\"name\": \"Brasil\",\r\n                \t\"states\": []\r\n            \t},\r\n            \t\"cities\": []\r\n        \t},\r\n        \t\"neighborhoods\": []\r\n    \t},\r\n    \t\"addresses\": []\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/address/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"address",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/fileStorage/uploadFile/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBkYmNjb21wYW55LmNvbS5iciIsImV4cCI6MTU2OTg4MTA4N30.l9f3caweIzWWYTUY4JltLE1ylTjGKv8T78NCBgGBtlsBP035uE93MOV0yJ-FZ-5X1CYezelazdlxuGOlPSqXxg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/MIDGARD-1/Pictures/Brazil-Digital-Report_956353730_1536x1536.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/fileStorage/uploadFile/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fileStorage",
+								"uploadFile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CandidatePOST",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Murilo Israel\",\n\t\"email\": \"murilo@dbc.com\",\n\t\"password\": \"852345\",\n\t\"cpf\": \"04182484002\",\n\t\"birthDate\": \"1990-03-03\",\n\t\"statusProcess\":\"PEENDING\",\n\t\"educationalInstitution\":\"ULBRA\",\n\t\"dateOfRegistration\":\"2019-03-03\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

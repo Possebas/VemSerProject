@@ -3,9 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.24",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "antd": "^3.23.3",
+    "axios": "^0.19.0",
+    "mdbreact": "^4.20.0",
+    "nodemailer": "^6.3.0",
+    "nodemailer-react": "^0.1.0",
     "react": "^16.9.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-native-svg": "^9.9.4",
+    "react-password-strength": "^2.4.0",
+    "react-password-strength-meter": "^1.0.5",
+    "react-router": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "react-stepper-horizontal": "^1.0.11",
+    "react-video-cover": "^1.2.2",
+    "sendmail": "^1.6.1",
+    "zxcvbn": "^4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,7 +30,26 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "airbnb-base"
+    ],
+    "rules": {
+      "semi": "off",
+      "no-console": "off",
+      "arrow-parens": "off",
+      "class-methods-use-this": "off",
+      "no-underscore-dangle": "off",
+      "space-in-parens": [
+        "error",
+        "always"
+      ],
+      "template-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "no-trailing-spaces": "error"
+    }
   },
   "browserslist": {
     "production": [

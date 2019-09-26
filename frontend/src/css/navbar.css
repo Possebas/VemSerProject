@@ -1,0 +1,162 @@
+#logoVemSer{
+    width: 72%;
+}
+
+#oi{
+    opacity: 0.9;
+}
+
+#titleNav{
+    font-size: 24px;
+    line-height: 45px;   
+}
+
+#tecnologia{
+    color: rgb(59, 58, 58);
+}
+
+#desafios{
+    color:rgb(59, 58, 58);
+}
+
+#desenvolver{
+    color: rgb(59, 58, 58);
+}
+
+#tituloVS{
+    color: rgb(60, 85, 130);
+    font-size: 90px;
+    line-height: 40px;
+    word-spacing: -25px;
+}
+
+#tituloVS1{
+    color: rgb(60, 85, 130);
+    font-size: 90px;
+    line-height: 40px;
+    margin-right: 350px;
+    margin-bottom: 20px;
+}
+
+#tituloVSSpan{
+    color: rgb(60, 85, 130);
+    font-size: 125px;
+}
+
+.under:hover{
+    border-top: 1px solid rgb(251, 142, 0);
+}
+
+#corPadrao{
+    background: #283c86;  /* fallback for old browsers */
+    background: -moz-linear-gradient(-45deg,  #283c86 0%, #45a247 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #283c86, #45a247 100%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(135deg, #283c86, #45a247 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.9;
+}
+
+#tt{
+    padding-top: 15%;
+}
+
+#tt p {
+    color: #fff;
+}
+
+#tt a{
+    text-shadow: 0 0 5px black;
+}
+
+.paragraf{
+    margin-top: 75px;
+}
+
+.font{
+    color: #fff;
+    font-family: Apple Chancery, cursive;
+    font-size: 120px;
+}
+
+.textVideo{
+    position: relative;
+    z-index: 10;
+}
+
+.videoCover{
+    position: absolute;
+    z-index: -1;
+    width: '100vw';
+    height: '100vh';
+    top: 0;
+    left: 0;
+}
+
+.dbc{
+background: -moz-linear-gradient(-45deg,  rgba(34,212,160,0.76) 0%, rgba(34,212,160,0.76) 18%, rgba(155,114,196,0.76) 81%, rgba(155,114,196,0.76) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  rgba(34,212,160,0.76) 0%,rgba(34,212,160,0.76) 18%,rgba(155,114,196,0.76) 81%,rgba(155,114,196,0.76) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  rgba(34,212,160,0.76) 0%,rgba(34,212,160,0.76) 18%,rgba(155,114,196,0.76) 81%,rgba(155,114,196,0.76) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c222d4a0', endColorstr='#c29b72c4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.tracking-in-expand {
+	-webkit-animation: tracking-in-expand 3s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3 both;
+	        animation: tracking-in-expand 3s cubic-bezier(0.215, 0.610, 0.355, 1.000) 3 both;
+}
+
+ @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@media (max-width: 415px) {
+    #tituloVS{
+        font-size: 50px;
+        line-height: 1px;
+        word-spacing: -15px;
+    }
+    #tituloVS1{
+        font-size: 50px;
+        line-height: 20px;
+        margin-top: 100px;
+        margin-right: 205px;
+        margin-bottom: 18px;
+    }
+    #tituloVSSpan{
+        font-size: 75px;
+        
+    }
+    #titleNav{
+        font-size: 17px;
+        line-height: 27px;   
+        margin-top:30px;
+    }
+    .videoCover{
+        width: '200vw';
+        height: 600px;
+    }
+}
+
+
+
+
+

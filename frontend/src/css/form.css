@@ -1,0 +1,59 @@
+#form{
+    width: 80%;
+    text-align: center;
+    margin: 0 0 0 8%;
+    padding-top:10px;
+}
+
+.md-form label{
+    color: white;
+}
+
+#formu label{
+    color:#777777 !important;
+}
+
+#form label {
+    color: #fff;
+}
+
+
+#container{
+    width: 100%;
+    padding: 0 0;
+    margin: 0 0 ;
+    background: #5170e2;  /* fallback for old browsers */
+    background: -moz-linear-gradient(-45deg,  #283c86 0%, #45a247 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #283c86, #45a247 100%);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(135deg, #283c86, #45a247 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.9;
+}
+
+#title{
+    color: #e0f7fa;
+}
+
+.title{
+    color: #e0f7fa;
+}
+
+.colorLabel{
+    color: white;
+}
+
+.padingRadio{
+    padding-left: 10px;
+}
+
+.mt-45{
+    margin-top: 36px;
+}
+
+#password{
+    margin-bottom: -15px;
+}
+
+#fonte-invalid{
+    font-size: 8px;
+    letter-spacing: 2px;
+}

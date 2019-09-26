@@ -1,0 +1,38 @@
+#text-comentarios{
+    font-size: 17px;
+    line-height: 30px;
+}
+
+#test{
+    height: 500px;
+}
+
+.hr{
+    border-top: 1px dashed #1D2825;
+    width: 100%;
+    opacity: 0.5;
+    margin-top: 70px;
+}
+
+.mt-6{
+    margin-top: 90px;
+}
+
+@media (max-width: 415px){
+    #test{
+        height: 40vh;
+    }
+    #text-comentarios{
+        font-size: 13px;
+        line-height: 20px;
+        margin-bottom: 40px;
+    }
+    .mt-6{
+        margin-top: 90px;
+    }
+    .smartphone{
+        font-size: 25px;
+        margin-bottom: -20px;
+    }
+   
+}

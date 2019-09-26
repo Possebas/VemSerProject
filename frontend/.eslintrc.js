@@ -6,9 +6,7 @@ module.exports = {
     extends: 'airbnb-base',
     globals: {
       Atomics: 'readonly',
-      SharedArrayBuffer: 'readonly',
-      PokeApi: 'readonly',
-      Pokemon: 'readonly'
+      SharedArrayBuffer: 'readonly'
     },
     parserOptions: {
       ecmaVersion: 2018,
