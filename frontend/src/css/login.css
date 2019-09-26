@@ -29,3 +29,8 @@
 .md-form #emaillogin label{
     color: black;
 }
+
+.erro{
+    width: 23%;
+    margin: auto;
+}

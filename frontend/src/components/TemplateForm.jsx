@@ -21,23 +21,39 @@ class TemplateForm extends React.Component {
     this.zipCodeUrl = `http://viacep.com.br/ws`
     this.baseUrl = `http://localhost:8080`
     this.state = {
-      name: "",
-      birthDate: "",
-      cpf: "",
-      zipCode: "",
+      name: "Fulaninho",
+      birthDate: "2012-12-12",
+      cpf: "86569813072",
+      zipCode: "94858540",
       street: "",
-      number: "",
-      complement: "",
+      number: "600",
+      complement: "casa",
       city: "",
       district: "",
       state: "",
       parents: "",
-      education: "",
-      email: "",
-      password: "",
-      confirmPassword: ""
+      education: "escola",
+      email: "teste@teste.com",
+      password: "1234",
+      confirmPassword: "",
+      erro: false
     }
   };
+
+  erro(){
+    return(
+      <div>
+        {
+          this.state.erro && (
+            <div>
+                <h4 className="white-text red">Erro ao tentar cadastrar, verifique seus dados</h4>
+            </div>
+          )
+        }
+      </div>
+    )
+  }
+  
 
   reqZipCodeData = async event => {
     event.preventDefault()
@@ -136,7 +152,7 @@ class TemplateForm extends React.Component {
                                   pathname: '/questions',
                                   state: { detail: respCandidate.data }
                                 })
-                              }).catch(function (error) { console.log("Error that's request: " + error) })
+                              }).catch(this.setState({erro:true}),function (error) { console.log("Error that's request: " + error) })
                           }).catch(function (error) { console.log("Error that's request: " + error) })
                       }).catch(function (error) { console.log("Error that's request: " + error) })
                   }).catch(function (error) { console.log("Error that's request: " + error) })
@@ -144,7 +160,6 @@ class TemplateForm extends React.Component {
           }).catch(function (error) { console.log("Error that's request: " + error) }
           )
       } catch (erro) { console.log("Erro na tentativa de salvar") }
-      event.target.className += "was-validated";
     }
   };
 
@@ -409,7 +424,7 @@ class TemplateForm extends React.Component {
               </div>
             </MDBCol>
           </MDBRow> */}
-
+          {this.erro()}
           {/*Botões*/}
           <MDBRow>
             <MDBCol>
