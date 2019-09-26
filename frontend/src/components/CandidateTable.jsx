@@ -5,7 +5,7 @@ import * as axios from 'axios';
 export default class CandidateTable extends Component {
   constructor(props) {
     super(props);
-    this.baseUrl = `http://localhost:8080`
+    this.baseUrl = `https://vemserdbc2019.herokuapp.com`
     this.state = {
       sentInvite: this.props.sentInvite,
       sentReject: this.props.sentReject,

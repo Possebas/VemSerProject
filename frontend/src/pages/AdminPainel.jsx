@@ -14,7 +14,7 @@ import '../css/painel.css';
 export default class AdminPainel extends Component {
     constructor(props) {
         super(props);
-        this.baseUrl = `http://localhost:8080`;
+        this.baseUrl = `https://vemserdbc2019.herokuapp.com`;
         this.state = {
             oldList: [],
             list: [],
