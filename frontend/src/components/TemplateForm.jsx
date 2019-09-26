@@ -19,22 +19,22 @@ class TemplateForm extends React.Component {
     super(props);
     this.backData = new RequestApi()
     this.zipCodeUrl = `http://viacep.com.br/ws`
-    this.baseUrl = `https://vemserdbc2019.herokuapp.com`
+    this.baseUrl = `http://localhost:8080`
     this.state = {
-      name: "Fulaninho",
-      birthDate: "2012-12-12",
-      cpf: "86569813072",
-      zipCode: "94858540",
+      name: "",
+      birthDate: "",
+      cpf: "",
+      zipCode: "",
       street: "",
-      number: "600",
-      complement: "casa",
+      number: "",
+      complement: "",
       city: "",
       district: "",
       state: "",
       parents: "",
-      education: "escola",
-      email: "teste@teste.com",
-      password: "1234",
+      education: "",
+      email: "",
+      password: "",
       confirmPassword: "",
       erro: false
     }

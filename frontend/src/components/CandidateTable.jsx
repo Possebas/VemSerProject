@@ -5,7 +5,7 @@ import * as axios from 'axios';
 export default class CandidateTable extends Component {
   constructor(props) {
     super(props);
-    this.baseUrl = `https://vemserdbc2019.herokuapp.com`
+    this.baseUrl = `http://localhost:8080`
     this.state = {
       sentInvite: this.props.sentInvite,
       sentReject: this.props.sentReject,
@@ -18,7 +18,6 @@ export default class CandidateTable extends Component {
 
   async sendInvite() {
     let state = this.state;
-    let config = { headers: { Authorization: localStorage.getItem("Authorization") } }
     await axios.post(`${this.baseUrl}/api/email/${this.props.email}`)
       .then( ()  => {
         state.sentInvite = true;
@@ -82,7 +81,8 @@ export default class CandidateTable extends Component {
             <td>
               {(this.state.statusProcess === "INVITATION_SENT" &&
                 <button className="btn btn-light btn-sm my-0 mx-0 pl-4 pr-3" onClick={this.sendInvite}> Reenviar Convite </button>)
-              }{(!this.state.sentInvite &&
+              
+              || (this.state.statusProcess === "PEENDING" &&
                 <button className="btn btn-primary btn-sm my-0 mx-0" onClick={this.sendInvite}> Enviar Convite </button>)
               }
             </td>
