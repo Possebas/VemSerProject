@@ -4,7 +4,7 @@ import axios from "axios";
 import { getToken } from '../api/LoginAuth';
 
 const api = axios.create({
-  baseURL: "http://localhost:8080"
+  baseURL: "https://vemserdbc2019.herokuapp.com"
 });
 
 api.interceptors.request.use( async config => {

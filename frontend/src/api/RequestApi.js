@@ -4,7 +4,7 @@ import * as axios from 'axios';
 export default class RequestApi {
     constructor() {
         this.data = []
-        this.baseUrl = `http://localhost:8080`
+        this.baseUrl = `https://vemserdbc2019.herokuapp.com`
         this.zipCodeUrl = `http://viacep.com.br/ws`
     }
 
